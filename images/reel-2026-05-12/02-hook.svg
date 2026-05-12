@@ -1,22 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920">
-<defs>
-<radialGradient id="glow" cx="80%" cy="85%" r="60%">
-<stop offset="0%" stop-color="#FF6B47" stop-opacity="0.45"/>
-<stop offset="100%" stop-color="#FF6B47" stop-opacity="0"/>
-</radialGradient>
-</defs>
-<rect width="1080" height="1920" fill="#292f71"/>
-<rect width="1080" height="1920" fill="url(#glow)"/>
-<text x="540" y="540" font-family="Inter, sans-serif" font-size="32" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">JUST ADDED THIS WEEK</text>
-<text x="540" y="780" font-family="Instrument Serif, Georgia, serif" font-size="220" text-anchor="middle" fill="#FAFAF7">5 picks.</text>
-<text x="540" y="980" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="160" text-anchor="middle" fill="#FAFAF7" opacity="0.85">All this week.</text>
-<line x1="440" y1="1110" x2="640" y2="1110" stroke="#FF6B47" stroke-width="4"/>
-<text x="540" y="1240" font-family="Inter, sans-serif" font-size="42" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.92">Four free, one jazz room.</text>
-<text x="540" y="1308" font-family="Inter, sans-serif" font-size="42" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.92">No filler. No sponcon.</text>
-<g transform="translate(540, 1800)">
-<circle cx="-30" cy="0" r="5" fill="#FF6B47"/>
-<circle cx="0" cy="0" r="5" fill="#FAFAF7" opacity="0.3"/>
-<circle cx="30" cy="0" r="5" fill="#FAFAF7" opacity="0.3"/>
-</g>
+  <defs>
+    <radialGradient id="s2-glow" cx="80%" cy="85%" r="60%">
+      <stop offset="0%" stop-color="#FF6B47" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#FF6B47" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="#292f71"/>
+  <rect width="1080" height="1920" fill="url(#s2-glow)"/>
+
+  <text x="540" y="540" font-family="Inter, sans-serif" font-size="32" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">EAT WELL THIS WEEK</text>
+
+  <text x="540" y="780" font-family="Instrument Serif, Georgia, serif" font-size="220" text-anchor="middle" fill="#FAFAF7">4 dinners.</text>
+  <text x="540" y="980" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="160" text-anchor="middle" fill="#FAFAF7" opacity="0.85">One city.</text>
+
+  <line x1="440" y1="1110" x2="640" y2="1110" stroke="#FF6B47" stroke-width="4"/>
+
+  <text x="540" y="1240" font-family="Inter, sans-serif" font-size="42" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.92">One-night collabs and</text>
+  <text x="540" y="1308" font-family="Inter, sans-serif" font-size="42" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.92">a sunset on the farm.</text>
+
+  <g transform="translate(540, 1800)">
+    <circle cx="-30" cy="0" r="5" fill="#FF6B47"/>
+    <circle cx="0" cy="0" r="5" fill="#FAFAF7" opacity="0.3"/>
+    <circle cx="30" cy="0" r="5" fill="#FAFAF7" opacity="0.3"/>
+  </g>
 </svg>
