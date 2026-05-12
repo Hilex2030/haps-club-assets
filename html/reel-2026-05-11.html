@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haps Club — Reel · This Week in LA (May 11)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #292f71;
+    --navy-deep: #1a1f4d;
+    --navy-tint: #EEF0F8;
+    --accent: #FF6B47;
+    --accent-deep: #E54D2B;
+    --accent-tint: #FFF1ED;
+    --bg: #FAFAF7;
+    --ink: #0F1117;
+    --ink-3: #6B6F7A;
+    --sans: 'Inter', -apple-system, system-ui, sans-serif;
+    --serif: 'Instrument Serif', Georgia, serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #2a2a2a;
+    font-family: var(--sans);
+    padding: 30px 0 60px;
+    min-height: 100vh;
+  }
+  .toolbar {
+    max-width: 1100px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+    color: #eee;
+    text-align: center;
+  }
+  .toolbar h1 { font-family: var(--serif); font-size: 28px; font-weight: 400; margin-bottom: 6px; }
+  .toolbar p { font-size: 14px; color: #aaa; line-height: 1.5; }
+  .toolbar code { background: #444; padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+  .deck {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 0 20px;
+  }
+  .slide-wrapper {
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+  }
+  .slide-label {
+    background: #333;
+    color: #ccc;
+    padding: 10px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .slide-label .num { color: var(--accent); }
+  .slide {
+    /* Each slide renders at 9:16 (1080×1920 design space, scaled to container width) */
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg);
+  }
+  .slide svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Print-ready: each slide on its own page when "Save as PDF" */
+  @media print {
+    body { background: #fff; padding: 0; }
+    .toolbar { display: none; }
+    .deck { display: block; max-width: none; padding: 0; gap: 0; }
+    .slide-wrapper { page-break-after: always; border-radius: 0; box-shadow: none; }
+    .slide-label { display: none; }
+    .slide { aspect-ratio: auto; width: 1080px; height: 1920px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <h1>Haps Club — Reel Deck</h1>
+  <p>8 slides, 9:16 vertical (1080×1920). Screen-record this page on your phone, or right-click any slide and "Save image as" to export individually.<br>Loaded at <code>https://hilex2030.github.io/haps-club-assets/html/reel-2026-05-11.html</code></p>
+</div>
+
+<div class="deck">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SLIDE 1 — OPEN: Logo + "This week in LA"
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="slide-wrapper">
+    <div class="slide-label"><span><span class="num">01</span> · Open</span><span>Logo + intro</span></div>
+    <div class="slide">
+      <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <!-- Warm off-white base with subtle navy gradient at top -->
+        <defs>
+          <radialGradient id="s1-bg" cx="20%" cy="0%" r="80%">
+            <stop offset="0%" stop-color="#292f71" stop-opacity="0.10"/>
+            <stop offset="55%" stop-color="#292f71" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="s1-coral" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FF6B47" stop-opacity="0.04"/>
+            <stop offset="100%" stop-color="#FF6B47" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <rect width="1080" height="1920" fill="#FAFAF7"/>
+        <rect width="1080" height="1920" fill="url(#s1-bg)"/>
+        <rect width="1080" height="1920" fill="url(#s1-coral)"/>
+
+        <!-- Logo: navy circular mark with HC monogram inside, paired with wordmark -->
+        <g transform="translate(540, 760)">
+          <!-- Circular badge -->
+          <circle cx="0" cy="0" r="170" fill="#292f71"/>
+          <!-- Inner accent ring -->
+          <circle cx="0" cy="0" r="155" fill="none" stroke="#FF6B47" stroke-width="3"/>
+          <!-- HC monogram, hand-set -->
+          <text x="0" y="38" font-family="Instrument Serif, Georgia, serif" font-size="180" font-style="italic" text-anchor="middle" fill="#FAFAF7">H</text>
+          <text x="0" y="38" font-family="Instrument Serif, Georgia, serif" font-size="180" font-style="italic" text-anchor="middle" fill="#FAFAF7" opacity="0">C</text>
+        </g>
+
+        <!-- Wordmark -->
+        <text x="540" y="1010" font-family="Instrument Serif, Georgia, serif" font-size="120" text-anchor="middle" fill="#292f71" letter-spacing="-2">Haps Club</text>
+
+        <!-- Live dot + tagline -->
+        <g transform="translate(540, 1140)">
+          <circle cx="-220" cy="-12" r="8" fill="#FF6B47"/>
+          <text x="-200" y="-2" font-family="Inter, sans-serif" font-size="32" font-weight="600" fill="#FF6B47" letter-spacing="3">THIS WEEK IN LA</text>
+        </g>
+
+        <!-- Big serif headline -->
+        <text x="540" y="1310" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#0F1117">May 11 — 17, 2026</text>
+
+        <!-- Hairline divider with accent dot -->
+        <line x1="380" y1="1410" x2="700" y2="1410" stroke="#292f71" stroke-width="1.5"/>
+        <circle cx="540" cy="1410" r="6" fill="#FF6B47"/>
+
+        <!-- Footer mark -->
+        <text x="540" y="1840" font-family="Inter, sans-serif" font-size="26" font-weight="500" text-anchor="middle" fill="#6B6F7A" letter-spacing="2">HAPS.CLUB</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SLIDE 2 — HOOK
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="slide-wrapper">
+    <div class="slide-label"><span><span class="num">02</span> · Hook</span><span>5 picks. One city.</span></div>
+    <div class="slide">
+      <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <!-- Navy background -->
+        <rect width="1080" height="1920" fill="#292f71"/>
+
+        <!-- Coral radial accent, lower-right -->
+        <defs>
+          <radialGradient id="s2-glow" cx="80%" cy="85%" r="60%">
+            <stop offset="0%" stop-color="#FF6B47" stop-opacity="0.45"/>
+            <stop offset="100%" stop-color="#FF6B47" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="1080" height="1920" fill="url(#s2-glow)"/>
+
+        <!-- Eyebrow -->
+        <text x="540" y="540" font-family="Inter, sans-serif" font-size="32" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">EDITOR'S SHORTLIST</text>
+
+        <!-- Big serif numerals stacking down -->
+        <text x="540" y="780" font-family="Instrument Serif, Georgia, serif" font-size="220" text-anchor="middle" fill="#FAFAF7">5 picks.</text>
+        <text x="540" y="980" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="160" text-anchor="middle" fill="#FAFAF7" opacity="0.85">One city.</text>
+
+        <!-- Accent slash -->
+        <line x1="440" y1="1110" x2="640" y2="1110" stroke="#FF6B47" stroke-width="4"/>
+
+        <!-- Subline -->
+        <text x="540" y="1240" font-family="Inter, sans-serif" font-size="42" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.92">Hand-picked for the week ahead.</text>
+        <text x="540" y="1308" font-family="Inter, sans-serif" font-size="42" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.92">No filler. No sponcon.</text>
+
+        <!-- Small footer dots -->
+        <g transform="translate(540, 1800)">
+          <circle cx="-30" cy="0" r="5" fill="#FF6B47"/>
+          <circle cx="0" cy="0" r="5" fill="#FAFAF7" opacity="0.3"/>
+          <circle cx="30" cy="0" r="5" fill="#FAFAF7" opacity="0.3"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SLIDE 3 — SUSHISAMBA (featured)
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="slide-wrapper">
+    <div class="slide-label"><span><span class="num">03</span> · Pick 1</span><span>SUSHISAMBA rooftop</span></div>
+    <div class="slide">
+      <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <!-- Coral-tinted background -->
+        <defs>
+          <linearGradient id="s3-sky" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFF1ED"/>
+            <stop offset="55%" stop-color="#FFE3D8"/>
+            <stop offset="100%" stop-color="#FFCFBC"/>
+          </linearGradient>
+        </defs>
+        <rect width="1080" height="1920" fill="url(#s3-sky)"/>
+
+        <!-- ILLUSTRATION: Stylized West Hollywood rooftop scene -->
+        <!-- Sun -->
+        <circle cx="780" cy="420" r="90" fill="#FF6B47" opacity="0.55"/>
+
+        <!-- Hollywood Hills silhouette layers -->
+        <path d="M0,820 L120,740 L240,790 L360,720 L480,770 L600,710 L720,760 L840,720 L960,780 L1080,750 L1080,900 L0,900 Z" fill="#292f71" opacity="0.30"/>
+        <path d="M0,870 L100,820 L220,860 L340,810 L460,855 L580,820 L700,860 L820,820 L940,860 L1080,830 L1080,950 L0,950 Z" fill="#292f71" opacity="0.45"/>
+
+        <!-- Building rooftop floor -->
+        <rect x="0" y="940" width="1080" height="60" fill="#292f71"/>
+        <rect x="0" y="980" width="1080" height="20" fill="#1a1f4d"/>
+
+        <!-- Retractable dome (the SUSHISAMBA hook) -->
+        <path d="M 240,940 Q 540,640 840,940" fill="none" stroke="#292f71" stroke-width="6"/>
+        <path d="M 240,940 Q 540,640 840,940" fill="#292f71" opacity="0.12"/>
+        <!-- Dome arch slats -->
+        <line x1="540" y1="700" x2="540" y2="940" stroke="#292f71" stroke-width="2" opacity="0.5"/>
+        <line x1="400" y1="780" x2="400" y2="940" stroke="#292f71" stroke-width="2" opacity="0.5"/>
+        <line x1="680" y1="780" x2="680" y2="940" stroke="#292f71" stroke-width="2" opacity="0.5"/>
+
+        <!-- Palm tree -->
+        <g transform="translate(160, 820)">
+          <rect x="-8" y="0" width="16" height="120" fill="#292f71"/>
+          <!-- Fronds, radial -->
+          <path d="M0,0 Q -50,-60 -110,-50 Q -70,-30 -10,-10 Z" fill="#292f71"/>
+          <path d="M0,0 Q 50,-60 110,-50 Q 70,-30 10,-10 Z" fill="#292f71"/>
+          <path d="M0,0 Q -30,-90 -50,-150 Q -10,-100 0,-30 Z" fill="#292f71"/>
+          <path d="M0,0 Q 30,-90 50,-150 Q 10,-100 0,-30 Z" fill="#292f71"/>
+          <path d="M0,0 Q -90,-30 -150,0 Q -90,-5 -20,5 Z" fill="#292f71"/>
+        </g>
+
+        <!-- Cocktail glass on the rooftop -->
+        <g transform="translate(870, 870)">
+          <path d="M-30,0 L30,0 L0,40 Z" fill="#FF6B47"/>
+          <rect x="-2" y="40" width="4" height="30" fill="#292f71"/>
+          <ellipse cx="0" cy="72" rx="18" ry="3" fill="#292f71"/>
+          <!-- Garnish leaf -->
+          <ellipse cx="14" cy="-4" rx="10" ry="4" fill="#292f71" transform="rotate(-20 14 -4)"/>
+        </g>
+
+        <!-- TYPE BLOCK -->
+        <text x="80" y="1180" font-family="Inter, sans-serif" font-size="28" font-weight="600" fill="#E54D2B" letter-spacing="6">EDITOR'S PICK · OPEN NIGHTLY</text>
+
+        <text x="80" y="1310" font-family="Instrument Serif, Georgia, serif" font-size="100" fill="#1a1f4d">SUSHISAMBA's</text>
+        <text x="80" y="1410" font-family="Instrument Serif, Georgia, serif" font-size="100" fill="#1a1f4d">rooftop is the</text>
+        <text x="80" y="1510" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="100" fill="#FF6B47">most fun room</text>
+        <text x="80" y="1610" font-family="Instrument Serif, Georgia, serif" font-size="100" fill="#1a1f4d">in LA right now.</text>
+
+        <!-- Meta line -->
+        <line x1="80" y1="1700" x2="180" y2="1700" stroke="#292f71" stroke-width="3"/>
+        <text x="80" y="1760" font-family="Inter, sans-serif" font-size="32" font-weight="500" fill="#0F1117">West Hollywood · 639 N La Peer</text>
+        <text x="80" y="1810" font-family="Inter, sans-serif" font-size="28" font-weight="400" fill="#6B6F7A" font-style="italic">Reserve two weeks out for Fri/Sat</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SLIDE 4 — FRIDAY DOUBLEHEADER (Salsa + Jazz)
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="slide-wrapper">
+    <div class="slide-label"><span><span class="num">04</span> · Pick 2 & 3</span><span>Free Friday</span></div>
+    <div class="slide">
+      <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <!-- Split background: navy top, warm bottom -->
+        <rect width="1080" height="960" fill="#292f71"/>
+        <rect y="960" width="1080" height="960" fill="#FAFAF7"/>
+
+        <!-- Top accent: floating music notes (jazz) -->
+        <g fill="#FF6B47">
+          <!-- Eighth note 1 -->
+          <g transform="translate(180, 380)">
+            <ellipse cx="0" cy="0" rx="32" ry="22" transform="rotate(-15)"/>
+            <rect x="22" y="-110" width="6" height="110" fill="#FF6B47" transform="rotate(0)"/>
+            <path d="M28,-110 Q 70,-90 60,-50" stroke="#FF6B47" stroke-width="6" fill="none"/>
+          </g>
+          <g transform="translate(420, 240)">
+            <ellipse cx="0" cy="0" rx="28" ry="20" transform="rotate(-15)"/>
+            <rect x="20" y="-90" width="5" height="90"/>
+          </g>
+          <g transform="translate(820, 320)">
+            <ellipse cx="0" cy="0" rx="30" ry="22" transform="rotate(-15)"/>
+            <rect x="22" y="-100" width="5" height="100"/>
+            <path d="M27,-100 Q 65,-80 55,-45" stroke="#FF6B47" stroke-width="6" fill="none"/>
+          </g>
+        </g>
+
+        <!-- Saxophone silhouette, centered top -->
+        <g transform="translate(540, 700)" fill="#FAFAF7">
+          <!-- Sax body curve -->
+          <path d="M-60,-150 Q -60,-180 -30,-180 L 30,-180 Q 60,-180 60,-150 L 60,30 Q 60,90 120,90 Q 180,90 180,30 L 180,-20" stroke="#FAFAF7" stroke-width="14" fill="none" stroke-linecap="round"/>
+          <!-- Bell -->
+          <ellipse cx="180" cy="-20" rx="50" ry="14" fill="#FAFAF7" transform="rotate(-15 180 -20)"/>
+          <!-- Keys -->
+          <circle cx="-30" cy="-100" r="6" fill="#292f71"/>
+          <circle cx="0" cy="-60" r="6" fill="#292f71"/>
+          <circle cx="20" cy="-20" r="6" fill="#292f71"/>
+          <circle cx="40" cy="20" r="6" fill="#292f71"/>
+          <!-- Mouthpiece -->
+          <rect x="-35" y="-200" width="10" height="20" fill="#FAFAF7"/>
+        </g>
+
+        <!-- Divider with double-event marker -->
+        <g transform="translate(540, 960)">
+          <line x1="-400" y1="0" x2="-30" y2="0" stroke="#FF6B47" stroke-width="2"/>
+          <circle cx="0" cy="0" r="10" fill="#FF6B47"/>
+          <line x1="30" y1="0" x2="400" y2="0" stroke="#FF6B47" stroke-width="2"/>
+        </g>
+
+        <!-- Bottom illustration: stylized dancers -->
+        <g transform="translate(540, 1340)" fill="#292f71">
+          <!-- Dancer 1 -->
+          <g transform="translate(-90, 0)">
+            <circle cx="0" cy="-90" r="22"/>
+            <path d="M-15,-60 L-25,30 L-30,90 L-10,90 L0,30 L10,90 L30,90 L25,30 L15,-60 Z"/>
+            <!-- Outstretched arm -->
+            <path d="M0,-50 L 40,-90 L 60,-80" stroke="#292f71" stroke-width="10" fill="none" stroke-linecap="round"/>
+          </g>
+          <!-- Dancer 2, swirling -->
+          <g transform="translate(80, 0)">
+            <circle cx="0" cy="-90" r="22"/>
+            <path d="M-15,-60 L-30,40 L-40,90 L-20,90 L-5,30 L10,90 L30,90 L20,30 L15,-60 Z"/>
+            <!-- Skirt swirl -->
+            <path d="M-40,90 Q -30,110 0,108 Q 30,108 40,90 L 50,60 L -50,60 Z" fill="#FF6B47"/>
+            <!-- Raised arm -->
+            <path d="M0,-50 L -40,-100 L -60,-95" stroke="#292f71" stroke-width="10" fill="none" stroke-linecap="round"/>
+          </g>
+        </g>
+
+        <!-- TYPE -->
+        <text x="540" y="180" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">FRIDAY · MAY 15 · BOTH FREE</text>
+
+        <text x="540" y="1530" font-family="Instrument Serif, Georgia, serif" font-size="86" text-anchor="middle" fill="#1a1f4d">Salsa under sunset,</text>
+        <text x="540" y="1620" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="86" text-anchor="middle" fill="#FF6B47">or jazz on the lawn.</text>
+
+        <text x="540" y="1750" font-family="Inter, sans-serif" font-size="32" font-weight="500" text-anchor="middle" fill="#0F1117">Ivy Station · Culver City</text>
+        <text x="540" y="1800" font-family="Inter, sans-serif" font-size="32" font-weight="500" text-anchor="middle" fill="#0F1117">+ LACMA · Mid-Wilshire</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SLIDE 5 — GETTY VILLA (Thursday)
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="slide-wrapper">
+    <div class="slide-label"><span><span class="num">05</span> · Pick 4</span><span>Getty Villa Thursday</span></div>
+    <div class="slide">
+      <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="s5-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#EEF0F8"/>
+            <stop offset="100%" stop-color="#FAFAF7"/>
+          </linearGradient>
+        </defs>
+        <rect width="1080" height="1920" fill="url(#s5-bg)"/>
+
+        <!-- ILLUSTRATION: Classical pediment + columns (Getty Villa motif) -->
+        <g transform="translate(540, 620)">
+          <!-- Pediment (triangle) -->
+          <path d="M-280,0 L0,-200 L280,0 Z" fill="#292f71"/>
+          <!-- Pediment inner line -->
+          <path d="M-260,-10 L0,-180 L260,-10 Z" fill="none" stroke="#FF6B47" stroke-width="2"/>
+          <!-- Entablature band -->
+          <rect x="-300" y="0" width="600" height="40" fill="#1a1f4d"/>
+          <!-- Bead row on entablature -->
+          <g fill="#FF6B47">
+            <circle cx="-260" cy="20" r="4"/>
+            <circle cx="-200" cy="20" r="4"/>
+            <circle cx="-140" cy="20" r="4"/>
+            <circle cx="-80" cy="20" r="4"/>
+            <circle cx="-20" cy="20" r="4"/>
+            <circle cx="40" cy="20" r="4"/>
+            <circle cx="100" cy="20" r="4"/>
+            <circle cx="160" cy="20" r="4"/>
+            <circle cx="220" cy="20" r="4"/>
+            <circle cx="260" cy="20" r="4"/>
+          </g>
+          <!-- Columns: 4 Doric -->
+          <g fill="#292f71">
+            <!-- Column 1 -->
+            <rect x="-280" y="40" width="55" height="380"/>
+            <rect x="-285" y="40" width="65" height="18"/>
+            <rect x="-285" y="410" width="65" height="18"/>
+            <!-- Fluting lines -->
+            <line x1="-270" y1="60" x2="-270" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+            <line x1="-255" y1="60" x2="-255" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+            <line x1="-240" y1="60" x2="-240" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+
+            <!-- Column 2 -->
+            <rect x="-130" y="40" width="55" height="380"/>
+            <rect x="-135" y="40" width="65" height="18"/>
+            <rect x="-135" y="410" width="65" height="18"/>
+            <line x1="-120" y1="60" x2="-120" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+            <line x1="-105" y1="60" x2="-105" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+            <line x1="-90" y1="60" x2="-90" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+
+            <!-- Column 3 -->
+            <rect x="75" y="40" width="55" height="380"/>
+            <rect x="70" y="40" width="65" height="18"/>
+            <rect x="70" y="410" width="65" height="18"/>
+            <line x1="85" y1="60" x2="85" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+            <line x1="100" y1="60" x2="100" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+            <line x1="115" y1="60" x2="115" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+
+            <!-- Column 4 -->
+            <rect x="225" y="40" width="55" height="380"/>
+            <rect x="220" y="40" width="65" height="18"/>
+            <rect x="220" y="410" width="65" height="18"/>
+            <line x1="240" y1="60" x2="240" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+            <line x1="255" y1="60" x2="255" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+            <line x1="270" y1="60" x2="270" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+          </g>
+          <!-- Steps below -->
+          <rect x="-340" y="428" width="680" height="14" fill="#292f71"/>
+          <rect x="-360" y="442" width="720" height="14" fill="#1a1f4d"/>
+        </g>
+
+        <!-- Eyebrow -->
+        <text x="540" y="200" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">THURSDAY · 6:30PM · FREE</text>
+
+        <!-- Main type -->
+        <text x="540" y="1320" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#1a1f4d">Two museum</text>
+        <text x="540" y="1410" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#1a1f4d">directors talk</text>
+        <text x="540" y="1500" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="92" text-anchor="middle" fill="#FF6B47">heritage &amp; politics.</text>
+
+        <!-- Divider -->
+        <line x1="440" y1="1570" x2="640" y2="1570" stroke="#292f71" stroke-width="1.5"/>
+
+        <text x="540" y="1660" font-family="Inter, sans-serif" font-size="34" font-weight="500" text-anchor="middle" fill="#0F1117">Getty Villa · Pacific Palisades</text>
+        <text x="540" y="1720" font-family="Inter, sans-serif" font-size="28" font-style="italic" text-anchor="middle" fill="#6B6F7A">Reception follows · RSVP required</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SLIDE 6 — BRIGHT EYES (Hollywood Bowl)
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="slide-wrapper">
+    <div class="slide-label"><span><span class="num">06</span> · Pick 5</span><span>Bright Eyes May 23</span></div>
+    <div class="slide">
+      <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="s6-night" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#1a1f4d"/>
+            <stop offset="60%" stop-color="#292f71"/>
+            <stop offset="100%" stop-color="#3a3f8a"/>
+          </linearGradient>
+        </defs>
+        <rect width="1080" height="1920" fill="url(#s6-night)"/>
+
+        <!-- Stars -->
+        <g fill="#FAFAF7">
+          <circle cx="120" cy="180" r="2.5"/>
+          <circle cx="280" cy="120" r="1.5"/>
+          <circle cx="450" cy="220" r="2"/>
+          <circle cx="640" cy="100" r="2.5"/>
+          <circle cx="820" cy="180" r="1.5"/>
+          <circle cx="970" cy="240" r="2"/>
+          <circle cx="200" cy="380" r="1.5"/>
+          <circle cx="380" cy="320" r="2"/>
+          <circle cx="580" cy="400" r="1.5"/>
+          <circle cx="760" cy="360" r="2"/>
+          <circle cx="920" cy="420" r="1.5"/>
+          <circle cx="80" cy="500" r="2"/>
+          <circle cx="160" cy="640" r="1.5"/>
+          <circle cx="980" cy="560" r="2"/>
+        </g>
+
+        <!-- Crescent moon -->
+        <g transform="translate(880, 280)">
+          <circle cx="0" cy="0" r="60" fill="#FAFAF7"/>
+          <circle cx="22" cy="-10" r="55" fill="#1a1f4d"/>
+        </g>
+
+        <!-- HOLLYWOOD BOWL SHELL — concentric arches -->
+        <g transform="translate(540, 1080)">
+          <!-- Stage floor -->
+          <rect x="-440" y="0" width="880" height="20" fill="#0F1117"/>
+          <!-- Hill silhouette behind -->
+          <path d="M-540,0 Q -300,-120 0,-100 Q 300,-120 540,0 Z" fill="#0a0f3a" opacity="0.6"/>
+
+          <!-- Bowl shell — nested arches getting smaller -->
+          <g fill="none" stroke="#FAFAF7" stroke-width="3">
+            <path d="M-400,0 Q -400,-360 0,-360 Q 400,-360 400,0"/>
+          </g>
+          <g fill="none" stroke="#FAFAF7" stroke-width="2.5" opacity="0.85">
+            <path d="M-340,0 Q -340,-310 0,-310 Q 340,-310 340,0"/>
+          </g>
+          <g fill="none" stroke="#FAFAF7" stroke-width="2.5" opacity="0.7">
+            <path d="M-280,0 Q -280,-260 0,-260 Q 280,-260 280,0"/>
+          </g>
+          <g fill="none" stroke="#FAFAF7" stroke-width="2.5" opacity="0.55">
+            <path d="M-220,0 Q -220,-210 0,-210 Q 220,-210 220,0"/>
+          </g>
+          <g fill="none" stroke="#FF6B47" stroke-width="3">
+            <path d="M-160,0 Q -160,-160 0,-160 Q 160,-160 160,0"/>
+          </g>
+          <!-- Stage light spotlights -->
+          <path d="M-50,-150 L-90,0 L-10,0 Z" fill="#FF6B47" opacity="0.25"/>
+          <path d="M50,-150 L 90,0 L 10,0 Z" fill="#FF6B47" opacity="0.25"/>
+        </g>
+
+        <!-- Eyebrow -->
+        <text x="540" y="200" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">SATURDAY · MAY 23 · 7PM</text>
+
+        <!-- Main type -->
+        <text x="540" y="1320" font-family="Instrument Serif, Georgia, serif" font-size="100" text-anchor="middle" fill="#FAFAF7">Bright Eyes</text>
+        <text x="540" y="1410" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="70" text-anchor="middle" fill="#FAFAF7" opacity="0.85">plays Wide Awake &amp;</text>
+        <text x="540" y="1490" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="70" text-anchor="middle" fill="#FAFAF7" opacity="0.85">Digital Ash in full.</text>
+
+        <line x1="440" y1="1560" x2="640" y2="1560" stroke="#FF6B47" stroke-width="2"/>
+
+        <text x="540" y="1650" font-family="Inter, sans-serif" font-size="34" font-weight="500" text-anchor="middle" fill="#FAFAF7">Hollywood Bowl · Hollywood</text>
+        <text x="540" y="1710" font-family="Inter, sans-serif" font-size="28" font-style="italic" text-anchor="middle" fill="#FAFAF7" opacity="0.7">The Moldy Peaches open</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SLIDE 7 — CTA: Full list at haps.club
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="slide-wrapper">
+    <div class="slide-label"><span><span class="num">07</span> · CTA</span><span>haps.club</span></div>
+    <div class="slide">
+      <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <!-- Coral background -->
+        <rect width="1080" height="1920" fill="#FF6B47"/>
+
+        <!-- Subtle vertical gradient overlay -->
+        <defs>
+          <linearGradient id="s7-shade" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.10"/>
+            <stop offset="100%" stop-color="#1a1f4d" stop-opacity="0.20"/>
+          </linearGradient>
+        </defs>
+        <rect width="1080" height="1920" fill="url(#s7-shade)"/>
+
+        <!-- Eyebrow -->
+        <text x="540" y="540" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#FAFAF7" letter-spacing="6">PLUS 14 MORE PICKS</text>
+
+        <!-- Big arrow pointer -->
+        <g transform="translate(540, 800)">
+          <text x="0" y="0" font-family="Instrument Serif, Georgia, serif" font-size="140" text-anchor="middle" fill="#FAFAF7">The full list</text>
+          <text x="0" y="130" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="140" text-anchor="middle" fill="#1a1f4d">is online.</text>
+        </g>
+
+        <!-- URL pill -->
+        <g transform="translate(540, 1180)">
+          <rect x="-340" y="-80" width="680" height="160" rx="80" fill="#1a1f4d"/>
+          <text x="0" y="30" font-family="Inter, sans-serif" font-size="72" font-weight="700" text-anchor="middle" fill="#FAFAF7" letter-spacing="2">haps.club</text>
+        </g>
+
+        <!-- Subline -->
+        <text x="540" y="1450" font-family="Inter, sans-serif" font-size="36" font-weight="500" text-anchor="middle" fill="#FAFAF7">Restaurants. Music. Free things.</text>
+        <text x="540" y="1510" font-family="Inter, sans-serif" font-size="36" font-weight="500" text-anchor="middle" fill="#FAFAF7">Updated every Tuesday.</text>
+
+        <!-- Decorative dots row -->
+        <g transform="translate(540, 1680)">
+          <circle cx="-60" cy="0" r="8" fill="#1a1f4d"/>
+          <circle cx="-20" cy="0" r="8" fill="#FAFAF7"/>
+          <circle cx="20" cy="0" r="8" fill="#FAFAF7"/>
+          <circle cx="60" cy="0" r="8" fill="#1a1f4d"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SLIDE 8 — CLOSE: Logo + tagline
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="slide-wrapper">
+    <div class="slide-label"><span><span class="num">08</span> · Close</span><span>Logo + tagline</span></div>
+    <div class="slide">
+      <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <!-- Navy background -->
+        <rect width="1080" height="1920" fill="#1a1f4d"/>
+
+        <!-- Subtle radial spotlight -->
+        <defs>
+          <radialGradient id="s8-glow" cx="50%" cy="40%" r="60%">
+            <stop offset="0%" stop-color="#292f71" stop-opacity="1"/>
+            <stop offset="100%" stop-color="#1a1f4d" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="1080" height="1920" fill="url(#s8-glow)"/>
+
+        <!-- Logo: circular mark, larger, centered -->
+        <g transform="translate(540, 760)">
+          <!-- Outer accent ring -->
+          <circle cx="0" cy="0" r="220" fill="none" stroke="#FF6B47" stroke-width="3" opacity="0.6"/>
+          <!-- Solid mark -->
+          <circle cx="0" cy="0" r="190" fill="#FAFAF7"/>
+          <!-- HC monogram -->
+          <text x="0" y="58" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="210" text-anchor="middle" fill="#1a1f4d">H</text>
+        </g>
+
+        <!-- Wordmark -->
+        <text x="540" y="1100" font-family="Instrument Serif, Georgia, serif" font-size="130" text-anchor="middle" fill="#FAFAF7" letter-spacing="-2">Haps Club</text>
+
+        <!-- Hairline accent + tagline -->
+        <line x1="380" y1="1180" x2="700" y2="1180" stroke="#FF6B47" stroke-width="2"/>
+        <circle cx="540" cy="1180" r="6" fill="#FF6B47"/>
+
+        <text x="540" y="1290" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="56" text-anchor="middle" fill="#FAFAF7" opacity="0.9">A daily glance at what's</text>
+        <text x="540" y="1360" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="56" text-anchor="middle" fill="#FAFAF7" opacity="0.9">worth doing in Los Angeles.</text>
+
+        <!-- Social block -->
+        <g transform="translate(540, 1600)">
+          <text x="0" y="0" font-family="Inter, sans-serif" font-size="32" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="4">FOLLOW · SUBSCRIBE · GO OUTSIDE</text>
+        </g>
+
+        <text x="540" y="1810" font-family="Inter, sans-serif" font-size="28" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.75" letter-spacing="3">@THEHAPSCLUB · HAPS.CLUB</text>
+      </svg>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
