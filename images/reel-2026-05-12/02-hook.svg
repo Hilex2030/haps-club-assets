@@ -18,7 +18,7 @@
   <text x="540" y="1240" font-family="Inter, sans-serif" font-size="42" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.92">One-night collabs and</text>
   <text x="540" y="1308" font-family="Inter, sans-serif" font-size="42" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.92">a sunset on the farm.</text>
 
-  <g transform="translate(540, 1800)">
+  <g transform="translate(540, 1780)">
     <circle cx="-30" cy="0" r="5" fill="#FF6B47"/>
     <circle cx="0" cy="0" r="5" fill="#FAFAF7" opacity="0.3"/>
     <circle cx="30" cy="0" r="5" fill="#FAFAF7" opacity="0.3"/>
