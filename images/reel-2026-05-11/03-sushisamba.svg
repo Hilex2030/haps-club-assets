@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920">
+<defs>
+<linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" stop-color="#FFF1ED"/>
+<stop offset="55%" stop-color="#FFE3D8"/>
+<stop offset="100%" stop-color="#FFCFBC"/>
+</linearGradient>
+</defs>
+<rect width="1080" height="1920" fill="url(#sky)"/>
+<circle cx="780" cy="420" r="90" fill="#FF6B47" opacity="0.55"/>
+<path d="M0,820 L120,740 L240,790 L360,720 L480,770 L600,710 L720,760 L840,720 L960,780 L1080,750 L1080,900 L0,900 Z" fill="#292f71" opacity="0.30"/>
+<path d="M0,870 L100,820 L220,860 L340,810 L460,855 L580,820 L700,860 L820,820 L940,860 L1080,830 L1080,950 L0,950 Z" fill="#292f71" opacity="0.45"/>
+<rect x="0" y="940" width="1080" height="60" fill="#292f71"/>
+<rect x="0" y="980" width="1080" height="20" fill="#1a1f4d"/>
+<path d="M 240,940 Q 540,640 840,940" fill="none" stroke="#292f71" stroke-width="6"/>
+<path d="M 240,940 Q 540,640 840,940" fill="#292f71" opacity="0.12"/>
+<line x1="540" y1="700" x2="540" y2="940" stroke="#292f71" stroke-width="2" opacity="0.5"/>
+<line x1="400" y1="780" x2="400" y2="940" stroke="#292f71" stroke-width="2" opacity="0.5"/>
+<line x1="680" y1="780" x2="680" y2="940" stroke="#292f71" stroke-width="2" opacity="0.5"/>
+<g transform="translate(160, 820)">
+<rect x="-8" y="0" width="16" height="120" fill="#292f71"/>
+<path d="M0,0 Q -50,-60 -110,-50 Q -70,-30 -10,-10 Z" fill="#292f71"/>
+<path d="M0,0 Q 50,-60 110,-50 Q 70,-30 10,-10 Z" fill="#292f71"/>
+<path d="M0,0 Q -30,-90 -50,-150 Q -10,-100 0,-30 Z" fill="#292f71"/>
+<path d="M0,0 Q 30,-90 50,-150 Q 10,-100 0,-30 Z" fill="#292f71"/>
+<path d="M0,0 Q -90,-30 -150,0 Q -90,-5 -20,5 Z" fill="#292f71"/>
+</g>
+<g transform="translate(870, 870)">
+<path d="M-30,0 L30,0 L0,40 Z" fill="#FF6B47"/>
+<rect x="-2" y="40" width="4" height="30" fill="#292f71"/>
+<ellipse cx="0" cy="72" rx="18" ry="3" fill="#292f71"/>
+<ellipse cx="14" cy="-4" rx="10" ry="4" fill="#292f71" transform="rotate(-20 14 -4)"/>
+</g>
+<text x="80" y="1180" font-family="Inter, sans-serif" font-size="28" font-weight="600" fill="#E54D2B" letter-spacing="6">EDITOR'S PICK · OPEN NIGHTLY</text>
+<text x="80" y="1310" font-family="Instrument Serif, Georgia, serif" font-size="100" fill="#1a1f4d">SUSHISAMBA's</text>
+<text x="80" y="1410" font-family="Instrument Serif, Georgia, serif" font-size="100" fill="#1a1f4d">rooftop is the</text>
+<text x="80" y="1510" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="100" fill="#FF6B47">most fun room</text>
+<text x="80" y="1610" font-family="Instrument Serif, Georgia, serif" font-size="100" fill="#1a1f4d">in LA right now.</text>
+<line x1="80" y1="1700" x2="180" y2="1700" stroke="#292f71" stroke-width="3"/>
+<text x="80" y="1760" font-family="Inter, sans-serif" font-size="32" font-weight="500" fill="#0F1117">West Hollywood · 639 N La Peer</text>
+<text x="80" y="1810" font-family="Inter, sans-serif" font-size="28" font-weight="400" fill="#6B6F7A" font-style="italic">Reserve two weeks out for Fri/Sat</text>
+</svg>

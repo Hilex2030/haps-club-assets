@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920">
+<defs>
+<linearGradient id="night" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" stop-color="#1a1f4d"/>
+<stop offset="60%" stop-color="#292f71"/>
+<stop offset="100%" stop-color="#3a3f8a"/>
+</linearGradient>
+</defs>
+<rect width="1080" height="1920" fill="url(#night)"/>
+<g fill="#FAFAF7">
+<circle cx="120" cy="180" r="2.5"/>
+<circle cx="280" cy="120" r="1.5"/>
+<circle cx="450" cy="220" r="2"/>
+<circle cx="640" cy="100" r="2.5"/>
+<circle cx="820" cy="180" r="1.5"/>
+<circle cx="970" cy="240" r="2"/>
+<circle cx="200" cy="380" r="1.5"/>
+<circle cx="380" cy="320" r="2"/>
+<circle cx="580" cy="400" r="1.5"/>
+<circle cx="760" cy="360" r="2"/>
+<circle cx="920" cy="420" r="1.5"/>
+<circle cx="80" cy="500" r="2"/>
+<circle cx="160" cy="640" r="1.5"/>
+<circle cx="980" cy="560" r="2"/>
+</g>
+<g transform="translate(880, 280)">
+<circle cx="0" cy="0" r="60" fill="#FAFAF7"/>
+<circle cx="22" cy="-10" r="55" fill="#1a1f4d"/>
+</g>
+<g transform="translate(540, 1080)">
+<rect x="-440" y="0" width="880" height="20" fill="#0F1117"/>
+<path d="M-540,0 Q -300,-120 0,-100 Q 300,-120 540,0 Z" fill="#0a0f3a" opacity="0.6"/>
+<path d="M-400,0 Q -400,-360 0,-360 Q 400,-360 400,0" fill="none" stroke="#FAFAF7" stroke-width="3"/>
+<path d="M-340,0 Q -340,-310 0,-310 Q 340,-310 340,0" fill="none" stroke="#FAFAF7" stroke-width="2.5" opacity="0.85"/>
+<path d="M-280,0 Q -280,-260 0,-260 Q 280,-260 280,0" fill="none" stroke="#FAFAF7" stroke-width="2.5" opacity="0.7"/>
+<path d="M-220,0 Q -220,-210 0,-210 Q 220,-210 220,0" fill="none" stroke="#FAFAF7" stroke-width="2.5" opacity="0.55"/>
+<path d="M-160,0 Q -160,-160 0,-160 Q 160,-160 160,0" fill="none" stroke="#FF6B47" stroke-width="3"/>
+<path d="M-50,-150 L-90,0 L-10,0 Z" fill="#FF6B47" opacity="0.25"/>
+<path d="M50,-150 L 90,0 L 10,0 Z" fill="#FF6B47" opacity="0.25"/>
+</g>
+<text x="540" y="200" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">SATURDAY · MAY 23 · 7PM</text>
+<text x="540" y="1320" font-family="Instrument Serif, Georgia, serif" font-size="100" text-anchor="middle" fill="#FAFAF7">Bright Eyes</text>
+<text x="540" y="1410" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="70" text-anchor="middle" fill="#FAFAF7" opacity="0.85">plays Wide Awake &amp;</text>
+<text x="540" y="1490" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="70" text-anchor="middle" fill="#FAFAF7" opacity="0.85">Digital Ash in full.</text>
+<line x1="440" y1="1560" x2="640" y2="1560" stroke="#FF6B47" stroke-width="2"/>
+<text x="540" y="1650" font-family="Inter, sans-serif" font-size="34" font-weight="500" text-anchor="middle" fill="#FAFAF7">Hollywood Bowl · Hollywood</text>
+<text x="540" y="1710" font-family="Inter, sans-serif" font-size="28" font-style="italic" text-anchor="middle" fill="#FAFAF7" opacity="0.7">The Moldy Peaches open</text>
+</svg>
