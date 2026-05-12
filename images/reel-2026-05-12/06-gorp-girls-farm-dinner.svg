@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920">
+  <defs>
+    <linearGradient id="s6-sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF1ED"/>
+      <stop offset="50%" stop-color="#FFD8C5"/>
+      <stop offset="100%" stop-color="#FF6B47" stop-opacity="0.65"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#s6-sky)"/>
+
+  <circle cx="540" cy="640" r="120" fill="#FF6B47" opacity="0.75"/>
+  <circle cx="540" cy="640" r="80" fill="#FF6B47"/>
+
+  <path d="M 0,780 Q 240,720 480,760 Q 720,800 960,740 Q 1080,720 1080,780 L 1080,860 L 0,860 Z" fill="#292f71" opacity="0.35"/>
+  <path d="M 0,830 Q 200,790 420,820 Q 660,860 880,810 Q 1000,790 1080,820 L 1080,900 L 0,900 Z" fill="#292f71" opacity="0.55"/>
+
+  <g fill="#292f71" opacity="0.3">
+    <path d="M 0,900 L 1080,900 L 1080,930 L 0,930 Z"/>
+    <path d="M -40,960 L 1120,960 L 1120,990 L -40,990 Z" opacity="0.85"/>
+    <path d="M -80,1020 L 1160,1020 L 1160,1055 L -80,1055 Z"/>
+  </g>
+
+  <g transform="translate(540, 1180)">
+    <ellipse cx="0" cy="80" rx="500" ry="22" fill="#1a1f4d" opacity="0.22"/>
+    <path d="M -460,-30 L 460,-30 L 520,40 L -520,40 Z" fill="#292f71"/>
+    <path d="M -460,-30 L 460,-30 L 470,-20 L -470,-20 Z" fill="#1a1f4d"/>
+    <rect x="-480" y="40" width="16" height="60" fill="#1a1f4d"/>
+    <rect x="464" y="40" width="16" height="60" fill="#1a1f4d"/>
+    <rect x="-20" y="40" width="16" height="60" fill="#1a1f4d"/>
+
+    <g>
+      <ellipse cx="-360" cy="0" rx="60" ry="14" fill="#FAFAF7"/>
+      <ellipse cx="-360" cy="-2" rx="50" ry="10" fill="#FFF1ED"/>
+      <rect x="-330" y="-12" width="38" height="6" fill="#FF6B47" transform="rotate(20 -310 -10)"/>
+
+      <ellipse cx="-180" cy="0" rx="60" ry="14" fill="#FAFAF7"/>
+      <ellipse cx="-180" cy="-2" rx="50" ry="10" fill="#FFF1ED"/>
+      <rect x="-150" y="-12" width="38" height="6" fill="#FF6B47" transform="rotate(20 -130 -10)"/>
+
+      <ellipse cx="0" cy="0" rx="70" ry="16" fill="#FAFAF7"/>
+      <ellipse cx="0" cy="-2" rx="58" ry="12" fill="#FFF1ED"/>
+      <rect x="30" y="-12" width="42" height="6" fill="#FF6B47" transform="rotate(20 50 -10)"/>
+
+      <ellipse cx="180" cy="0" rx="60" ry="14" fill="#FAFAF7"/>
+      <ellipse cx="180" cy="-2" rx="50" ry="10" fill="#FFF1ED"/>
+      <rect x="210" y="-12" width="38" height="6" fill="#FF6B47" transform="rotate(20 230 -10)"/>
+
+      <ellipse cx="360" cy="0" rx="60" ry="14" fill="#FAFAF7"/>
+      <ellipse cx="360" cy="-2" rx="50" ry="10" fill="#FFF1ED"/>
+      <rect x="390" y="-12" width="38" height="6" fill="#FF6B47" transform="rotate(20 410 -10)"/>
+    </g>
+
+    <g fill="#1a1f4d">
+      <path d="M -260,-22 L -250,-22 L -252,-46 Q -255,-52 -255,-46 Z"/>
+      <path d="M -260,-22 Q -270,-22 -266,-12 L -244,-12 Q -240,-22 -250,-22 Z"/>
+      <line x1="-255" y1="-12" x2="-255" y2="6" stroke="#1a1f4d" stroke-width="2"/>
+      <ellipse cx="-255" cy="6" rx="8" ry="2" fill="#1a1f4d"/>
+
+      <path d="M 240,-22 L 250,-22 L 248,-46 Q 245,-52 245,-46 Z"/>
+      <path d="M 240,-22 Q 230,-22 234,-12 L 256,-12 Q 260,-22 250,-22 Z"/>
+      <line x1="245" y1="-12" x2="245" y2="6" stroke="#1a1f4d" stroke-width="2"/>
+      <ellipse cx="245" cy="6" rx="8" ry="2" fill="#1a1f4d"/>
+    </g>
+  </g>
+
+  <text x="540" y="200" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#E54D2B" letter-spacing="6">SATURDAY · MAY 16 · 4 PM</text>
+
+  <text x="540" y="1450" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#1a1f4d">Five courses</text>
+  <text x="540" y="1540" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="92" text-anchor="middle" fill="#E54D2B">on a working farm.</text>
+
+  <line x1="440" y1="1620" x2="640" y2="1620" stroke="#292f71" stroke-width="1.5"/>
+
+  <text x="540" y="1700" font-family="Inter, sans-serif" font-size="34" font-weight="500" text-anchor="middle" fill="#0F1117">Gorp Girls · Fillmore</text>
+  <text x="540" y="1760" font-family="Inter, sans-serif" font-size="28" font-style="italic" text-anchor="middle" fill="#6B6F7A">Communal tables · solo diners welcome</text>
+  <text x="540" y="1830" font-family="Inter, sans-serif" font-size="26" font-weight="500" text-anchor="middle" fill="#292f71">Tickets on Eventbrite</text>
+</svg>
