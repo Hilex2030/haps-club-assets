@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920">
+<defs>
+<linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" stop-color="#FFF1ED"/>
+<stop offset="55%" stop-color="#FAFAF7"/>
+<stop offset="100%" stop-color="#EEF0F8"/>
+</linearGradient>
+</defs>
+<rect width="1080" height="1920" fill="url(#bg)"/>
+<circle cx="540" cy="430" r="180" fill="#FF6B47" opacity="0.18"/>
+<circle cx="540" cy="430" r="120" fill="#FF6B47" opacity="0.28"/>
+<circle cx="540" cy="430" r="70" fill="#FF6B47" opacity="0.55"/>
+<line x1="120" y1="630" x2="960" y2="630" stroke="#292f71" stroke-width="1" opacity="0.18"/>
+<g transform="translate(540, 870)" fill="none" stroke="#292f71" stroke-width="2.5">
+<g opacity="0.55">
+<polygon points="-320,-110 -280,-130 -240,-110 -240,-70 -280,-50 -320,-70"/>
+<polygon points="-240,-110 -200,-130 -160,-110 -160,-70 -200,-50 -240,-70"/>
+<polygon points="-160,-110 -120,-130 -80,-110 -80,-70 -120,-50 -160,-70"/>
+<polygon points="-80,-110 -40,-130 0,-110 0,-70 -40,-50 -80,-70"/>
+<polygon points="0,-110 40,-130 80,-110 80,-70 40,-50 0,-70"/>
+<polygon points="80,-110 120,-130 160,-110 160,-70 120,-50 80,-70"/>
+<polygon points="160,-110 200,-130 240,-110 240,-70 200,-50 160,-70"/>
+<polygon points="240,-110 280,-130 320,-110 320,-70 280,-50 240,-70"/>
+</g>
+<g opacity="0.85">
+<polygon points="-280,-50 -240,-70 -200,-50 -200,-10 -240,10 -280,-10"/>
+<polygon points="-200,-50 -160,-70 -120,-50 -120,-10 -160,10 -200,-10"/>
+<polygon points="-120,-50 -80,-70 -40,-50 -40,-10 -80,10 -120,-10"/>
+<polygon points="-40,-50 0,-70 40,-50 40,-10 0,10 -40,-10"/>
+<polygon points="40,-50 80,-70 120,-50 120,-10 80,10 40,-10"/>
+<polygon points="120,-50 160,-70 200,-50 200,-10 160,10 120,-10"/>
+<polygon points="200,-50 240,-70 280,-50 280,-10 240,10 200,-10"/>
+</g>
+<g>
+<polygon points="-320,10 -280,-10 -240,10 -240,50 -280,70 -320,50"/>
+<polygon points="-240,10 -200,-10 -160,10 -160,50 -200,70 -240,50"/>
+<polygon points="-160,10 -120,-10 -80,10 -80,50 -120,70 -160,50"/>
+<polygon points="-80,10 -40,-10 0,10 0,50 -40,70 -80,50" fill="#FF6B47" fill-opacity="0.18" stroke="#FF6B47"/>
+<polygon points="0,10 40,-10 80,10 80,50 40,70 0,50"/>
+<polygon points="80,10 120,-10 160,10 160,50 120,70 80,50"/>
+<polygon points="160,10 200,-10 240,10 240,50 200,70 160,50"/>
+<polygon points="240,10 280,-10 320,10 320,50 280,70 240,50"/>
+</g>
+<g opacity="0.6">
+<polygon points="-280,70 -240,50 -200,70 -200,110 -240,130 -280,110"/>
+<polygon points="-200,70 -160,50 -120,70 -120,110 -160,130 -200,110"/>
+<polygon points="-120,70 -80,50 -40,70 -40,110 -80,130 -120,110"/>
+<polygon points="-40,70 0,50 40,70 40,110 0,130 -40,110"/>
+<polygon points="40,70 80,50 120,70 120,110 80,130 40,110"/>
+<polygon points="120,70 160,50 200,70 200,110 160,130 120,110"/>
+<polygon points="200,70 240,50 280,70 280,110 240,130 200,110"/>
+</g>
+</g>
+<text x="540" y="200" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#E54D2B" letter-spacing="6">SUNDAY · 9AM · FREE</text>
+<text x="540" y="1290" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#1a1f4d">A quiet hour with</text>
+<text x="540" y="1380" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="92" text-anchor="middle" fill="#FF6B47">Kusama, before</text>
+<text x="540" y="1470" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#1a1f4d">the crowds.</text>
+<line x1="440" y1="1550" x2="640" y2="1550" stroke="#292f71" stroke-width="1.5"/>
+<text x="540" y="1650" font-family="Inter, sans-serif" font-size="34" font-weight="500" text-anchor="middle" fill="#0F1117">The Broad · DTLA</text>
+<text x="540" y="1710" font-family="Inter, sans-serif" font-size="26" font-style="italic" text-anchor="middle" fill="#6B6F7A">Sensory Morning · adjusted lighting, reserve free</text>
+</svg>

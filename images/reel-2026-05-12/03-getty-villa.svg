@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920">
+<defs>
+<linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" stop-color="#EEF0F8"/>
+<stop offset="100%" stop-color="#FAFAF7"/>
+</linearGradient>
+</defs>
+<rect width="1080" height="1920" fill="url(#bg)"/>
+<g transform="translate(540, 620)">
+<path d="M-280,0 L0,-200 L280,0 Z" fill="#292f71"/>
+<path d="M-260,-10 L0,-180 L260,-10 Z" fill="none" stroke="#FF6B47" stroke-width="2"/>
+<rect x="-300" y="0" width="600" height="40" fill="#1a1f4d"/>
+<g fill="#FF6B47">
+<circle cx="-260" cy="20" r="4"/>
+<circle cx="-200" cy="20" r="4"/>
+<circle cx="-140" cy="20" r="4"/>
+<circle cx="-80" cy="20" r="4"/>
+<circle cx="-20" cy="20" r="4"/>
+<circle cx="40" cy="20" r="4"/>
+<circle cx="100" cy="20" r="4"/>
+<circle cx="160" cy="20" r="4"/>
+<circle cx="220" cy="20" r="4"/>
+<circle cx="260" cy="20" r="4"/>
+</g>
+<g fill="#292f71">
+<rect x="-280" y="40" width="55" height="380"/>
+<rect x="-285" y="40" width="65" height="18"/>
+<rect x="-285" y="410" width="65" height="18"/>
+<line x1="-270" y1="60" x2="-270" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+<line x1="-255" y1="60" x2="-255" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+<line x1="-240" y1="60" x2="-240" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+<rect x="-130" y="40" width="55" height="380"/>
+<rect x="-135" y="40" width="65" height="18"/>
+<rect x="-135" y="410" width="65" height="18"/>
+<line x1="-120" y1="60" x2="-120" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+<line x1="-105" y1="60" x2="-105" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+<line x1="-90" y1="60" x2="-90" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+<rect x="75" y="40" width="55" height="380"/>
+<rect x="70" y="40" width="65" height="18"/>
+<rect x="70" y="410" width="65" height="18"/>
+<line x1="85" y1="60" x2="85" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+<line x1="100" y1="60" x2="100" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+<line x1="115" y1="60" x2="115" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+<rect x="225" y="40" width="55" height="380"/>
+<rect x="220" y="40" width="65" height="18"/>
+<rect x="220" y="410" width="65" height="18"/>
+<line x1="240" y1="60" x2="240" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+<line x1="255" y1="60" x2="255" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+<line x1="270" y1="60" x2="270" y2="408" stroke="#1a1f4d" stroke-width="2"/>
+</g>
+<rect x="-340" y="428" width="680" height="14" fill="#292f71"/>
+<rect x="-360" y="442" width="720" height="14" fill="#1a1f4d"/>
+</g>
+<text x="540" y="200" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#E54D2B" letter-spacing="6">THURSDAY · 6:30PM · FREE</text>
+<text x="540" y="1300" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#1a1f4d">Two museum</text>
+<text x="540" y="1390" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#1a1f4d">directors talk</text>
+<text x="540" y="1480" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="92" text-anchor="middle" fill="#FF6B47">heritage &amp; politics.</text>
+<line x1="440" y1="1560" x2="640" y2="1560" stroke="#292f71" stroke-width="1.5"/>
+<text x="540" y="1660" font-family="Inter, sans-serif" font-size="34" font-weight="500" text-anchor="middle" fill="#0F1117">Getty Villa · Pacific Palisades</text>
+<text x="540" y="1720" font-family="Inter, sans-serif" font-size="28" font-style="italic" text-anchor="middle" fill="#6B6F7A">Free, RSVP required, reception follows</text>
+</svg>
