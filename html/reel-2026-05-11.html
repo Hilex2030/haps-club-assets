@@ -64,7 +64,6 @@
   }
   .slide-label .num { color: var(--accent); }
   .slide {
-    /* Each slide renders at 9:16 (1080×1920 design space, scaled to container width) */
     width: 100%;
     aspect-ratio: 9 / 16;
     position: relative;
@@ -77,7 +76,6 @@
     display: block;
   }
 
-  /* Print-ready: each slide on its own page when "Save as PDF" */
   @media print {
     body { background: #fff; padding: 0; }
     .toolbar { display: none; }
@@ -90,21 +88,64 @@
 </head>
 <body>
 
+<!--
+  REUSABLE LOGO SYMBOLS — actual Haps Club wordmark
+  Source of truth: Hilex2030/haps-club-assets/images/haps-club-logo.svg (navy, 1100×1100)
+                   Hilex2030/haps-club-assets/images/haps-club-logo-white.svg (white, 900×900)
+  Embedded inline so the deck renders reliably offline and exports cleanly.
+-->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="hc-logo-navy" viewBox="0 0 1100 1100">
+      <g fill="#292f71">
+        <path d="M425.07,448.57c1.12,0,2.23.07,3.31.19-3.45-1.45-7.15-2.19-10.19-1.46-5.61,1.27-36.72,9.18-79.82,16.07,20.91-78.8,51.26-159.38,80.07-211.65,3.06-5.61-12.75-18.87-14.03-12.5-27.8,55.34-62.73,144.84-85.94,227.21-26.27,3.83-55.34,7.14-85.17,8.42,21.17-86.45,56.36-168.56,63.75-188.7,2.04-5.61-10.97-23.46-14.28-16.07-6.63,14.79-43.61,107.1-66.56,198.39-16.83-12.75-34.94-20.91-52.79-22.7-6.63-.51-13.77.76-13.77,10.2,0,19.64,20.15,30.35,53.04,31.62h8.93c-10.71,47.43-17.09,93.33-12.24,125.97,2.04,13.26,21.68,19.89,20.4,11.22-5.87-36.98-1.02-82.62,8.67-128.01,47.18,49.47,61.97,123.68,62.99,140.25,0,.12.02.24.03.36,7.24,1.99,14.11,4.66,20.61,8.02-2.78-43.95,7.24-106.85,23.73-171.84,24.15-3.3,47.59-6.42,66.69-8.75,7.19-9.61,15.02-16.24,22.55-16.24ZM199.14,475.34c-16.06-.25-35.7-5.35-35.7-11.48s5.61-5.86,10.46-4.08c10.71,4.08,20.66,9.44,29.58,15.56h-4.34ZM294.51,581.68c-10.46-34.68-32.13-70.13-58.4-96.14,21.93-2.04,50.49-5.61,79.56-9.44-10.46,38.51-18.11,75.23-21.17,105.57Z"/>
+        <path d="M464.59,575.05c-1.27,0-4.84-.76-4.84-5.35,0-19.89,28.82-98.69,28.82-107.87,0-6.89-7.65-11.48-11.22-11.48s-7.14,4.08-15.81,15.05c-8.67,10.97-57.89,72.68-69.87,72.68-.77,0-2.81-.25-2.81-3.06,0-27.54,36.72-73.19,50.75-73.19,5.61,0,11.48,10.2,14.54,5.87,1.91-2.86-9.82-17.13-25.76-18.94,8.69,3.65,15.76,11.83,6.64,12.56-7.88.63-19.13,1.87-32.5,3.49-15.46,20.67-27.94,55.13-27.94,67.14,0,8.93,8.67,16.83,13.77,16.83,17.34,0,57.38-59.16,83.64-83.39-9.44,31.11-26.78,72.68-26.78,94.35,0,9.43,10.46,23.21,23.72,23.21,9.18,0,25.76-18.62,44.12-39.27,11.21-12.73,22.96-26.38,32.85-37.95,1.81-5.45,3.56-10.49,5.27-15.22-25.78,29.49-72.71,84.54-86.57,84.54Z"/>
+        <path d="M428.38,448.76c-1.09-.12-2.19-.19-3.31-.19-7.53,0-15.36,6.63-22.55,16.24,13.37-1.63,24.63-2.86,32.5-3.49,9.13-.73,2.05-8.91-6.64-12.56Z"/>
+        <path d="M756.76,446.54c-5.93,3.26-57.31,35.95-91.99,57.62,9.95-23.46,16.58-48.45,16.58-69.87,0-18.11-11.99-25.76-21.67-25.76-45.65,0-121.64,207.83-133.88,248.89,31.37-149.43,58.4-199.16,58.91-205.53.51-6.38-9.69-12.24-13-11.22-3.06,1.02-10.2,14.79-13.52,21.93-.51,1.27-.25,2.81.25,3.83l.25.51c.51,1.28.51,2.29,0,3.57-2.41,6.22-4.91,12.76-7.53,20.01,6.95-7.95,12.37-14.04,15.18-16.69,3.57-3.31,5.1,1.79,3.32,3.83-.59.73-10.48,12.54-23.77,28.09-12.14,36.57-26.72,91.72-45.6,198.35-6.89,39.53,4.08,43.86,13.77,43.86,6.12,0,4.59-39.78,13.01-69.87,29.33-106.08,102.26-261.38,136.94-261.38,3.57,0,5.1,2.55,4.84,8.16-1.28,29.58-11.99,64.01-25.76,93.08-35.96,23.97-68.85,48.96-68.85,62.73,0,6.38,10.71,11.48,20.4,11.48,3.57,0,8.42-.51,13.26-3.83,15.56-11.48,36.21-40.04,51.77-72.68,24.81-16.37,50.03-30.81,66.45-39.84,5.96-5.98,12.02-11,16.76-14.73-2.14-1.17,15.21-15.25,13.88-14.53ZM591.58,583.47c-7.65.26-5.1-4.08-1.78-8.67,9.94-13.77,27.03-28.82,46.67-43.1-15.81,29.84-33.66,51.51-44.88,51.77Z"/>
+        <path d="M566.34,473.81c-2.81,2.65-8.23,8.75-15.18,16.69-1.71,4.73-3.46,9.77-5.27,15.22,13.28-15.56,23.18-27.36,23.77-28.09,1.79-2.04.25-7.14-3.32-3.83Z"/>
+        <path d="M780.53,575.31c0-13.26-4.33-22.18-18.36-29.58,35.7-26.01,71.91-47.94,93.33-55.08,1.53-.51-.77-5.36-2.55-4.85-21.93,7.4-60.69,29.84-98.69,56.61-3.06-1.27-6.38-2.55-9.95-3.57-14.28-4.34-31.11-6.38-31.11-15.3,0-21.68,55.34-65.54,79.05-73.95,6.38-2.29,1.27-14.54-5.61-14.54-5.87,0-20.52,5.5-31.11,12.24-5.61,3.57-4.66,4.47-6.14,5.89-1.09,1.06-2.76,1.01-5.1,5.04-1.33-.11-3.75.85-2.98,2.59-2.73,1.31-6.97,5.98-10.26,7.76-2.24,1.17.85.38-4.95,7.21-11.76,11.79-23.1,27.29-23.1,43.92,0,14.03,17.6,25.25,30.6,29.33,2.8.76,5.61,1.53,8.16,2.04-48.71,35.7-92.82,76.5-92.82,98.69,0,9.69,6.12,23.46,23.71,23.46,3.16,0,6.62-.53,10.29-1.51v-10.99c-4.98,2.13-9.81,3.56-14.37,4.08-7.91,1.02-11.47-4.33-11.47-9.18,0-21.17,45.65-64.77,94.86-102.26,9.44,1.79,16.07,3.57,16.07,8.92,0,16.32-22.27,49.13-48.61,73.3h18.25v2.69c23.55-20.85,42.85-46.41,42.85-62.99Z"/>
+        <path d="M291.49,637.38c-10.49-2.88-21.75-4.33-33.8-4.33-21.76,0-41.23,4.86-58.4,14.56-17.18,9.71-30.56,23.25-40.16,40.64-9.6,17.39-14.4,37.17-14.4,59.36s4.8,41.92,14.4,59.2c9.6,17.28,22.98,30.78,40.16,40.48,17.17,9.71,36.64,14.56,58.4,14.56,26.67,0,49.49-6.98,68.48-20.96,18.98-13.97,31.68-33.12,38.08-57.44h-60.16c-4.48,9.39-10.83,16.54-19.04,21.44-8.21,4.91-17.55,7.36-28,7.36-16.85,0-30.51-5.87-40.96-17.6-10.46-11.73-15.68-27.41-15.68-47.04s5.22-35.31,15.68-47.04c10.45-11.73,24.1-17.6,40.96-17.6,10.45,0,19.79,2.46,28,7.36,8.21,4.91,14.56,12.05,19.04,21.44h60.16c-6.4-24.32-19.1-43.52-38.08-57.6-4.47-3.32-9.17-6.23-14.07-8.77.14,2.27.31,4.5.52,6.66,1.27,12.9-20.05.2-21.13-14.69Z"/>
+        <path d="M312.62,652.06c-.21-2.16-.38-4.4-.52-6.66-6.5-3.36-13.36-6.04-20.61-8.02,1.09,14.89,22.4,27.59,21.13,14.69Z"/>
+        <polygon points="452.56 635.61 397.84 635.61 397.84 860.24 524.24 860.24 524.24 818 452.56 818 452.56 635.61"/>
+        <path d="M682.96,770c0,13.44-3.41,23.79-10.24,31.04-6.83,7.25-16.64,10.88-29.44,10.88s-22.51-3.62-29.12-10.88c-6.61-7.25-9.92-17.6-9.92-31.04v-134.4h-54.72v134.08c0,20.05,4.05,37.07,12.16,51.04,8.11,13.97,19.15,24.43,33.12,31.36,13.97,6.94,29.81,10.4,47.52,10.4s33.76-3.52,48.16-10.56c14.4-7.04,25.87-17.49,34.4-31.36,8.53-13.87,12.8-30.83,12.8-50.88v-131.39c-18,15.93-38.48,29.1-54.72,33.42v98.28Z"/>
+        <path d="M719.43,635.61c-11.89,10.91-24.6,20.04-36.47,25.12v10.99c16.24-4.32,36.72-17.49,54.72-33.42v-2.69h-18.25Z"/>
+        <path d="M943.44,764.4c-7.9-10.13-18.35-16.58-31.36-19.36,11.52-3.41,20.75-9.49,27.68-18.24,6.93-8.74,10.4-19.73,10.4-32.96,0-17.92-6.46-32.1-19.36-42.56-12.91-10.45-30.77-15.68-53.6-15.68h-101.12v224.64h104.64c23.46,0,41.76-5.49,54.88-16.48,13.12-10.98,19.68-25.86,19.68-44.64,0-13.01-3.95-24.58-11.84-34.72ZM830.79,679.44h35.84c8.96,0,15.84,2.03,20.64,6.08,4.8,4.05,7.2,9.92,7.2,17.6s-2.4,13.5-7.2,17.44c-4.8,3.95-11.68,5.92-20.64,5.92h-35.84v-47.04ZM892.4,809.84c-5.02,4.16-12.11,6.24-21.28,6.24h-40.32v-49.6h39.68c9.17,0,16.37,2.24,21.6,6.72,5.23,4.48,7.84,10.67,7.84,18.56s-2.51,13.92-7.52,18.08Z"/>
+      </g>
+    </symbol>
+
+    <symbol id="hc-logo-white" viewBox="0 0 900 900">
+      <g fill="#fdfbfd">
+        <path d="M325.07,348.57c1.12,0,2.23.07,3.31.19-3.45-1.45-7.15-2.19-10.19-1.46-5.61,1.27-36.72,9.18-79.82,16.07,20.91-78.8,51.26-159.38,80.07-211.65,3.06-5.61-12.75-18.87-14.03-12.5-27.8,55.34-62.73,144.84-85.94,227.21-26.27,3.83-55.34,7.14-85.17,8.42,21.17-86.45,56.36-168.56,63.75-188.7,2.04-5.61-10.97-23.46-14.28-16.07-6.63,14.79-43.61,107.1-66.56,198.39-16.83-12.75-34.94-20.91-52.79-22.7-6.63-.51-13.77.76-13.77,10.2,0,19.64,20.15,30.35,53.04,31.62h8.93c-10.71,47.43-17.09,93.33-12.24,125.97,2.04,13.26,21.68,19.89,20.4,11.22-5.87-36.98-1.02-82.62,8.67-128.01,47.18,49.47,61.97,123.68,62.99,140.25,0,.12.02.24.03.36,7.24,1.99,14.11,4.66,20.61,8.02-2.78-43.95,7.24-106.85,23.73-171.84,24.15-3.3,47.59-6.42,66.69-8.75,7.19-9.61,15.02-16.24,22.55-16.24ZM99.14,375.34c-16.06-.25-35.7-5.35-35.7-11.48s5.61-5.86,10.46-4.08c10.71,4.08,20.66,9.44,29.58,15.56h-4.34ZM194.51,481.68c-10.46-34.68-32.13-70.13-58.4-96.14,21.93-2.04,50.49-5.61,79.56-9.44-10.46,38.51-18.11,75.23-21.17,105.57Z"/>
+        <path d="M364.59,475.05c-1.27,0-4.84-.76-4.84-5.35,0-19.89,28.82-98.69,28.82-107.87,0-6.89-7.65-11.48-11.22-11.48s-7.14,4.08-15.81,15.05c-8.67,10.97-57.89,72.68-69.87,72.68-.77,0-2.81-.25-2.81-3.06,0-27.54,36.72-73.19,50.75-73.19,5.61,0,11.48,10.2,14.54,5.87,1.91-2.86-9.82-17.13-25.76-18.94,8.69,3.65,15.76,11.83,6.64,12.56-7.88.63-19.13,1.87-32.5,3.49-15.46,20.67-27.94,55.13-27.94,67.14,0,8.93,8.67,16.83,13.77,16.83,17.34,0,57.38-59.16,83.64-83.39-9.44,31.11-26.78,72.68-26.78,94.35,0,9.43,10.46,23.21,23.72,23.21,9.18,0,25.76-18.62,44.12-39.27,11.21-12.73,22.96-26.38,32.85-37.95,1.81-5.45,3.56-10.49,5.27-15.22-25.78,29.49-72.71,84.54-86.57,84.54Z"/>
+        <path d="M328.38,348.76c-1.09-.12-2.19-.19-3.31-.19-7.53,0-15.36,6.63-22.55,16.24,13.37-1.63,24.63-2.86,32.5-3.49,9.13-.73,2.05-8.91-6.64-12.56Z"/>
+        <path d="M656.76,346.54c-5.93,3.26-57.31,35.95-91.99,57.62,9.95-23.46,16.58-48.45,16.58-69.87,0-18.11-11.99-25.76-21.67-25.76-45.65,0-121.64,207.83-133.88,248.89,31.37-149.43,58.4-199.16,58.91-205.53.51-6.38-9.69-12.24-13-11.22-3.06,1.02-10.2,14.79-13.52,21.93-.51,1.27-.25,2.81.25,3.83l.25.51c.51,1.28.51,2.29,0,3.57-2.41,6.22-4.91,12.76-7.53,20.01,6.95-7.95,12.37-14.04,15.18-16.69,3.57-3.31,5.1,1.79,3.32,3.83-.59.73-10.48,12.54-23.77,28.09-12.14,36.57-26.72,91.72-45.6,198.35-6.89,39.53,4.08,43.86,13.77,43.86,6.12,0,4.59-39.78,13.01-69.87,29.33-106.08,102.26-261.38,136.94-261.38,3.57,0,5.1,2.55,4.84,8.16-1.28,29.58-11.99,64.01-25.76,93.08-35.96,23.97-68.85,48.96-68.85,62.73,0,6.38,10.71,11.48,20.4,11.48,3.57,0,8.42-.51,13.26-3.83,15.56-11.48,36.21-40.04,51.77-72.68,24.81-16.37,50.03-30.81,66.45-39.84,5.96-5.98,12.02-11,16.76-14.73-2.14-1.17,15.21-15.25,13.88-14.53ZM491.58,483.47c-7.65.26-5.1-4.08-1.78-8.67,9.94-13.77,27.03-28.82,46.67-43.1-15.81,29.84-33.66,51.51-44.88,51.77Z"/>
+        <path d="M466.34,373.81c-2.81,2.65-8.23,8.75-15.18,16.69-1.71,4.73-3.46,9.77-5.27,15.22,13.28-15.56,23.18-27.36,23.77-28.09,1.79-2.04.25-7.14-3.32-3.83Z"/>
+        <path d="M680.53,475.31c0-13.26-4.33-22.18-18.36-29.58,35.7-26.01,71.91-47.94,93.33-55.08,1.53-.51-.77-5.36-2.55-4.85-21.93,7.4-60.69,29.84-98.69,56.61-3.06-1.27-6.38-2.55-9.95-3.57-14.28-4.34-31.11-6.38-31.11-15.3,0-21.68,55.34-65.54,79.05-73.95,6.38-2.29,1.27-14.54-5.61-14.54-5.87,0-20.52,5.5-31.11,12.24-5.61,3.57-4.66,4.47-6.14,5.89-1.09,1.06-2.76,1.01-5.1,5.04-1.33-.11-3.75.85-2.98,2.59-2.73,1.31-6.97,5.98-10.26,7.76-2.24,1.17.85.38-4.95,7.21-11.76,11.79-23.1,27.29-23.1,43.92,0,14.03,17.6,25.25,30.6,29.33,2.8.76,5.61,1.53,8.16,2.04-48.71,35.7-92.82,76.5-92.82,98.69,0,9.69,6.12,23.46,23.71,23.46,3.16,0,6.62-.53,10.29-1.51v-10.99c-4.98,2.13-9.81,3.56-14.37,4.08-7.91,1.02-11.47-4.33-11.47-9.18,0-21.17,45.65-64.77,94.86-102.26,9.44,1.79,16.07,3.57,16.07,8.92,0,16.32-22.27,49.13-48.61,73.3h18.25v2.69c23.55-20.85,42.85-46.41,42.85-62.99Z"/>
+        <path d="M191.49,537.38c-10.49-2.88-21.75-4.33-33.8-4.33-21.76,0-41.23,4.86-58.4,14.56-17.18,9.71-30.56,23.25-40.16,40.64-9.6,17.39-14.4,37.17-14.4,59.36s4.8,41.92,14.4,59.2c9.6,17.28,22.98,30.78,40.16,40.48,17.17,9.71,36.64,14.56,58.4,14.56,26.67,0,49.49-6.98,68.48-20.96,18.98-13.97,31.68-33.12,38.08-57.44h-60.16c-4.48,9.39-10.83,16.54-19.04,21.44-8.21,4.91-17.55,7.36-28,7.36-16.85,0-30.51-5.87-40.96-17.6-10.46-11.73-15.68-27.41-15.68-47.04s5.22-35.31,15.68-47.04c10.45-11.73,24.1-17.6,40.96-17.6,10.45,0,19.79,2.46,28,7.36,8.21,4.91,14.56,12.05,19.04,21.44h60.16c-6.4-24.32-19.1-43.52-38.08-57.6-4.47-3.32-9.17-6.23-14.07-8.77.14,2.27.31,4.5.52,6.66,1.27,12.9-20.05.2-21.13-14.69Z"/>
+        <path d="M212.62,552.06c-.21-2.16-.38-4.4-.52-6.66-6.5-3.36-13.36-6.04-20.61-8.02,1.09,14.89,22.4,27.59,21.13,14.69Z"/>
+        <polygon points="352.56 535.61 297.84 535.61 297.84 760.24 424.24 760.24 424.24 718 352.56 718 352.56 535.61"/>
+        <path d="M582.96,670c0,13.44-3.41,23.79-10.24,31.04-6.83,7.25-16.64,10.88-29.44,10.88s-22.51-3.62-29.12-10.88c-6.61-7.25-9.92-17.6-9.92-31.04v-134.4h-54.72v134.08c0,20.05,4.05,37.07,12.16,51.04,8.11,13.97,19.15,24.43,33.12,31.36,13.97,6.94,29.81,10.4,47.52,10.4s33.76-3.52,48.16-10.56c14.4-7.04,25.87-17.49,34.4-31.36,8.53-13.87,12.8-30.83,12.8-50.88v-131.39c-18,15.93-38.48,29.1-54.72,33.42v98.28Z"/>
+        <path d="M619.43,535.61c-11.89,10.91-24.6,20.04-36.47,25.12v10.99c16.24-4.32,36.72-17.49,54.72-33.42v-2.69h-18.25Z"/>
+        <path d="M843.44,664.4c-7.9-10.13-18.35-16.58-31.36-19.36,11.52-3.41,20.75-9.49,27.68-18.24,6.93-8.74,10.4-19.73,10.4-32.96,0-17.92-6.46-32.1-19.36-42.56-12.91-10.45-30.77-15.68-53.6-15.68h-101.12v224.64h104.64c23.46,0,41.76-5.49,54.88-16.48,13.12-10.98,19.68-25.86,19.68-44.64,0-13.01-3.95-24.58-11.84-34.72ZM730.79,579.44h35.84c8.96,0,15.84,2.03,20.64,6.08,4.8,4.05,7.2,9.92,7.2,17.6s-2.4,13.5-7.2,17.44c-4.8,3.95-11.68,5.92-20.64,5.92h-35.84v-47.04ZM792.4,709.84c-5.02,4.16-12.11,6.24-21.28,6.24h-40.32v-49.6h39.68c9.17,0,16.37,2.24,21.6,6.72,5.23,4.48,7.84,10.67,7.84,18.56s-2.51,13.92-7.52,18.08Z"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
 <div class="toolbar">
   <h1>Haps Club — Reel Deck</h1>
-  <p>8 slides, 9:16 vertical (1080×1920). Screen-record this page on your phone, or right-click any slide and "Save image as" to export individually.<br>Loaded at <code>https://hilex2030.github.io/haps-club-assets/html/reel-2026-05-11.html</code></p>
+  <p>8 slides, 9:16 vertical (1080×1920). Screen-record this page on your phone, or use Print → Save as PDF for 1080×1920 pages.<br>Loaded at <code>https://hilex2030.github.io/haps-club-assets/html/reel-2026-05-11.html</code></p>
 </div>
 
 <div class="deck">
 
   <!-- ═══════════════════════════════════════════════════════════════════════
-       SLIDE 1 — OPEN: Logo + "This week in LA"
+       SLIDE 1 — OPEN: Real logo + "This week in LA"
        ═══════════════════════════════════════════════════════════════════════ -->
   <div class="slide-wrapper">
     <div class="slide-label"><span><span class="num">01</span> · Open</span><span>Logo + intro</span></div>
     <div class="slide">
       <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <!-- Warm off-white base with subtle navy gradient at top -->
         <defs>
           <radialGradient id="s1-bg" cx="20%" cy="0%" r="80%">
             <stop offset="0%" stop-color="#292f71" stop-opacity="0.10"/>
@@ -119,35 +160,27 @@
         <rect width="1080" height="1920" fill="url(#s1-bg)"/>
         <rect width="1080" height="1920" fill="url(#s1-coral)"/>
 
-        <!-- Logo: navy circular mark with HC monogram inside, paired with wordmark -->
-        <g transform="translate(540, 760)">
-          <!-- Circular badge -->
-          <circle cx="0" cy="0" r="170" fill="#292f71"/>
-          <!-- Inner accent ring -->
-          <circle cx="0" cy="0" r="155" fill="none" stroke="#FF6B47" stroke-width="3"/>
-          <!-- HC monogram, hand-set -->
-          <text x="0" y="38" font-family="Instrument Serif, Georgia, serif" font-size="180" font-style="italic" text-anchor="middle" fill="#FAFAF7">H</text>
-          <text x="0" y="38" font-family="Instrument Serif, Georgia, serif" font-size="180" font-style="italic" text-anchor="middle" fill="#FAFAF7" opacity="0">C</text>
+        <!-- REAL Haps Club logo, navy on cream, centered upper half -->
+        <use href="#hc-logo-navy" x="190" y="440" width="700" height="700"/>
+
+        <!-- Live dot + eyebrow -->
+        <g transform="translate(540, 1280)">
+          <circle cx="-230" cy="-12" r="9" fill="#FF6B47"/>
+          <text x="-210" y="0" font-family="Inter, sans-serif" font-size="34" font-weight="600" fill="#FF6B47" letter-spacing="4">THIS WEEK IN LA</text>
         </g>
 
-        <!-- Wordmark -->
-        <text x="540" y="1010" font-family="Instrument Serif, Georgia, serif" font-size="120" text-anchor="middle" fill="#292f71" letter-spacing="-2">Haps Club</text>
-
-        <!-- Live dot + tagline -->
-        <g transform="translate(540, 1140)">
-          <circle cx="-220" cy="-12" r="8" fill="#FF6B47"/>
-          <text x="-200" y="-2" font-family="Inter, sans-serif" font-size="32" font-weight="600" fill="#FF6B47" letter-spacing="3">THIS WEEK IN LA</text>
-        </g>
-
-        <!-- Big serif headline -->
-        <text x="540" y="1310" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#0F1117">May 11 — 17, 2026</text>
+        <!-- Big serif date -->
+        <text x="540" y="1430" font-family="Instrument Serif, Georgia, serif" font-size="96" text-anchor="middle" fill="#1a1f4d">May 11 — 17, 2026</text>
 
         <!-- Hairline divider with accent dot -->
-        <line x1="380" y1="1410" x2="700" y2="1410" stroke="#292f71" stroke-width="1.5"/>
-        <circle cx="540" cy="1410" r="6" fill="#FF6B47"/>
+        <line x1="380" y1="1530" x2="700" y2="1530" stroke="#292f71" stroke-width="1.5"/>
+        <circle cx="540" cy="1530" r="6" fill="#FF6B47"/>
+
+        <!-- Subline -->
+        <text x="540" y="1620" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="48" text-anchor="middle" fill="#6B6F7A">A daily glance at what's worth doing.</text>
 
         <!-- Footer mark -->
-        <text x="540" y="1840" font-family="Inter, sans-serif" font-size="26" font-weight="500" text-anchor="middle" fill="#6B6F7A" letter-spacing="2">HAPS.CLUB</text>
+        <text x="540" y="1840" font-family="Inter, sans-serif" font-size="26" font-weight="500" text-anchor="middle" fill="#6B6F7A" letter-spacing="3">HAPS.CLUB</text>
       </svg>
     </div>
   </div>
@@ -159,10 +192,7 @@
     <div class="slide-label"><span><span class="num">02</span> · Hook</span><span>5 picks. One city.</span></div>
     <div class="slide">
       <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <!-- Navy background -->
         <rect width="1080" height="1920" fill="#292f71"/>
-
-        <!-- Coral radial accent, lower-right -->
         <defs>
           <radialGradient id="s2-glow" cx="80%" cy="85%" r="60%">
             <stop offset="0%" stop-color="#FF6B47" stop-opacity="0.45"/>
@@ -171,21 +201,16 @@
         </defs>
         <rect width="1080" height="1920" fill="url(#s2-glow)"/>
 
-        <!-- Eyebrow -->
         <text x="540" y="540" font-family="Inter, sans-serif" font-size="32" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">EDITOR'S SHORTLIST</text>
 
-        <!-- Big serif numerals stacking down -->
         <text x="540" y="780" font-family="Instrument Serif, Georgia, serif" font-size="220" text-anchor="middle" fill="#FAFAF7">5 picks.</text>
         <text x="540" y="980" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="160" text-anchor="middle" fill="#FAFAF7" opacity="0.85">One city.</text>
 
-        <!-- Accent slash -->
         <line x1="440" y1="1110" x2="640" y2="1110" stroke="#FF6B47" stroke-width="4"/>
 
-        <!-- Subline -->
         <text x="540" y="1240" font-family="Inter, sans-serif" font-size="42" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.92">Hand-picked for the week ahead.</text>
         <text x="540" y="1308" font-family="Inter, sans-serif" font-size="42" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.92">No filler. No sponcon.</text>
 
-        <!-- Small footer dots -->
         <g transform="translate(540, 1800)">
           <circle cx="-30" cy="0" r="5" fill="#FF6B47"/>
           <circle cx="0" cy="0" r="5" fill="#FAFAF7" opacity="0.3"/>
@@ -202,7 +227,6 @@
     <div class="slide-label"><span><span class="num">03</span> · Pick 1</span><span>SUSHISAMBA rooftop</span></div>
     <div class="slide">
       <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <!-- Coral-tinted background -->
         <defs>
           <linearGradient id="s3-sky" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stop-color="#FFF1ED"/>
@@ -212,30 +236,22 @@
         </defs>
         <rect width="1080" height="1920" fill="url(#s3-sky)"/>
 
-        <!-- ILLUSTRATION: Stylized West Hollywood rooftop scene -->
-        <!-- Sun -->
         <circle cx="780" cy="420" r="90" fill="#FF6B47" opacity="0.55"/>
 
-        <!-- Hollywood Hills silhouette layers -->
         <path d="M0,820 L120,740 L240,790 L360,720 L480,770 L600,710 L720,760 L840,720 L960,780 L1080,750 L1080,900 L0,900 Z" fill="#292f71" opacity="0.30"/>
         <path d="M0,870 L100,820 L220,860 L340,810 L460,855 L580,820 L700,860 L820,820 L940,860 L1080,830 L1080,950 L0,950 Z" fill="#292f71" opacity="0.45"/>
 
-        <!-- Building rooftop floor -->
         <rect x="0" y="940" width="1080" height="60" fill="#292f71"/>
         <rect x="0" y="980" width="1080" height="20" fill="#1a1f4d"/>
 
-        <!-- Retractable dome (the SUSHISAMBA hook) -->
         <path d="M 240,940 Q 540,640 840,940" fill="none" stroke="#292f71" stroke-width="6"/>
         <path d="M 240,940 Q 540,640 840,940" fill="#292f71" opacity="0.12"/>
-        <!-- Dome arch slats -->
         <line x1="540" y1="700" x2="540" y2="940" stroke="#292f71" stroke-width="2" opacity="0.5"/>
         <line x1="400" y1="780" x2="400" y2="940" stroke="#292f71" stroke-width="2" opacity="0.5"/>
         <line x1="680" y1="780" x2="680" y2="940" stroke="#292f71" stroke-width="2" opacity="0.5"/>
 
-        <!-- Palm tree -->
         <g transform="translate(160, 820)">
           <rect x="-8" y="0" width="16" height="120" fill="#292f71"/>
-          <!-- Fronds, radial -->
           <path d="M0,0 Q -50,-60 -110,-50 Q -70,-30 -10,-10 Z" fill="#292f71"/>
           <path d="M0,0 Q 50,-60 110,-50 Q 70,-30 10,-10 Z" fill="#292f71"/>
           <path d="M0,0 Q -30,-90 -50,-150 Q -10,-100 0,-30 Z" fill="#292f71"/>
@@ -243,16 +259,13 @@
           <path d="M0,0 Q -90,-30 -150,0 Q -90,-5 -20,5 Z" fill="#292f71"/>
         </g>
 
-        <!-- Cocktail glass on the rooftop -->
         <g transform="translate(870, 870)">
           <path d="M-30,0 L30,0 L0,40 Z" fill="#FF6B47"/>
           <rect x="-2" y="40" width="4" height="30" fill="#292f71"/>
           <ellipse cx="0" cy="72" rx="18" ry="3" fill="#292f71"/>
-          <!-- Garnish leaf -->
           <ellipse cx="14" cy="-4" rx="10" ry="4" fill="#292f71" transform="rotate(-20 14 -4)"/>
         </g>
 
-        <!-- TYPE BLOCK -->
         <text x="80" y="1180" font-family="Inter, sans-serif" font-size="28" font-weight="600" fill="#E54D2B" letter-spacing="6">EDITOR'S PICK · OPEN NIGHTLY</text>
 
         <text x="80" y="1310" font-family="Instrument Serif, Georgia, serif" font-size="100" fill="#1a1f4d">SUSHISAMBA's</text>
@@ -260,7 +273,6 @@
         <text x="80" y="1510" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="100" fill="#FF6B47">most fun room</text>
         <text x="80" y="1610" font-family="Instrument Serif, Georgia, serif" font-size="100" fill="#1a1f4d">in LA right now.</text>
 
-        <!-- Meta line -->
         <line x1="80" y1="1700" x2="180" y2="1700" stroke="#292f71" stroke-width="3"/>
         <text x="80" y="1760" font-family="Inter, sans-serif" font-size="32" font-weight="500" fill="#0F1117">West Hollywood · 639 N La Peer</text>
         <text x="80" y="1810" font-family="Inter, sans-serif" font-size="28" font-weight="400" fill="#6B6F7A" font-style="italic">Reserve two weeks out for Fri/Sat</text>
@@ -269,22 +281,19 @@
   </div>
 
   <!-- ═══════════════════════════════════════════════════════════════════════
-       SLIDE 4 — FRIDAY DOUBLEHEADER (Salsa + Jazz)
+       SLIDE 4 — FRIDAY DOUBLEHEADER
        ═══════════════════════════════════════════════════════════════════════ -->
   <div class="slide-wrapper">
     <div class="slide-label"><span><span class="num">04</span> · Pick 2 & 3</span><span>Free Friday</span></div>
     <div class="slide">
       <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <!-- Split background: navy top, warm bottom -->
         <rect width="1080" height="960" fill="#292f71"/>
         <rect y="960" width="1080" height="960" fill="#FAFAF7"/>
 
-        <!-- Top accent: floating music notes (jazz) -->
         <g fill="#FF6B47">
-          <!-- Eighth note 1 -->
           <g transform="translate(180, 380)">
             <ellipse cx="0" cy="0" rx="32" ry="22" transform="rotate(-15)"/>
-            <rect x="22" y="-110" width="6" height="110" fill="#FF6B47" transform="rotate(0)"/>
+            <rect x="22" y="-110" width="6" height="110" fill="#FF6B47"/>
             <path d="M28,-110 Q 70,-90 60,-50" stroke="#FF6B47" stroke-width="6" fill="none"/>
           </g>
           <g transform="translate(420, 240)">
@@ -298,49 +307,36 @@
           </g>
         </g>
 
-        <!-- Saxophone silhouette, centered top -->
         <g transform="translate(540, 700)" fill="#FAFAF7">
-          <!-- Sax body curve -->
           <path d="M-60,-150 Q -60,-180 -30,-180 L 30,-180 Q 60,-180 60,-150 L 60,30 Q 60,90 120,90 Q 180,90 180,30 L 180,-20" stroke="#FAFAF7" stroke-width="14" fill="none" stroke-linecap="round"/>
-          <!-- Bell -->
           <ellipse cx="180" cy="-20" rx="50" ry="14" fill="#FAFAF7" transform="rotate(-15 180 -20)"/>
-          <!-- Keys -->
           <circle cx="-30" cy="-100" r="6" fill="#292f71"/>
           <circle cx="0" cy="-60" r="6" fill="#292f71"/>
           <circle cx="20" cy="-20" r="6" fill="#292f71"/>
           <circle cx="40" cy="20" r="6" fill="#292f71"/>
-          <!-- Mouthpiece -->
           <rect x="-35" y="-200" width="10" height="20" fill="#FAFAF7"/>
         </g>
 
-        <!-- Divider with double-event marker -->
         <g transform="translate(540, 960)">
           <line x1="-400" y1="0" x2="-30" y2="0" stroke="#FF6B47" stroke-width="2"/>
           <circle cx="0" cy="0" r="10" fill="#FF6B47"/>
           <line x1="30" y1="0" x2="400" y2="0" stroke="#FF6B47" stroke-width="2"/>
         </g>
 
-        <!-- Bottom illustration: stylized dancers -->
         <g transform="translate(540, 1340)" fill="#292f71">
-          <!-- Dancer 1 -->
           <g transform="translate(-90, 0)">
             <circle cx="0" cy="-90" r="22"/>
             <path d="M-15,-60 L-25,30 L-30,90 L-10,90 L0,30 L10,90 L30,90 L25,30 L15,-60 Z"/>
-            <!-- Outstretched arm -->
             <path d="M0,-50 L 40,-90 L 60,-80" stroke="#292f71" stroke-width="10" fill="none" stroke-linecap="round"/>
           </g>
-          <!-- Dancer 2, swirling -->
           <g transform="translate(80, 0)">
             <circle cx="0" cy="-90" r="22"/>
             <path d="M-15,-60 L-30,40 L-40,90 L-20,90 L-5,30 L10,90 L30,90 L20,30 L15,-60 Z"/>
-            <!-- Skirt swirl -->
             <path d="M-40,90 Q -30,110 0,108 Q 30,108 40,90 L 50,60 L -50,60 Z" fill="#FF6B47"/>
-            <!-- Raised arm -->
             <path d="M0,-50 L -40,-100 L -60,-95" stroke="#292f71" stroke-width="10" fill="none" stroke-linecap="round"/>
           </g>
         </g>
 
-        <!-- TYPE -->
         <text x="540" y="180" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">FRIDAY · MAY 15 · BOTH FREE</text>
 
         <text x="540" y="1530" font-family="Instrument Serif, Georgia, serif" font-size="86" text-anchor="middle" fill="#1a1f4d">Salsa under sunset,</text>
@@ -353,7 +349,7 @@
   </div>
 
   <!-- ═══════════════════════════════════════════════════════════════════════
-       SLIDE 5 — GETTY VILLA (Thursday)
+       SLIDE 5 — GETTY VILLA
        ═══════════════════════════════════════════════════════════════════════ -->
   <div class="slide-wrapper">
     <div class="slide-label"><span><span class="num">05</span> · Pick 4</span><span>Getty Villa Thursday</span></div>
@@ -367,15 +363,10 @@
         </defs>
         <rect width="1080" height="1920" fill="url(#s5-bg)"/>
 
-        <!-- ILLUSTRATION: Classical pediment + columns (Getty Villa motif) -->
         <g transform="translate(540, 620)">
-          <!-- Pediment (triangle) -->
           <path d="M-280,0 L0,-200 L280,0 Z" fill="#292f71"/>
-          <!-- Pediment inner line -->
           <path d="M-260,-10 L0,-180 L260,-10 Z" fill="none" stroke="#FF6B47" stroke-width="2"/>
-          <!-- Entablature band -->
           <rect x="-300" y="0" width="600" height="40" fill="#1a1f4d"/>
-          <!-- Bead row on entablature -->
           <g fill="#FF6B47">
             <circle cx="-260" cy="20" r="4"/>
             <circle cx="-200" cy="20" r="4"/>
@@ -388,18 +379,14 @@
             <circle cx="220" cy="20" r="4"/>
             <circle cx="260" cy="20" r="4"/>
           </g>
-          <!-- Columns: 4 Doric -->
           <g fill="#292f71">
-            <!-- Column 1 -->
             <rect x="-280" y="40" width="55" height="380"/>
             <rect x="-285" y="40" width="65" height="18"/>
             <rect x="-285" y="410" width="65" height="18"/>
-            <!-- Fluting lines -->
             <line x1="-270" y1="60" x2="-270" y2="408" stroke="#1a1f4d" stroke-width="2"/>
             <line x1="-255" y1="60" x2="-255" y2="408" stroke="#1a1f4d" stroke-width="2"/>
             <line x1="-240" y1="60" x2="-240" y2="408" stroke="#1a1f4d" stroke-width="2"/>
 
-            <!-- Column 2 -->
             <rect x="-130" y="40" width="55" height="380"/>
             <rect x="-135" y="40" width="65" height="18"/>
             <rect x="-135" y="410" width="65" height="18"/>
@@ -407,7 +394,6 @@
             <line x1="-105" y1="60" x2="-105" y2="408" stroke="#1a1f4d" stroke-width="2"/>
             <line x1="-90" y1="60" x2="-90" y2="408" stroke="#1a1f4d" stroke-width="2"/>
 
-            <!-- Column 3 -->
             <rect x="75" y="40" width="55" height="380"/>
             <rect x="70" y="40" width="65" height="18"/>
             <rect x="70" y="410" width="65" height="18"/>
@@ -415,7 +401,6 @@
             <line x1="100" y1="60" x2="100" y2="408" stroke="#1a1f4d" stroke-width="2"/>
             <line x1="115" y1="60" x2="115" y2="408" stroke="#1a1f4d" stroke-width="2"/>
 
-            <!-- Column 4 -->
             <rect x="225" y="40" width="55" height="380"/>
             <rect x="220" y="40" width="65" height="18"/>
             <rect x="220" y="410" width="65" height="18"/>
@@ -423,20 +408,16 @@
             <line x1="255" y1="60" x2="255" y2="408" stroke="#1a1f4d" stroke-width="2"/>
             <line x1="270" y1="60" x2="270" y2="408" stroke="#1a1f4d" stroke-width="2"/>
           </g>
-          <!-- Steps below -->
           <rect x="-340" y="428" width="680" height="14" fill="#292f71"/>
           <rect x="-360" y="442" width="720" height="14" fill="#1a1f4d"/>
         </g>
 
-        <!-- Eyebrow -->
         <text x="540" y="200" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">THURSDAY · 6:30PM · FREE</text>
 
-        <!-- Main type -->
         <text x="540" y="1320" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#1a1f4d">Two museum</text>
         <text x="540" y="1410" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#1a1f4d">directors talk</text>
         <text x="540" y="1500" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="92" text-anchor="middle" fill="#FF6B47">heritage &amp; politics.</text>
 
-        <!-- Divider -->
         <line x1="440" y1="1570" x2="640" y2="1570" stroke="#292f71" stroke-width="1.5"/>
 
         <text x="540" y="1660" font-family="Inter, sans-serif" font-size="34" font-weight="500" text-anchor="middle" fill="#0F1117">Getty Villa · Pacific Palisades</text>
@@ -446,7 +427,7 @@
   </div>
 
   <!-- ═══════════════════════════════════════════════════════════════════════
-       SLIDE 6 — BRIGHT EYES (Hollywood Bowl)
+       SLIDE 6 — BRIGHT EYES
        ═══════════════════════════════════════════════════════════════════════ -->
   <div class="slide-wrapper">
     <div class="slide-label"><span><span class="num">06</span> · Pick 5</span><span>Bright Eyes May 23</span></div>
@@ -461,7 +442,6 @@
         </defs>
         <rect width="1080" height="1920" fill="url(#s6-night)"/>
 
-        <!-- Stars -->
         <g fill="#FAFAF7">
           <circle cx="120" cy="180" r="2.5"/>
           <circle cx="280" cy="120" r="1.5"/>
@@ -479,20 +459,15 @@
           <circle cx="980" cy="560" r="2"/>
         </g>
 
-        <!-- Crescent moon -->
         <g transform="translate(880, 280)">
           <circle cx="0" cy="0" r="60" fill="#FAFAF7"/>
           <circle cx="22" cy="-10" r="55" fill="#1a1f4d"/>
         </g>
 
-        <!-- HOLLYWOOD BOWL SHELL — concentric arches -->
         <g transform="translate(540, 1080)">
-          <!-- Stage floor -->
           <rect x="-440" y="0" width="880" height="20" fill="#0F1117"/>
-          <!-- Hill silhouette behind -->
           <path d="M-540,0 Q -300,-120 0,-100 Q 300,-120 540,0 Z" fill="#0a0f3a" opacity="0.6"/>
 
-          <!-- Bowl shell — nested arches getting smaller -->
           <g fill="none" stroke="#FAFAF7" stroke-width="3">
             <path d="M-400,0 Q -400,-360 0,-360 Q 400,-360 400,0"/>
           </g>
@@ -508,15 +483,12 @@
           <g fill="none" stroke="#FF6B47" stroke-width="3">
             <path d="M-160,0 Q -160,-160 0,-160 Q 160,-160 160,0"/>
           </g>
-          <!-- Stage light spotlights -->
           <path d="M-50,-150 L-90,0 L-10,0 Z" fill="#FF6B47" opacity="0.25"/>
           <path d="M50,-150 L 90,0 L 10,0 Z" fill="#FF6B47" opacity="0.25"/>
         </g>
 
-        <!-- Eyebrow -->
         <text x="540" y="200" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">SATURDAY · MAY 23 · 7PM</text>
 
-        <!-- Main type -->
         <text x="540" y="1320" font-family="Instrument Serif, Georgia, serif" font-size="100" text-anchor="middle" fill="#FAFAF7">Bright Eyes</text>
         <text x="540" y="1410" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="70" text-anchor="middle" fill="#FAFAF7" opacity="0.85">plays Wide Awake &amp;</text>
         <text x="540" y="1490" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="70" text-anchor="middle" fill="#FAFAF7" opacity="0.85">Digital Ash in full.</text>
@@ -530,16 +502,13 @@
   </div>
 
   <!-- ═══════════════════════════════════════════════════════════════════════
-       SLIDE 7 — CTA: Full list at haps.club
+       SLIDE 7 — CTA
        ═══════════════════════════════════════════════════════════════════════ -->
   <div class="slide-wrapper">
     <div class="slide-label"><span><span class="num">07</span> · CTA</span><span>haps.club</span></div>
     <div class="slide">
       <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <!-- Coral background -->
         <rect width="1080" height="1920" fill="#FF6B47"/>
-
-        <!-- Subtle vertical gradient overlay -->
         <defs>
           <linearGradient id="s7-shade" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.10"/>
@@ -548,26 +517,21 @@
         </defs>
         <rect width="1080" height="1920" fill="url(#s7-shade)"/>
 
-        <!-- Eyebrow -->
         <text x="540" y="540" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#FAFAF7" letter-spacing="6">PLUS 14 MORE PICKS</text>
 
-        <!-- Big arrow pointer -->
         <g transform="translate(540, 800)">
           <text x="0" y="0" font-family="Instrument Serif, Georgia, serif" font-size="140" text-anchor="middle" fill="#FAFAF7">The full list</text>
           <text x="0" y="130" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="140" text-anchor="middle" fill="#1a1f4d">is online.</text>
         </g>
 
-        <!-- URL pill -->
         <g transform="translate(540, 1180)">
           <rect x="-340" y="-80" width="680" height="160" rx="80" fill="#1a1f4d"/>
           <text x="0" y="30" font-family="Inter, sans-serif" font-size="72" font-weight="700" text-anchor="middle" fill="#FAFAF7" letter-spacing="2">haps.club</text>
         </g>
 
-        <!-- Subline -->
         <text x="540" y="1450" font-family="Inter, sans-serif" font-size="36" font-weight="500" text-anchor="middle" fill="#FAFAF7">Restaurants. Music. Free things.</text>
         <text x="540" y="1510" font-family="Inter, sans-serif" font-size="36" font-weight="500" text-anchor="middle" fill="#FAFAF7">Updated every Tuesday.</text>
 
-        <!-- Decorative dots row -->
         <g transform="translate(540, 1680)">
           <circle cx="-60" cy="0" r="8" fill="#1a1f4d"/>
           <circle cx="-20" cy="0" r="8" fill="#FAFAF7"/>
@@ -579,16 +543,13 @@
   </div>
 
   <!-- ═══════════════════════════════════════════════════════════════════════
-       SLIDE 8 — CLOSE: Logo + tagline
+       SLIDE 8 — CLOSE: Real white logo on navy
        ═══════════════════════════════════════════════════════════════════════ -->
   <div class="slide-wrapper">
     <div class="slide-label"><span><span class="num">08</span> · Close</span><span>Logo + tagline</span></div>
     <div class="slide">
       <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <!-- Navy background -->
         <rect width="1080" height="1920" fill="#1a1f4d"/>
-
-        <!-- Subtle radial spotlight -->
         <defs>
           <radialGradient id="s8-glow" cx="50%" cy="40%" r="60%">
             <stop offset="0%" stop-color="#292f71" stop-opacity="1"/>
@@ -597,29 +558,18 @@
         </defs>
         <rect width="1080" height="1920" fill="url(#s8-glow)"/>
 
-        <!-- Logo: circular mark, larger, centered -->
-        <g transform="translate(540, 760)">
-          <!-- Outer accent ring -->
-          <circle cx="0" cy="0" r="220" fill="none" stroke="#FF6B47" stroke-width="3" opacity="0.6"/>
-          <!-- Solid mark -->
-          <circle cx="0" cy="0" r="190" fill="#FAFAF7"/>
-          <!-- HC monogram -->
-          <text x="0" y="58" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="210" text-anchor="middle" fill="#1a1f4d">H</text>
-        </g>
-
-        <!-- Wordmark -->
-        <text x="540" y="1100" font-family="Instrument Serif, Georgia, serif" font-size="130" text-anchor="middle" fill="#FAFAF7" letter-spacing="-2">Haps Club</text>
+        <!-- REAL Haps Club logo, white variant on navy, centered upper half -->
+        <use href="#hc-logo-white" x="190" y="380" width="700" height="700"/>
 
         <!-- Hairline accent + tagline -->
-        <line x1="380" y1="1180" x2="700" y2="1180" stroke="#FF6B47" stroke-width="2"/>
-        <circle cx="540" cy="1180" r="6" fill="#FF6B47"/>
+        <line x1="380" y1="1240" x2="700" y2="1240" stroke="#FF6B47" stroke-width="2"/>
+        <circle cx="540" cy="1240" r="6" fill="#FF6B47"/>
 
-        <text x="540" y="1290" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="56" text-anchor="middle" fill="#FAFAF7" opacity="0.9">A daily glance at what's</text>
-        <text x="540" y="1360" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="56" text-anchor="middle" fill="#FAFAF7" opacity="0.9">worth doing in Los Angeles.</text>
+        <text x="540" y="1360" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="58" text-anchor="middle" fill="#FAFAF7" opacity="0.92">A daily glance at what's</text>
+        <text x="540" y="1430" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="58" text-anchor="middle" fill="#FAFAF7" opacity="0.92">worth doing in Los Angeles.</text>
 
-        <!-- Social block -->
-        <g transform="translate(540, 1600)">
-          <text x="0" y="0" font-family="Inter, sans-serif" font-size="32" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="4">FOLLOW · SUBSCRIBE · GO OUTSIDE</text>
+        <g transform="translate(540, 1640)">
+          <text x="0" y="0" font-family="Inter, sans-serif" font-size="32" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="5">FOLLOW · SUBSCRIBE · GO OUTSIDE</text>
         </g>
 
         <text x="540" y="1810" font-family="Inter, sans-serif" font-size="28" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.75" letter-spacing="3">@THEHAPSCLUB · HAPS.CLUB</text>
