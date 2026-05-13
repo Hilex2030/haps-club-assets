@@ -34,15 +34,14 @@
     </g>
   </g>
 
-  <text x="540" y="1020" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">THURSDAY · MAY 14 · PRIX FIXE</text>
+  <text x="540" y="1070" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">THURSDAY · MAY 14 · PRIX FIXE</text>
 
-  <text x="540" y="1170" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="72" text-anchor="middle" fill="#FF6B47">A one-night menu.</text>
+  <text x="540" y="1180" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="56" text-anchor="middle" fill="#FF6B47">A one-night menu.</text>
 
-  <line x1="440" y1="1260" x2="640" y2="1260" stroke="#292f71" stroke-width="1.5"/>
+  <line x1="440" y1="1240" x2="640" y2="1240" stroke="#292f71" stroke-width="1.5"/>
 
-  <text x="540" y="1380" font-family="Instrument Serif, Georgia, serif" font-size="100" font-weight="500" text-anchor="middle" fill="#1a1f4d">Firstborn</text>
-  <text x="540" y="1475" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="72" text-anchor="middle" fill="#FF6B47">× Little Fish</text>
+  <text x="540" y="1400" font-family="Instrument Serif, Georgia, serif" font-size="180" font-weight="500" text-anchor="middle" fill="#1a1f4d">Firstborn</text>
+  <text x="540" y="1500" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="100" text-anchor="middle" fill="#FF6B47">× Little Fish</text>
 
-  <text x="540" y="1530" font-family="Inter, sans-serif" font-size="28" font-weight="500" text-anchor="middle" fill="#6B6F7A">Mandarin Plaza · Chinatown</text>
-  <text x="540" y="1575" font-family="Inter, sans-serif" font-size="26" font-style="italic" text-anchor="middle" fill="#6B6F7A">Anthony Wang hosts · book on OpenTable</text>
+  <text x="540" y="1570" font-family="Inter, sans-serif" font-size="24" font-weight="500" text-anchor="middle" fill="#6B6F7A">Mandarin Plaza, Chinatown · OpenTable</text>
 </svg>
