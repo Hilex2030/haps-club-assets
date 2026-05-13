@@ -24,17 +24,15 @@
   <rect width="1080" height="1920" fill="#1a1f4d"/>
   <rect width="1080" height="1920" fill="url(#s8-glow)"/>
 
-  <use href="#hc-logo-white" x="190" y="380" width="700" height="700"/>
+  <use href="#hc-logo-white" x="190" y="360" width="700" height="700"/>
 
-  <line x1="380" y1="1140" x2="700" y2="1140" stroke="#FF6B47" stroke-width="2"/>
-  <circle cx="540" cy="1140" r="6" fill="#FF6B47"/>
+  <line x1="380" y1="1120" x2="700" y2="1120" stroke="#FF6B47" stroke-width="2"/>
+  <circle cx="540" cy="1120" r="6" fill="#FF6B47"/>
 
-  <text x="540" y="1260" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="58" text-anchor="middle" fill="#FAFAF7" opacity="0.92">A daily glance at what's</text>
-  <text x="540" y="1330" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="58" text-anchor="middle" fill="#FAFAF7" opacity="0.92">worth doing in Los Angeles.</text>
+  <text x="540" y="1240" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="60" text-anchor="middle" fill="#FAFAF7" opacity="0.92">A daily glance at what's</text>
+  <text x="540" y="1315" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="60" text-anchor="middle" fill="#FAFAF7" opacity="0.92">worth doing in Los Angeles.</text>
 
-  <g transform="translate(540, 1480)">
-    <text x="0" y="0" font-family="Inter, sans-serif" font-size="32" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="5">FOLLOW · SUBSCRIBE · GO OUTSIDE</text>
-  </g>
+  <text x="540" y="1450" font-family="Inter, sans-serif" font-size="40" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="4">FOLLOW · SUBSCRIBE</text>
 
-  <text x="540" y="1560" font-family="Inter, sans-serif" font-size="28" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.75" letter-spacing="3">@THEHAPSCLUB · HAPS.CLUB</text>
+  <text x="540" y="1560" font-family="Inter, sans-serif" font-size="40" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.85" letter-spacing="3">@THEHAPSCLUB</text>
 </svg>
