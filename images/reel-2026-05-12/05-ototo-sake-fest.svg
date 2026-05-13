@@ -48,13 +48,13 @@
 
   <text x="540" y="200" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">THIS WEEK · NO RES REQUIRED</text>
 
-  <text x="540" y="1180" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#1a1f4d">Seven days</text>
-  <text x="540" y="1270" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#1a1f4d">of sake at</text>
-  <text x="540" y="1360" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="92" text-anchor="middle" fill="#FF6B47">a James Beard bar.</text>
+  <text x="540" y="1130" font-family="Instrument Serif, Georgia, serif" font-size="84" text-anchor="middle" fill="#1a1f4d">Seven days of sake</text>
+  <text x="540" y="1220" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="84" text-anchor="middle" fill="#FF6B47">at a James Beard bar.</text>
 
-  <line x1="440" y1="1440" x2="640" y2="1440" stroke="#292f71" stroke-width="1.5"/>
+  <line x1="440" y1="1300" x2="640" y2="1300" stroke="#292f71" stroke-width="1.5"/>
 
-  <text x="540" y="1520" font-family="Inter, sans-serif" font-size="34" font-weight="500" text-anchor="middle" fill="#0F1117">OTOTO · Echo Park</text>
-  <text x="540" y="1580" font-family="Inter, sans-serif" font-size="28" font-style="italic" text-anchor="middle" fill="#6B6F7A">Tastings &amp; workshops · food pairing Thurs 5/14</text>
-  <text x="540" y="1650" font-family="Inter, sans-serif" font-size="26" font-weight="500" text-anchor="middle" fill="#292f71">1360 Allison Ave</text>
+  <text x="540" y="1420" font-family="Instrument Serif, Georgia, serif" font-size="100" font-weight="500" text-anchor="middle" fill="#1a1f4d">OTOTO</text>
+  <text x="540" y="1485" font-family="Inter, sans-serif" font-size="32" font-weight="500" text-anchor="middle" fill="#6B6F7A">1360 Allison Ave · Echo Park</text>
+  <text x="540" y="1535" font-family="Inter, sans-serif" font-size="26" font-style="italic" text-anchor="middle" fill="#6B6F7A">Tastings all week · food pairing Thurs 5/14</text>
+  <text x="540" y="1570" font-family="Inter, sans-serif" font-size="24" font-weight="500" text-anchor="middle" fill="#292f71">No reservations needed</text>
 </svg>
