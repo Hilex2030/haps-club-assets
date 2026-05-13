@@ -33,12 +33,12 @@
 
   <text x="540" y="200" font-family="Inter, sans-serif" font-size="32" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="5">ALL WEEK · ECHO PARK</text>
 
-  <text x="540" y="1130" font-family="Instrument Serif, Georgia, serif" font-size="68" text-anchor="middle" fill="#1a1f4d">Seven days of sake</text>
-  <text x="540" y="1205" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="68" text-anchor="middle" fill="#FF6B47">at a James Beard bar.</text>
+  <text x="540" y="1130" font-family="Instrument Serif, Georgia, serif" font-size="64" text-anchor="middle" fill="#1a1f4d">Seven days of sake</text>
+  <text x="540" y="1200" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="64" text-anchor="middle" fill="#FF6B47">at a James Beard bar.</text>
 
-  <line x1="440" y1="1280" x2="640" y2="1280" stroke="#292f71" stroke-width="1.5"/>
+  <line x1="440" y1="1270" x2="640" y2="1270" stroke="#292f71" stroke-width="1.5"/>
 
-  <text x="540" y="1460" font-family="Instrument Serif, Georgia, serif" font-size="180" font-weight="500" text-anchor="middle" fill="#1a1f4d">OTOTO</text>
-  <text x="540" y="1530" font-family="Inter, sans-serif" font-size="40" font-weight="500" text-anchor="middle" fill="#6B6F7A">1360 Allison Ave</text>
-  <text x="540" y="1575" font-family="Inter, sans-serif" font-size="32" font-style="italic" text-anchor="middle" fill="#292f71">Pairing dinner Thu 5/14</text>
+  <text x="540" y="1330" font-family="Inter, sans-serif" font-size="40" font-weight="500" text-anchor="middle" fill="#6B6F7A">1360 Allison Ave · pairing Thu 5/14</text>
+
+  <text x="540" y="1545" font-family="Instrument Serif, Georgia, serif" font-size="180" font-weight="500" text-anchor="middle" fill="#1a1f4d">OTOTO</text>
 </svg>
