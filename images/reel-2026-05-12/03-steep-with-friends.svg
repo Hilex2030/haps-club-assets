@@ -23,10 +23,6 @@
     <ellipse cx="0" cy="30" rx="240" ry="44" fill="#1a1f4d"/>
     <ellipse cx="0" cy="28" rx="230" ry="36" fill="#FF6B47"/>
     <ellipse cx="-50" cy="20" rx="80" ry="10" fill="#FFF1ED" opacity="0.45"/>
-    <circle cx="-30" cy="30" r="4" fill="#1a1f4d" opacity="0.5"/>
-    <circle cx="40" cy="36" r="3" fill="#1a1f4d" opacity="0.5"/>
-    <circle cx="-90" cy="32" r="3" fill="#1a1f4d" opacity="0.5"/>
-    <circle cx="100" cy="28" r="3" fill="#1a1f4d" opacity="0.5"/>
   </g>
 
   <g transform="translate(540, 1010) rotate(-12)">
@@ -36,13 +32,13 @@
     <rect x="172" y="7" width="14" height="12" fill="#FF6B47"/>
   </g>
 
-  <text x="80" y="1100" font-family="Inter, sans-serif" font-size="28" font-weight="600" fill="#E54D2B" letter-spacing="6">EDITOR'S PICK · WED 5/13</text>
+  <text x="80" y="1140" font-family="Inter, sans-serif" font-size="32" font-weight="600" fill="#E54D2B" letter-spacing="5">EDITOR'S PICK · WED 5/13</text>
 
-  <text x="80" y="1210" font-family="Instrument Serif, Georgia, serif" font-size="72" fill="#1a1f4d">Modern Korean</text>
-  <text x="80" y="1280" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="72" fill="#FF6B47">at the tea bar.</text>
+  <text x="80" y="1240" font-family="Instrument Serif, Georgia, serif" font-size="68" fill="#1a1f4d">Modern Korean at</text>
+  <text x="80" y="1310" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="68" fill="#FF6B47">the tea bar.</text>
 
-  <line x1="80" y1="1350" x2="180" y2="1350" stroke="#292f71" stroke-width="3"/>
+  <line x1="80" y1="1380" x2="180" y2="1380" stroke="#292f71" stroke-width="3"/>
 
-  <text x="80" y="1520" font-family="Instrument Serif, Georgia, serif" font-size="200" font-weight="500" fill="#1a1f4d">Steep</text>
-  <text x="80" y="1565" font-family="Inter, sans-serif" font-size="24" font-weight="500" fill="#6B6F7A">970 N Broadway · Chinatown · steepla.com</text>
+  <text x="80" y="1510" font-family="Instrument Serif, Georgia, serif" font-size="160" font-weight="500" fill="#1a1f4d">Steep</text>
+  <text x="80" y="1570" font-family="Inter, sans-serif" font-size="40" font-weight="500" fill="#6B6F7A">970 N Broadway, Chinatown</text>
 </svg>

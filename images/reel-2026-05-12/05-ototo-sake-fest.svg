@@ -7,53 +7,38 @@
   </defs>
   <rect width="1080" height="1920" fill="url(#s5-bg)"/>
 
-  <rect x="0" y="940" width="1080" height="14" fill="#292f71"/>
-  <rect x="0" y="954" width="1080" height="8" fill="#1a1f4d"/>
-  <rect x="0" y="962" width="1080" height="60" fill="#292f71" opacity="0.08"/>
+  <rect x="0" y="900" width="1080" height="14" fill="#292f71"/>
+  <rect x="0" y="914" width="1080" height="8" fill="#1a1f4d"/>
 
-  <g transform="translate(420, 600)">
-    <ellipse cx="0" cy="345" rx="120" ry="14" fill="#292f71" opacity="0.18"/>
-    <path d="M -90,0 Q -110,80 -100,180 Q -100,300 0,340 Q 100,300 100,180 Q 110,80 90,0 Z" fill="#292f71"/>
+  <g transform="translate(420, 560)">
+    <ellipse cx="0" cy="325" rx="120" ry="14" fill="#292f71" opacity="0.18"/>
+    <path d="M -90,0 Q -110,80 -100,180 Q -100,290 0,320 Q 100,290 100,180 Q 110,80 90,0 Z" fill="#292f71"/>
     <rect x="-32" y="-110" width="64" height="120" fill="#292f71"/>
     <ellipse cx="0" cy="-110" rx="32" ry="9" fill="#1a1f4d"/>
-    <ellipse cx="0" cy="-112" rx="26" ry="6" fill="#0F1117"/>
-    <rect x="-70" y="120" width="140" height="100" fill="#FF6B47"/>
-    <line x1="-50" y1="155" x2="50" y2="155" stroke="#FAFAF7" stroke-width="3"/>
-    <line x1="-40" y1="175" x2="40" y2="175" stroke="#FAFAF7" stroke-width="2"/>
-    <line x1="-30" y1="195" x2="30" y2="195" stroke="#FAFAF7" stroke-width="2"/>
+    <rect x="-70" y="110" width="140" height="100" fill="#FF6B47"/>
   </g>
 
-  <g transform="translate(680, 870)">
+  <g transform="translate(680, 820)">
     <ellipse cx="0" cy="50" rx="55" ry="8" fill="#292f71" opacity="0.18"/>
     <path d="M -54,-30 Q -58,30 -40,46 L 40,46 Q 58,30 54,-30 Z" fill="#FAFAF7" stroke="#292f71" stroke-width="3"/>
     <ellipse cx="0" cy="-30" rx="54" ry="12" fill="#FAFAF7" stroke="#292f71" stroke-width="3"/>
     <ellipse cx="0" cy="-22" rx="46" ry="8" fill="#FF6B47" opacity="0.55"/>
   </g>
 
-  <g transform="translate(820, 895)">
+  <g transform="translate(820, 845)">
     <ellipse cx="0" cy="38" rx="42" ry="6" fill="#292f71" opacity="0.18"/>
     <path d="M -40,-20 Q -44,22 -28,36 L 28,36 Q 44,22 40,-20 Z" fill="#FAFAF7" stroke="#292f71" stroke-width="3"/>
     <ellipse cx="0" cy="-20" rx="40" ry="10" fill="#FAFAF7" stroke="#292f71" stroke-width="3"/>
-    <ellipse cx="0" cy="-15" rx="34" ry="6" fill="#FF6B47" opacity="0.55"/>
   </g>
 
-  <g transform="translate(220, 880)">
-    <ellipse cx="0" cy="22" rx="90" ry="12" fill="#292f71" opacity="0.18"/>
-    <ellipse cx="0" cy="14" rx="88" ry="20" fill="#1a1f4d"/>
-    <ellipse cx="0" cy="10" rx="82" ry="14" fill="#292f71"/>
-    <circle cx="-30" cy="6" r="6" fill="#FF6B47"/>
-    <circle cx="0" cy="10" r="6" fill="#FF6B47"/>
-    <circle cx="28" cy="6" r="6" fill="#FF6B47"/>
-  </g>
+  <text x="540" y="200" font-family="Inter, sans-serif" font-size="32" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="5">ALL WEEK · ECHO PARK</text>
 
-  <text x="540" y="200" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">THIS WEEK · NO RES REQUIRED</text>
+  <text x="540" y="1130" font-family="Instrument Serif, Georgia, serif" font-size="68" text-anchor="middle" fill="#1a1f4d">Seven days of sake</text>
+  <text x="540" y="1205" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="68" text-anchor="middle" fill="#FF6B47">at a James Beard bar.</text>
 
-  <text x="540" y="1150" font-family="Instrument Serif, Georgia, serif" font-size="60" text-anchor="middle" fill="#1a1f4d">Seven days of sake at</text>
-  <text x="540" y="1215" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="60" text-anchor="middle" fill="#FF6B47">a James Beard sake bar.</text>
+  <line x1="440" y1="1280" x2="640" y2="1280" stroke="#292f71" stroke-width="1.5"/>
 
-  <line x1="440" y1="1285" x2="640" y2="1285" stroke="#292f71" stroke-width="1.5"/>
-
-  <text x="540" y="1480" font-family="Instrument Serif, Georgia, serif" font-size="200" font-weight="500" text-anchor="middle" fill="#1a1f4d">OTOTO</text>
-  <text x="540" y="1530" font-family="Inter, sans-serif" font-size="24" font-weight="500" text-anchor="middle" fill="#6B6F7A">1360 Allison Ave · Echo Park</text>
-  <text x="540" y="1565" font-family="Inter, sans-serif" font-size="20" font-style="italic" text-anchor="middle" fill="#292f71">Pairing dinner Thu 5/14 · walk-in</text>
+  <text x="540" y="1460" font-family="Instrument Serif, Georgia, serif" font-size="180" font-weight="500" text-anchor="middle" fill="#1a1f4d">OTOTO</text>
+  <text x="540" y="1530" font-family="Inter, sans-serif" font-size="40" font-weight="500" text-anchor="middle" fill="#6B6F7A">1360 Allison Ave</text>
+  <text x="540" y="1575" font-family="Inter, sans-serif" font-size="32" font-style="italic" text-anchor="middle" fill="#292f71">Pairing dinner Thu 5/14</text>
 </svg>
