@@ -65,10 +65,10 @@
 
   <text x="540" y="200" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#E54D2B" letter-spacing="6">SATURDAY · MAY 16 · 4 PM</text>
 
-  <text x="540" y="1340" font-family="Instrument Serif, Georgia, serif" font-size="64" text-anchor="middle" fill="#1a1f4d">Five courses on a</text>
-  <text x="540" y="1405" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="64" text-anchor="middle" fill="#E54D2B">working farm in Fillmore.</text>
+  <text x="540" y="1330" font-family="Instrument Serif, Georgia, serif" font-size="60" text-anchor="middle" fill="#1a1f4d">Five courses on a</text>
+  <text x="540" y="1395" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="60" text-anchor="middle" fill="#E54D2B">working farm in Fillmore.</text>
 
-  <line x1="440" y1="1470" x2="640" y2="1470" stroke="#292f71" stroke-width="1.5"/>
+  <line x1="440" y1="1455" x2="640" y2="1455" stroke="#292f71" stroke-width="1.5"/>
 
-  <text x="540" y="1550" font-family="Instrument Serif, Georgia, serif" font-size="160" font-weight="500" text-anchor="middle" fill="#1a1f4d">Gorp Girls</text>
+  <text x="540" y="1530" font-family="Instrument Serif, Georgia, serif" font-size="140" font-weight="500" text-anchor="middle" fill="#1a1f4d">Gorp Girls</text>
 </svg>
