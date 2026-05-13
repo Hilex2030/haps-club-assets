@@ -9,10 +9,8 @@
   :root {
     --navy: #292f71;
     --navy-deep: #1a1f4d;
-    --navy-tint: #EEF0F8;
     --accent: #FF6B47;
     --accent-deep: #E54D2B;
-    --accent-tint: #FFF1ED;
     --bg: #FAFAF7;
     --ink: #0F1117;
     --ink-3: #6B6F7A;
@@ -20,80 +18,24 @@
     --serif: 'Instrument Serif', Georgia, serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: #2a2a2a;
-    font-family: var(--sans);
-    padding: 30px 0 60px;
-    min-height: 100vh;
-  }
-  .toolbar {
-    max-width: 1100px;
-    margin: 0 auto 30px;
-    padding: 0 20px;
-    color: #eee;
-    text-align: center;
-  }
+  body { background: #2a2a2a; font-family: var(--sans); padding: 30px 0 60px; min-height: 100vh; }
+  .toolbar { max-width: 1100px; margin: 0 auto 30px; padding: 0 20px; color: #eee; text-align: center; }
   .toolbar h1 { font-family: var(--serif); font-size: 28px; font-weight: 400; margin-bottom: 6px; }
   .toolbar p { font-size: 14px; color: #aaa; line-height: 1.5; }
   .toolbar code { background: #444; padding: 2px 6px; border-radius: 4px; font-size: 12px; }
-  .deck {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    padding: 0 20px;
-  }
-  .slide-wrapper {
-    background: #1a1a1a;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.5);
-  }
-  .slide-label {
-    background: #333;
-    color: #ccc;
-    padding: 10px 14px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  .deck { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; padding: 0 20px; }
+  .slide-wrapper { background: #1a1a1a; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 32px rgba(0,0,0,0.5); }
+  .slide-label { background: #333; color: #ccc; padding: 10px 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
   .slide-label .num { color: var(--accent); }
-  .slide {
-    width: 100%;
-    aspect-ratio: 9 / 16;
-    position: relative;
-    overflow: hidden;
-    background: var(--bg);
-  }
-  .slide svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-
-  @media print {
-    body { background: #fff; padding: 0; }
-    .toolbar { display: none; }
-    .deck { display: block; max-width: none; padding: 0; gap: 0; }
-    .slide-wrapper { page-break-after: always; border-radius: 0; box-shadow: none; }
-    .slide-label { display: none; }
-    .slide { aspect-ratio: auto; width: 1080px; height: 1920px; }
-  }
+  .slide { width: 100%; aspect-ratio: 9 / 16; position: relative; overflow: hidden; background: var(--bg); }
+  .slide svg { width: 100%; height: 100%; display: block; }
+  .safe-zone { position: absolute; left: 0; right: 0; bottom: 0; height: 17.7%; background: repeating-linear-gradient(45deg, rgba(255,107,71,0.08) 0, rgba(255,107,71,0.08) 8px, transparent 8px, transparent 16px); border-top: 1px dashed rgba(255,107,71,0.55); pointer-events: none; }
+  .safe-zone::before { content: "Instagram overlay zone (340px / 17.7% from bottom)"; position: absolute; top: 4px; left: 50%; transform: translateX(-50%); font-size: 9px; color: #FF6B47; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; opacity: 0.7; }
+  @media print { body { background: #fff; padding: 0; } .toolbar, .safe-zone { display: none; } .deck { display: block; max-width: none; padding: 0; gap: 0; } .slide-wrapper { page-break-after: always; border-radius: 0; box-shadow: none; } .slide-label { display: none; } .slide { aspect-ratio: auto; width: 1080px; height: 1920px; } }
 </style>
 </head>
 <body>
 
-<!--
-  REUSABLE LOGO SYMBOLS — actual Haps Club wordmark
-  Source of truth: Hilex2030/haps-club-assets/images/haps-club-logo.svg (navy, 1100×1100)
-                   Hilex2030/haps-club-assets/images/haps-club-logo-white.svg (white, 900×900)
-  Embedded inline so the deck renders reliably offline and exports cleanly.
--->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="hc-logo-navy" viewBox="0 0 1100 1100">
@@ -112,7 +54,6 @@
         <path d="M943.44,764.4c-7.9-10.13-18.35-16.58-31.36-19.36,11.52-3.41,20.75-9.49,27.68-18.24,6.93-8.74,10.4-19.73,10.4-32.96,0-17.92-6.46-32.1-19.36-42.56-12.91-10.45-30.77-15.68-53.6-15.68h-101.12v224.64h104.64c23.46,0,41.76-5.49,54.88-16.48,13.12-10.98,19.68-25.86,19.68-44.64,0-13.01-3.95-24.58-11.84-34.72ZM830.79,679.44h35.84c8.96,0,15.84,2.03,20.64,6.08,4.8,4.05,7.2,9.92,7.2,17.6s-2.4,13.5-7.2,17.44c-4.8,3.95-11.68,5.92-20.64,5.92h-35.84v-47.04ZM892.4,809.84c-5.02,4.16-12.11,6.24-21.28,6.24h-40.32v-49.6h39.68c9.17,0,16.37,2.24,21.6,6.72,5.23,4.48,7.84,10.67,7.84,18.56s-2.51,13.92-7.52,18.08Z"/>
       </g>
     </symbol>
-
     <symbol id="hc-logo-white" viewBox="0 0 900 900">
       <g fill="#fdfbfd">
         <path d="M325.07,348.57c1.12,0,2.23.07,3.31.19-3.45-1.45-7.15-2.19-10.19-1.46-5.61,1.27-36.72,9.18-79.82,16.07,20.91-78.8,51.26-159.38,80.07-211.65,3.06-5.61-12.75-18.87-14.03-12.5-27.8,55.34-62.73,144.84-85.94,227.21-26.27,3.83-55.34,7.14-85.17,8.42,21.17-86.45,56.36-168.56,63.75-188.7,2.04-5.61-10.97-23.46-14.28-16.07-6.63,14.79-43.61,107.1-66.56,198.39-16.83-12.75-34.94-20.91-52.79-22.7-6.63-.51-13.77.76-13.77,10.2,0,19.64,20.15,30.35,53.04,31.62h8.93c-10.71,47.43-17.09,93.33-12.24,125.97,2.04,13.26,21.68,19.89,20.4,11.22-5.87-36.98-1.02-82.62,8.67-128.01,47.18,49.47,61.97,123.68,62.99,140.25,0,.12.02.24.03.36,7.24,1.99,14.11,4.66,20.61,8.02-2.78-43.95,7.24-106.85,23.73-171.84,24.15-3.3,47.59-6.42,66.69-8.75,7.19-9.61,15.02-16.24,22.55-16.24ZM99.14,375.34c-16.06-.25-35.7-5.35-35.7-11.48s5.61-5.86,10.46-4.08c10.71,4.08,20.66,9.44,29.58,15.56h-4.34ZM194.51,481.68c-10.46-34.68-32.13-70.13-58.4-96.14,21.93-2.04,50.49-5.61,79.56-9.44-10.46,38.51-18.11,75.23-21.17,105.57Z"/>
@@ -134,483 +75,236 @@
 
 <div class="toolbar">
   <h1>Haps Club — Reel Deck · LA Dining</h1>
-  <p>8 slides, 9:16 vertical (1080×1920). Screen-record this page on your phone, or use Print → Save as PDF for 1080×1920 pages.<br>Loaded at <code>https://hilex2030.github.io/haps-club-assets/html/reel-2026-05-12.html</code></p>
+  <p>8 slides, 9:16 (1080×1920). Pink hatched band = Instagram caption/UI overlay zone (bottom 340px). All ink stays above it.<br>Loaded at <code>https://hilex2030.github.io/haps-club-assets/html/reel-2026-05-12.html</code></p>
 </div>
 
 <div class="deck">
 
-  <!-- ═══════════════════════════════════════════════════════════════════════
-       SLIDE 1 — OPEN: Real logo + "HAPPENING IN MAY" (centered, no date)
-       ═══════════════════════════════════════════════════════════════════════ -->
   <div class="slide-wrapper">
     <div class="slide-label"><span><span class="num">01</span> · Open</span><span>Logo + intro</span></div>
     <div class="slide">
       <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
         <defs>
-          <radialGradient id="s1-bg" cx="20%" cy="0%" r="80%">
-            <stop offset="0%" stop-color="#292f71" stop-opacity="0.10"/>
-            <stop offset="55%" stop-color="#292f71" stop-opacity="0"/>
-          </radialGradient>
-          <linearGradient id="s1-coral" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#FF6B47" stop-opacity="0.04"/>
-            <stop offset="100%" stop-color="#FF6B47" stop-opacity="0"/>
-          </linearGradient>
+          <radialGradient id="s1-bg" cx="20%" cy="0%" r="80%"><stop offset="0%" stop-color="#292f71" stop-opacity="0.10"/><stop offset="55%" stop-color="#292f71" stop-opacity="0"/></radialGradient>
         </defs>
         <rect width="1080" height="1920" fill="#FAFAF7"/>
         <rect width="1080" height="1920" fill="url(#s1-bg)"/>
-        <rect width="1080" height="1920" fill="url(#s1-coral)"/>
-
-        <!-- REAL Haps Club logo, navy on cream, centered upper half -->
         <use href="#hc-logo-navy" x="190" y="440" width="700" height="700"/>
-
-        <!-- Centered eyebrow, no date -->
-        <g transform="translate(540, 1330)">
+        <g transform="translate(540, 1230)">
           <text x="0" y="0" font-family="Inter, sans-serif" font-size="34" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">HAPPENING IN MAY</text>
         </g>
-
-        <!-- Hairline divider with accent dot -->
-        <line x1="380" y1="1430" x2="700" y2="1430" stroke="#292f71" stroke-width="1.5"/>
-        <circle cx="540" cy="1430" r="6" fill="#FF6B47"/>
-
-        <!-- Subline -->
-        <text x="540" y="1530" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="56" text-anchor="middle" fill="#6B6F7A">Four tables worth showing up for.</text>
-
-        <!-- Footer mark with 100px bottom padding -->
-        <text x="540" y="1820" font-family="Inter, sans-serif" font-size="26" font-weight="500" text-anchor="middle" fill="#6B6F7A" letter-spacing="3">HAPS.CLUB</text>
+        <line x1="380" y1="1330" x2="700" y2="1330" stroke="#292f71" stroke-width="1.5"/>
+        <circle cx="540" cy="1330" r="6" fill="#FF6B47"/>
+        <text x="540" y="1430" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="56" text-anchor="middle" fill="#6B6F7A">Four tables worth showing up for.</text>
+        <text x="540" y="1560" font-family="Inter, sans-serif" font-size="26" font-weight="500" text-anchor="middle" fill="#6B6F7A" letter-spacing="3">HAPS.CLUB</text>
       </svg>
+      <div class="safe-zone"></div>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════════════════════════════
-       SLIDE 2 — HOOK
-       ═══════════════════════════════════════════════════════════════════════ -->
   <div class="slide-wrapper">
     <div class="slide-label"><span><span class="num">02</span> · Hook</span><span>4 dinners. One city.</span></div>
     <div class="slide">
       <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
         <rect width="1080" height="1920" fill="#292f71"/>
-        <defs>
-          <radialGradient id="s2-glow" cx="80%" cy="85%" r="60%">
-            <stop offset="0%" stop-color="#FF6B47" stop-opacity="0.45"/>
-            <stop offset="100%" stop-color="#FF6B47" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
+        <defs><radialGradient id="s2-glow" cx="80%" cy="85%" r="60%"><stop offset="0%" stop-color="#FF6B47" stop-opacity="0.45"/><stop offset="100%" stop-color="#FF6B47" stop-opacity="0"/></radialGradient></defs>
         <rect width="1080" height="1920" fill="url(#s2-glow)"/>
-
         <text x="540" y="540" font-family="Inter, sans-serif" font-size="32" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">EAT WELL THIS WEEK</text>
-
         <text x="540" y="780" font-family="Instrument Serif, Georgia, serif" font-size="220" text-anchor="middle" fill="#FAFAF7">4 dinners.</text>
         <text x="540" y="980" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="160" text-anchor="middle" fill="#FAFAF7" opacity="0.85">One city.</text>
-
         <line x1="440" y1="1110" x2="640" y2="1110" stroke="#FF6B47" stroke-width="4"/>
-
         <text x="540" y="1240" font-family="Inter, sans-serif" font-size="42" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.92">One-night collabs and</text>
         <text x="540" y="1308" font-family="Inter, sans-serif" font-size="42" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.92">a sunset on the farm.</text>
-
-        <g transform="translate(540, 1800)">
+        <g transform="translate(540, 1560)">
           <circle cx="-30" cy="0" r="5" fill="#FF6B47"/>
           <circle cx="0" cy="0" r="5" fill="#FAFAF7" opacity="0.3"/>
           <circle cx="30" cy="0" r="5" fill="#FAFAF7" opacity="0.3"/>
         </g>
       </svg>
+      <div class="safe-zone"></div>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════════════════════════════
-       SLIDE 3 — STEEP WITH FRIENDS (featured): tea bowl + steam
-       ═══════════════════════════════════════════════════════════════════════ -->
   <div class="slide-wrapper">
     <div class="slide-label"><span><span class="num">03</span> · Pick 1</span><span>Steep with Friends</span></div>
     <div class="slide">
       <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <defs>
-          <linearGradient id="s3-bg" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#FFF1ED"/>
-            <stop offset="100%" stop-color="#FAFAF7"/>
-          </linearGradient>
-        </defs>
+        <defs><linearGradient id="s3-bg" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FFF1ED"/><stop offset="100%" stop-color="#FAFAF7"/></linearGradient></defs>
         <rect width="1080" height="1920" fill="url(#s3-bg)"/>
-
-        <!-- A round accent glow behind the bowl -->
         <circle cx="540" cy="640" r="320" fill="#FF6B47" opacity="0.08"/>
-
-        <!-- Steam curls -->
         <g stroke="#292f71" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.55">
           <path d="M 440,280 Q 420,340 460,400 Q 500,460 480,520"/>
           <path d="M 540,240 Q 520,310 560,380 Q 600,450 580,520"/>
           <path d="M 640,280 Q 620,340 660,400 Q 700,460 680,520"/>
         </g>
-
-        <!-- Tea bowl: navy ceramic with coral interior -->
         <g transform="translate(540, 760)">
-          <!-- Saucer -->
           <ellipse cx="0" cy="180" rx="320" ry="40" fill="#292f71" opacity="0.18"/>
           <ellipse cx="0" cy="170" rx="300" ry="30" fill="#1a1f4d"/>
           <ellipse cx="0" cy="165" rx="290" ry="22" fill="#292f71"/>
-          <!-- Bowl body -->
           <path d="M -240,30 Q -260,140 -180,170 L 180,170 Q 260,140 240,30 Z" fill="#292f71"/>
-          <!-- Bowl rim -->
           <ellipse cx="0" cy="30" rx="240" ry="44" fill="#1a1f4d"/>
           <ellipse cx="0" cy="28" rx="230" ry="36" fill="#FF6B47"/>
-          <!-- Tea liquid surface ellipse highlight -->
           <ellipse cx="-50" cy="20" rx="80" ry="10" fill="#FFF1ED" opacity="0.45"/>
-          <!-- Tea leaves floating: small geometric dots -->
-          <circle cx="-30" cy="30" r="4" fill="#1a1f4d" opacity="0.5"/>
-          <circle cx="40" cy="36" r="3" fill="#1a1f4d" opacity="0.5"/>
-          <circle cx="-90" cy="32" r="3" fill="#1a1f4d" opacity="0.5"/>
-          <circle cx="100" cy="28" r="3" fill="#1a1f4d" opacity="0.5"/>
         </g>
-
-        <!-- Pair of chopsticks resting at angle, navy -->
         <g transform="translate(540, 1010) rotate(-12)">
           <rect x="-180" y="-4" width="360" height="6" fill="#1a1f4d"/>
           <rect x="-180" y="10" width="360" height="6" fill="#1a1f4d"/>
           <rect x="172" y="-7" width="14" height="12" fill="#FF6B47"/>
           <rect x="172" y="7" width="14" height="12" fill="#FF6B47"/>
         </g>
-
-        <!-- Eyebrow -->
-        <text x="80" y="1180" font-family="Inter, sans-serif" font-size="28" font-weight="600" fill="#E54D2B" letter-spacing="6">EDITOR'S PICK · WED 5/13</text>
-
-        <!-- Headline -->
-        <text x="80" y="1310" font-family="Instrument Serif, Georgia, serif" font-size="100" fill="#1a1f4d">Modern Korean</text>
-        <text x="80" y="1410" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="100" fill="#FF6B47">at the tea bar</text>
-        <text x="80" y="1510" font-family="Instrument Serif, Georgia, serif" font-size="100" fill="#1a1f4d">in Chinatown.</text>
-
-        <line x1="80" y1="1620" x2="180" y2="1620" stroke="#292f71" stroke-width="3"/>
-
-        <text x="80" y="1680" font-family="Inter, sans-serif" font-size="32" font-weight="500" fill="#0F1117">Steep · 970 N Broadway</text>
-        <text x="80" y="1730" font-family="Inter, sans-serif" font-size="28" font-weight="400" fill="#6B6F7A" font-style="italic">Chef Kyungbin Min · Steep with Friends series</text>
-        <text x="80" y="1810" font-family="Inter, sans-serif" font-size="26" font-weight="500" fill="#292f71">Reserve at steepla.com</text>
+        <text x="80" y="1100" font-family="Inter, sans-serif" font-size="28" font-weight="600" fill="#E54D2B" letter-spacing="6">EDITOR'S PICK · WED 5/13</text>
+        <text x="80" y="1210" font-family="Instrument Serif, Georgia, serif" font-size="72" fill="#1a1f4d">Modern Korean</text>
+        <text x="80" y="1280" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="72" fill="#FF6B47">at the tea bar.</text>
+        <line x1="80" y1="1350" x2="180" y2="1350" stroke="#292f71" stroke-width="3"/>
+        <text x="80" y="1520" font-family="Instrument Serif, Georgia, serif" font-size="200" font-weight="500" fill="#1a1f4d">Steep</text>
+        <text x="80" y="1565" font-family="Inter, sans-serif" font-size="24" font-weight="500" fill="#6B6F7A">970 N Broadway · Chinatown · steepla.com</text>
       </svg>
+      <div class="safe-zone"></div>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════════════════════════════
-       SLIDE 4 — FIRSTBORN × LITTLE FISH: crossing arcs / collab motif
-       ═══════════════════════════════════════════════════════════════════════ -->
   <div class="slide-wrapper">
     <div class="slide-label"><span><span class="num">04</span> · Pick 2</span><span>Firstborn × Little Fish</span></div>
     <div class="slide">
       <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <defs>
-          <linearGradient id="s4-bg" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#FAFAF7"/>
-            <stop offset="100%" stop-color="#EEF0F8"/>
-          </linearGradient>
-        </defs>
+        <defs><linearGradient id="s4-bg" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FAFAF7"/><stop offset="100%" stop-color="#EEF0F8"/></linearGradient></defs>
         <rect width="1080" height="1920" fill="url(#s4-bg)"/>
-
-        <!-- Two overlapping circles representing the collab -->
         <g transform="translate(540, 620)">
-          <!-- Soft drop shadows -->
           <ellipse cx="-90" cy="320" rx="180" ry="20" fill="#292f71" opacity="0.12"/>
           <ellipse cx="90" cy="320" rx="180" ry="20" fill="#FF6B47" opacity="0.12"/>
-
-          <!-- Navy circle (Firstborn) -->
           <circle cx="-90" cy="0" r="240" fill="#292f71"/>
-          <!-- Coral circle (Little Fish) -->
           <circle cx="90" cy="0" r="240" fill="#FF6B47" opacity="0.95"/>
-          <!-- Intersection: darken with coral-deep for richness -->
           <path d="M 0,-220 A 240,240 0 0,1 0,220 A 240,240 0 0,1 0,-220 Z" fill="#E54D2B"/>
-
-          <!-- Small geometric fish silhouette in the coral side -->
-          <g transform="translate(180, 0)" fill="#FAFAF7">
-            <ellipse cx="0" cy="0" rx="70" ry="28"/>
-            <path d="M 60,0 L 100,-26 L 100,26 Z"/>
-            <circle cx="-40" cy="-6" r="5" fill="#E54D2B"/>
-          </g>
-
-          <!-- Small bowl / dish silhouette in the navy side -->
-          <g transform="translate(-180, 0)" fill="#FAFAF7">
-            <path d="M -70,-10 Q -75,30 -50,40 L 50,40 Q 75,30 70,-10 Z"/>
-            <ellipse cx="0" cy="-10" rx="70" ry="10" fill="#1a1f4d"/>
-            <circle cx="-20" cy="-5" r="3" fill="#FAFAF7"/>
-            <circle cx="15" cy="-5" r="3" fill="#FAFAF7"/>
-          </g>
-
-          <!-- Plus sign in the center overlap -->
-          <g transform="translate(0, 0)" fill="#FAFAF7">
-            <rect x="-6" y="-50" width="12" height="100"/>
-            <rect x="-50" y="-6" width="100" height="12"/>
-          </g>
+          <g transform="translate(180, 0)" fill="#FAFAF7"><ellipse cx="0" cy="0" rx="70" ry="28"/><path d="M 60,0 L 100,-26 L 100,26 Z"/><circle cx="-40" cy="-6" r="5" fill="#E54D2B"/></g>
+          <g transform="translate(-180, 0)" fill="#FAFAF7"><path d="M -70,-10 Q -75,30 -50,40 L 50,40 Q 75,30 70,-10 Z"/><ellipse cx="0" cy="-10" rx="70" ry="10" fill="#1a1f4d"/></g>
+          <g fill="#FAFAF7"><rect x="-6" y="-50" width="12" height="100"/><rect x="-50" y="-6" width="100" height="12"/></g>
         </g>
-
-        <!-- Eyebrow -->
-        <text x="540" y="1120" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">THURSDAY · MAY 14 · PRIX FIXE</text>
-
-        <!-- Headline -->
-        <text x="540" y="1280" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#1a1f4d">Firstborn x Little Fish:</text>
-        <text x="540" y="1380" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="92" text-anchor="middle" fill="#FF6B47">a one-night menu.</text>
-
-        <text x="540" y="1490" font-family="Instrument Serif, Georgia, serif" font-size="64" text-anchor="middle" fill="#1a1f4d">Anthony Wang hosts the</text>
-        <text x="540" y="1570" font-family="Instrument Serif, Georgia, serif" font-size="64" text-anchor="middle" fill="#1a1f4d">Little Fish team in Chinatown.</text>
-
-        <line x1="440" y1="1660" x2="640" y2="1660" stroke="#292f71" stroke-width="1.5"/>
-
-        <text x="540" y="1740" font-family="Inter, sans-serif" font-size="34" font-weight="500" text-anchor="middle" fill="#0F1117">Firstborn · Mandarin Plaza</text>
-        <text x="540" y="1800" font-family="Inter, sans-serif" font-size="28" font-style="italic" text-anchor="middle" fill="#6B6F7A">Multi-course · book on OpenTable</text>
+        <text x="540" y="1070" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">THURSDAY · MAY 14 · PRIX FIXE</text>
+        <text x="540" y="1180" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="56" text-anchor="middle" fill="#FF6B47">A one-night menu.</text>
+        <line x1="440" y1="1240" x2="640" y2="1240" stroke="#292f71" stroke-width="1.5"/>
+        <text x="540" y="1400" font-family="Instrument Serif, Georgia, serif" font-size="180" font-weight="500" text-anchor="middle" fill="#1a1f4d">Firstborn</text>
+        <text x="540" y="1500" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="100" text-anchor="middle" fill="#FF6B47">× Little Fish</text>
+        <text x="540" y="1570" font-family="Inter, sans-serif" font-size="24" font-weight="500" text-anchor="middle" fill="#6B6F7A">Mandarin Plaza, Chinatown · OpenTable</text>
       </svg>
+      <div class="safe-zone"></div>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════════════════════════════
-       SLIDE 5 — OTOTO SAKE FEST: sake bottle + cup tableau
-       ═══════════════════════════════════════════════════════════════════════ -->
   <div class="slide-wrapper">
     <div class="slide-label"><span><span class="num">05</span> · Pick 3</span><span>OTOTO Sake Fest</span></div>
     <div class="slide">
       <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <defs>
-          <linearGradient id="s5-bg" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#EEF0F8"/>
-            <stop offset="100%" stop-color="#FAFAF7"/>
-          </linearGradient>
-        </defs>
+        <defs><linearGradient id="s5-bg" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#EEF0F8"/><stop offset="100%" stop-color="#FAFAF7"/></linearGradient></defs>
         <rect width="1080" height="1920" fill="url(#s5-bg)"/>
-
-        <!-- Counter/bar line -->
         <rect x="0" y="940" width="1080" height="14" fill="#292f71"/>
         <rect x="0" y="954" width="1080" height="8" fill="#1a1f4d"/>
-        <!-- Counter shadow strip -->
-        <rect x="0" y="962" width="1080" height="60" fill="#292f71" opacity="0.08"/>
-
-        <!-- Sake bottle (tokkuri) — center left -->
         <g transform="translate(420, 600)">
-          <!-- Soft shadow under -->
           <ellipse cx="0" cy="345" rx="120" ry="14" fill="#292f71" opacity="0.18"/>
-          <!-- Bottle body -->
           <path d="M -90,0 Q -110,80 -100,180 Q -100,300 0,340 Q 100,300 100,180 Q 110,80 90,0 Z" fill="#292f71"/>
-          <!-- Bottle neck -->
           <rect x="-32" y="-110" width="64" height="120" fill="#292f71"/>
-          <!-- Neck rim -->
           <ellipse cx="0" cy="-110" rx="32" ry="9" fill="#1a1f4d"/>
-          <ellipse cx="0" cy="-112" rx="26" ry="6" fill="#0F1117"/>
-          <!-- Label on bottle, coral -->
           <rect x="-70" y="120" width="140" height="100" fill="#FF6B47"/>
-          <!-- Label content: minimal kanji-like marks (abstract) -->
-          <line x1="-50" y1="155" x2="50" y2="155" stroke="#FAFAF7" stroke-width="3"/>
-          <line x1="-40" y1="175" x2="40" y2="175" stroke="#FAFAF7" stroke-width="2"/>
-          <line x1="-30" y1="195" x2="30" y2="195" stroke="#FAFAF7" stroke-width="2"/>
         </g>
-
-        <!-- Sake cup 1 (ochoko) — right of bottle -->
         <g transform="translate(680, 870)">
           <ellipse cx="0" cy="50" rx="55" ry="8" fill="#292f71" opacity="0.18"/>
-          <!-- Cup body -->
           <path d="M -54,-30 Q -58,30 -40,46 L 40,46 Q 58,30 54,-30 Z" fill="#FAFAF7" stroke="#292f71" stroke-width="3"/>
-          <!-- Cup rim ellipse -->
           <ellipse cx="0" cy="-30" rx="54" ry="12" fill="#FAFAF7" stroke="#292f71" stroke-width="3"/>
-          <!-- Liquid line -->
           <ellipse cx="0" cy="-22" rx="46" ry="8" fill="#FF6B47" opacity="0.55"/>
         </g>
-
-        <!-- Sake cup 2 (ochoko) — further right, smaller -->
         <g transform="translate(820, 895)">
           <ellipse cx="0" cy="38" rx="42" ry="6" fill="#292f71" opacity="0.18"/>
           <path d="M -40,-20 Q -44,22 -28,36 L 28,36 Q 44,22 40,-20 Z" fill="#FAFAF7" stroke="#292f71" stroke-width="3"/>
           <ellipse cx="0" cy="-20" rx="40" ry="10" fill="#FAFAF7" stroke="#292f71" stroke-width="3"/>
-          <ellipse cx="0" cy="-15" rx="34" ry="6" fill="#FF6B47" opacity="0.55"/>
         </g>
-
-        <!-- Small ceramic dish (snack pairing nod) — left of bottle -->
-        <g transform="translate(220, 880)">
-          <ellipse cx="0" cy="22" rx="90" ry="12" fill="#292f71" opacity="0.18"/>
-          <ellipse cx="0" cy="14" rx="88" ry="20" fill="#1a1f4d"/>
-          <ellipse cx="0" cy="10" rx="82" ry="14" fill="#292f71"/>
-          <!-- Tiny items on the dish -->
-          <circle cx="-30" cy="6" r="6" fill="#FF6B47"/>
-          <circle cx="0" cy="10" r="6" fill="#FF6B47"/>
-          <circle cx="28" cy="6" r="6" fill="#FF6B47"/>
-        </g>
-
-        <!-- Eyebrow -->
         <text x="540" y="200" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">THIS WEEK · NO RES REQUIRED</text>
-
-        <!-- Headline -->
-        <text x="540" y="1280" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#1a1f4d">Seven days</text>
-        <text x="540" y="1370" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#1a1f4d">of sake at</text>
-        <text x="540" y="1460" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="92" text-anchor="middle" fill="#FF6B47">a James Beard bar.</text>
-
-        <line x1="440" y1="1540" x2="640" y2="1540" stroke="#292f71" stroke-width="1.5"/>
-
-        <text x="540" y="1620" font-family="Inter, sans-serif" font-size="34" font-weight="500" text-anchor="middle" fill="#0F1117">OTOTO · Echo Park</text>
-        <text x="540" y="1680" font-family="Inter, sans-serif" font-size="28" font-style="italic" text-anchor="middle" fill="#6B6F7A">Tastings &amp; workshops · food pairing Thurs 5/14</text>
-        <text x="540" y="1750" font-family="Inter, sans-serif" font-size="26" font-weight="500" text-anchor="middle" fill="#292f71">1360 Allison Ave</text>
+        <text x="540" y="1150" font-family="Instrument Serif, Georgia, serif" font-size="60" text-anchor="middle" fill="#1a1f4d">Seven days of sake at</text>
+        <text x="540" y="1215" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="60" text-anchor="middle" fill="#FF6B47">a James Beard sake bar.</text>
+        <line x1="440" y1="1285" x2="640" y2="1285" stroke="#292f71" stroke-width="1.5"/>
+        <text x="540" y="1480" font-family="Instrument Serif, Georgia, serif" font-size="200" font-weight="500" text-anchor="middle" fill="#1a1f4d">OTOTO</text>
+        <text x="540" y="1530" font-family="Inter, sans-serif" font-size="24" font-weight="500" text-anchor="middle" fill="#6B6F7A">1360 Allison Ave · Echo Park</text>
+        <text x="540" y="1565" font-family="Inter, sans-serif" font-size="20" font-style="italic" text-anchor="middle" fill="#292f71">Pairing dinner Thu 5/14 · walk-in</text>
       </svg>
+      <div class="safe-zone"></div>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════════════════════════════
-       SLIDE 6 — GORP GIRLS FARM DINNER: sunset farm + long table
-       ═══════════════════════════════════════════════════════════════════════ -->
   <div class="slide-wrapper">
     <div class="slide-label"><span><span class="num">06</span> · Pick 4</span><span>Gorp Girls Farm Dinner</span></div>
     <div class="slide">
       <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <defs>
-          <linearGradient id="s6-sky" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#FFF1ED"/>
-            <stop offset="50%" stop-color="#FFD8C5"/>
-            <stop offset="100%" stop-color="#FF6B47" stop-opacity="0.65"/>
-          </linearGradient>
-        </defs>
+        <defs><linearGradient id="s6-sky" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FFF1ED"/><stop offset="50%" stop-color="#FFD8C5"/><stop offset="100%" stop-color="#FF6B47" stop-opacity="0.65"/></linearGradient></defs>
         <rect width="1080" height="1920" fill="url(#s6-sky)"/>
-
-        <!-- Sun low on horizon -->
         <circle cx="540" cy="640" r="120" fill="#FF6B47" opacity="0.75"/>
         <circle cx="540" cy="640" r="80" fill="#FF6B47"/>
-
-        <!-- Distant hills, layered -->
         <path d="M 0,780 Q 240,720 480,760 Q 720,800 960,740 Q 1080,720 1080,780 L 1080,860 L 0,860 Z" fill="#292f71" opacity="0.35"/>
         <path d="M 0,830 Q 200,790 420,820 Q 660,860 880,810 Q 1000,790 1080,820 L 1080,900 L 0,900 Z" fill="#292f71" opacity="0.55"/>
-
-        <!-- Farm field stripes (perspective rows) -->
-        <g fill="#292f71" opacity="0.3">
-          <path d="M 0,900 L 1080,900 L 1080,930 L 0,930 Z"/>
-          <path d="M -40,960 L 1120,960 L 1120,990 L -40,990 Z" opacity="0.85"/>
-          <path d="M -80,1020 L 1160,1020 L 1160,1055 L -80,1055 Z"/>
-        </g>
-
-        <!-- Long communal table, perspective: -->
         <g transform="translate(540, 1180)">
-          <!-- table shadow -->
           <ellipse cx="0" cy="80" rx="500" ry="22" fill="#1a1f4d" opacity="0.22"/>
-          <!-- Table top -->
           <path d="M -460,-30 L 460,-30 L 520,40 L -520,40 Z" fill="#292f71"/>
           <path d="M -460,-30 L 460,-30 L 470,-20 L -470,-20 Z" fill="#1a1f4d"/>
-          <!-- Table legs -->
           <rect x="-480" y="40" width="16" height="60" fill="#1a1f4d"/>
           <rect x="464" y="40" width="16" height="60" fill="#1a1f4d"/>
-          <rect x="-20" y="40" width="16" height="60" fill="#1a1f4d"/>
-
-          <!-- Place settings: 5 plates with coral napkins -->
           <g>
-            <!-- Plate 1 -->
             <ellipse cx="-360" cy="0" rx="60" ry="14" fill="#FAFAF7"/>
-            <ellipse cx="-360" cy="-2" rx="50" ry="10" fill="#FFF1ED"/>
-            <rect x="-330" y="-12" width="38" height="6" fill="#FF6B47" transform="rotate(20 -310 -10)"/>
-            <!-- Plate 2 -->
             <ellipse cx="-180" cy="0" rx="60" ry="14" fill="#FAFAF7"/>
-            <ellipse cx="-180" cy="-2" rx="50" ry="10" fill="#FFF1ED"/>
-            <rect x="-150" y="-12" width="38" height="6" fill="#FF6B47" transform="rotate(20 -130 -10)"/>
-            <!-- Plate 3 (center) -->
             <ellipse cx="0" cy="0" rx="70" ry="16" fill="#FAFAF7"/>
-            <ellipse cx="0" cy="-2" rx="58" ry="12" fill="#FFF1ED"/>
-            <rect x="30" y="-12" width="42" height="6" fill="#FF6B47" transform="rotate(20 50 -10)"/>
-            <!-- Plate 4 -->
             <ellipse cx="180" cy="0" rx="60" ry="14" fill="#FAFAF7"/>
-            <ellipse cx="180" cy="-2" rx="50" ry="10" fill="#FFF1ED"/>
-            <rect x="210" y="-12" width="38" height="6" fill="#FF6B47" transform="rotate(20 230 -10)"/>
-            <!-- Plate 5 -->
             <ellipse cx="360" cy="0" rx="60" ry="14" fill="#FAFAF7"/>
-            <ellipse cx="360" cy="-2" rx="50" ry="10" fill="#FFF1ED"/>
-            <rect x="390" y="-12" width="38" height="6" fill="#FF6B47" transform="rotate(20 410 -10)"/>
-          </g>
-
-          <!-- Small wine glasses, navy with hint of liquid -->
-          <g fill="#1a1f4d">
-            <path d="M -260,-22 L -250,-22 L -252,-46 Q -255,-52 -255,-46 Z"/>
-            <path d="M -260,-22 Q -270,-22 -266,-12 L -244,-12 Q -240,-22 -250,-22 Z"/>
-            <line x1="-255" y1="-12" x2="-255" y2="6" stroke="#1a1f4d" stroke-width="2"/>
-            <ellipse cx="-255" cy="6" rx="8" ry="2" fill="#1a1f4d"/>
-
-            <path d="M 240,-22 L 250,-22 L 248,-46 Q 245,-52 245,-46 Z"/>
-            <path d="M 240,-22 Q 230,-22 234,-12 L 256,-12 Q 260,-22 250,-22 Z"/>
-            <line x1="245" y1="-12" x2="245" y2="6" stroke="#1a1f4d" stroke-width="2"/>
-            <ellipse cx="245" cy="6" rx="8" ry="2" fill="#1a1f4d"/>
           </g>
         </g>
-
-        <!-- Eyebrow -->
         <text x="540" y="200" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#E54D2B" letter-spacing="6">SATURDAY · MAY 16 · 4 PM</text>
-
-        <!-- Headline -->
-        <text x="540" y="1450" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#1a1f4d">Five courses</text>
-        <text x="540" y="1540" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="92" text-anchor="middle" fill="#E54D2B">on a working farm.</text>
-
-        <line x1="440" y1="1620" x2="640" y2="1620" stroke="#292f71" stroke-width="1.5"/>
-
-        <text x="540" y="1700" font-family="Inter, sans-serif" font-size="34" font-weight="500" text-anchor="middle" fill="#0F1117">Gorp Girls · Fillmore</text>
-        <text x="540" y="1760" font-family="Inter, sans-serif" font-size="28" font-style="italic" text-anchor="middle" fill="#6B6F7A">Communal tables · solo diners welcome</text>
-        <text x="540" y="1830" font-family="Inter, sans-serif" font-size="26" font-weight="500" text-anchor="middle" fill="#292f71">Tickets on Eventbrite</text>
+        <text x="540" y="1330" font-family="Instrument Serif, Georgia, serif" font-size="60" text-anchor="middle" fill="#1a1f4d">Five courses on a</text>
+        <text x="540" y="1395" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="60" text-anchor="middle" fill="#E54D2B">working farm in Fillmore.</text>
+        <line x1="440" y1="1455" x2="640" y2="1455" stroke="#292f71" stroke-width="1.5"/>
+        <text x="540" y="1530" font-family="Instrument Serif, Georgia, serif" font-size="140" font-weight="500" text-anchor="middle" fill="#1a1f4d">Gorp Girls</text>
       </svg>
+      <div class="safe-zone"></div>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════════════════════════════
-       SLIDE 7 — CTA
-       ═══════════════════════════════════════════════════════════════════════ -->
   <div class="slide-wrapper">
     <div class="slide-label"><span><span class="num">07</span> · CTA</span><span>haps.club</span></div>
     <div class="slide">
       <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
         <rect width="1080" height="1920" fill="#FF6B47"/>
-        <defs>
-          <linearGradient id="s7-shade" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.10"/>
-            <stop offset="100%" stop-color="#1a1f4d" stop-opacity="0.20"/>
-          </linearGradient>
-        </defs>
-        <rect width="1080" height="1920" fill="url(#s7-shade)"/>
-
         <text x="540" y="540" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#FAFAF7" letter-spacing="6">DOZENS MORE THIS WEEK</text>
-
         <g transform="translate(540, 800)">
           <text x="0" y="0" font-family="Instrument Serif, Georgia, serif" font-size="140" text-anchor="middle" fill="#FAFAF7">The full list</text>
           <text x="0" y="130" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="140" text-anchor="middle" fill="#1a1f4d">is online.</text>
         </g>
-
         <g transform="translate(540, 1180)">
           <rect x="-340" y="-80" width="680" height="160" rx="80" fill="#1a1f4d"/>
           <text x="0" y="30" font-family="Inter, sans-serif" font-size="72" font-weight="700" text-anchor="middle" fill="#FAFAF7" letter-spacing="2">haps.club</text>
         </g>
-
-        <text x="540" y="1450" font-family="Inter, sans-serif" font-size="36" font-weight="500" text-anchor="middle" fill="#FAFAF7">Restaurants. Music. Free things.</text>
-        <text x="540" y="1510" font-family="Inter, sans-serif" font-size="36" font-weight="500" text-anchor="middle" fill="#FAFAF7">Updated every Tuesday.</text>
-
-        <g transform="translate(540, 1680)">
+        <text x="540" y="1350" font-family="Inter, sans-serif" font-size="36" font-weight="500" text-anchor="middle" fill="#FAFAF7">Restaurants. Music. Free things.</text>
+        <text x="540" y="1410" font-family="Inter, sans-serif" font-size="36" font-weight="500" text-anchor="middle" fill="#FAFAF7">Updated every Tuesday.</text>
+        <g transform="translate(540, 1560)">
           <circle cx="-60" cy="0" r="8" fill="#1a1f4d"/>
           <circle cx="-20" cy="0" r="8" fill="#FAFAF7"/>
           <circle cx="20" cy="0" r="8" fill="#FAFAF7"/>
           <circle cx="60" cy="0" r="8" fill="#1a1f4d"/>
         </g>
       </svg>
+      <div class="safe-zone"></div>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════════════════════════════
-       SLIDE 8 — CLOSE: Real white logo on navy
-       ═══════════════════════════════════════════════════════════════════════ -->
   <div class="slide-wrapper">
     <div class="slide-label"><span><span class="num">08</span> · Close</span><span>Logo + tagline</span></div>
     <div class="slide">
       <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
         <rect width="1080" height="1920" fill="#1a1f4d"/>
-        <defs>
-          <radialGradient id="s8-glow" cx="50%" cy="40%" r="60%">
-            <stop offset="0%" stop-color="#292f71" stop-opacity="1"/>
-            <stop offset="100%" stop-color="#1a1f4d" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-        <rect width="1080" height="1920" fill="url(#s8-glow)"/>
-
-        <!-- REAL Haps Club logo, white variant on navy, centered upper half -->
         <use href="#hc-logo-white" x="190" y="380" width="700" height="700"/>
-
-        <!-- Hairline accent + tagline -->
-        <line x1="380" y1="1240" x2="700" y2="1240" stroke="#FF6B47" stroke-width="2"/>
-        <circle cx="540" cy="1240" r="6" fill="#FF6B47"/>
-
-        <text x="540" y="1360" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="58" text-anchor="middle" fill="#FAFAF7" opacity="0.92">A daily glance at what's</text>
-        <text x="540" y="1430" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="58" text-anchor="middle" fill="#FAFAF7" opacity="0.92">worth doing in Los Angeles.</text>
-
-        <g transform="translate(540, 1640)">
+        <line x1="380" y1="1140" x2="700" y2="1140" stroke="#FF6B47" stroke-width="2"/>
+        <circle cx="540" cy="1140" r="6" fill="#FF6B47"/>
+        <text x="540" y="1260" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="58" text-anchor="middle" fill="#FAFAF7" opacity="0.92">A daily glance at what's</text>
+        <text x="540" y="1330" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="58" text-anchor="middle" fill="#FAFAF7" opacity="0.92">worth doing in Los Angeles.</text>
+        <g transform="translate(540, 1480)">
           <text x="0" y="0" font-family="Inter, sans-serif" font-size="32" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="5">FOLLOW · SUBSCRIBE · GO OUTSIDE</text>
         </g>
-
-        <text x="540" y="1810" font-family="Inter, sans-serif" font-size="28" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.75" letter-spacing="3">@THEHAPSCLUB · HAPS.CLUB</text>
+        <text x="540" y="1560" font-family="Inter, sans-serif" font-size="28" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.75" letter-spacing="3">@THEHAPSCLUB · HAPS.CLUB</text>
       </svg>
+      <div class="safe-zone"></div>
     </div>
   </div>
 
