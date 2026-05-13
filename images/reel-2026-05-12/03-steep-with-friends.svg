@@ -32,13 +32,14 @@
     <rect x="172" y="7" width="14" height="12" fill="#FF6B47"/>
   </g>
 
-  <text x="80" y="1140" font-family="Inter, sans-serif" font-size="32" font-weight="600" fill="#E54D2B" letter-spacing="5">EDITOR'S PICK · WED 5/13</text>
+  <text x="80" y="1120" font-family="Inter, sans-serif" font-size="32" font-weight="600" fill="#E54D2B" letter-spacing="5">EDITOR'S PICK · WED 5/13</text>
 
-  <text x="80" y="1240" font-family="Instrument Serif, Georgia, serif" font-size="68" fill="#1a1f4d">Modern Korean at</text>
-  <text x="80" y="1310" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="68" fill="#FF6B47">the tea bar.</text>
+  <text x="80" y="1215" font-family="Instrument Serif, Georgia, serif" font-size="64" fill="#1a1f4d">Modern Korean at</text>
+  <text x="80" y="1280" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="64" fill="#FF6B47">the tea bar.</text>
 
-  <line x1="80" y1="1380" x2="180" y2="1380" stroke="#292f71" stroke-width="3"/>
+  <line x1="80" y1="1340" x2="180" y2="1340" stroke="#292f71" stroke-width="3"/>
 
-  <text x="80" y="1510" font-family="Instrument Serif, Georgia, serif" font-size="160" font-weight="500" fill="#1a1f4d">Steep</text>
-  <text x="80" y="1570" font-family="Inter, sans-serif" font-size="40" font-weight="500" fill="#6B6F7A">970 N Broadway, Chinatown</text>
+  <text x="80" y="1395" font-family="Inter, sans-serif" font-size="40" font-weight="500" fill="#6B6F7A">970 N Broadway, Chinatown</text>
+
+  <text x="80" y="1555" font-family="Instrument Serif, Georgia, serif" font-size="160" font-weight="500" fill="#1a1f4d">Steep</text>
 </svg>
