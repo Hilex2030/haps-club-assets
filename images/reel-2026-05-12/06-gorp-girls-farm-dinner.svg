@@ -65,12 +65,12 @@
 
   <text x="540" y="200" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#E54D2B" letter-spacing="6">SATURDAY · MAY 16 · 4 PM</text>
 
-  <text x="540" y="1450" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#1a1f4d">Five courses</text>
-  <text x="540" y="1540" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="92" text-anchor="middle" fill="#E54D2B">on a working farm.</text>
+  <text x="540" y="1350" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#1a1f4d">Five courses</text>
+  <text x="540" y="1440" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="92" text-anchor="middle" fill="#E54D2B">on a working farm.</text>
 
-  <line x1="440" y1="1620" x2="640" y2="1620" stroke="#292f71" stroke-width="1.5"/>
+  <line x1="440" y1="1520" x2="640" y2="1520" stroke="#292f71" stroke-width="1.5"/>
 
-  <text x="540" y="1700" font-family="Inter, sans-serif" font-size="34" font-weight="500" text-anchor="middle" fill="#0F1117">Gorp Girls · Fillmore</text>
-  <text x="540" y="1745" font-family="Inter, sans-serif" font-size="28" font-style="italic" text-anchor="middle" fill="#6B6F7A">Communal tables · solo diners welcome</text>
-  <text x="540" y="1790" font-family="Inter, sans-serif" font-size="26" font-weight="500" text-anchor="middle" fill="#292f71">Tickets on Eventbrite</text>
+  <text x="540" y="1600" font-family="Inter, sans-serif" font-size="34" font-weight="500" text-anchor="middle" fill="#0F1117">Gorp Girls · Fillmore</text>
+  <text x="540" y="1645" font-family="Inter, sans-serif" font-size="28" font-style="italic" text-anchor="middle" fill="#6B6F7A">Communal tables · solo diners welcome</text>
+  <text x="540" y="1690" font-family="Inter, sans-serif" font-size="26" font-weight="500" text-anchor="middle" fill="#292f71">Tickets on Eventbrite</text>
 </svg>

@@ -36,15 +36,15 @@
     <rect x="172" y="7" width="14" height="12" fill="#FF6B47"/>
   </g>
 
-  <text x="80" y="1180" font-family="Inter, sans-serif" font-size="28" font-weight="600" fill="#E54D2B" letter-spacing="6">EDITOR'S PICK · WED 5/13</text>
+  <text x="80" y="1080" font-family="Inter, sans-serif" font-size="28" font-weight="600" fill="#E54D2B" letter-spacing="6">EDITOR'S PICK · WED 5/13</text>
 
-  <text x="80" y="1310" font-family="Instrument Serif, Georgia, serif" font-size="100" fill="#1a1f4d">Modern Korean</text>
-  <text x="80" y="1410" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="100" fill="#FF6B47">at the tea bar</text>
-  <text x="80" y="1510" font-family="Instrument Serif, Georgia, serif" font-size="100" fill="#1a1f4d">in Chinatown.</text>
+  <text x="80" y="1210" font-family="Instrument Serif, Georgia, serif" font-size="100" fill="#1a1f4d">Modern Korean</text>
+  <text x="80" y="1310" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="100" fill="#FF6B47">at the tea bar</text>
+  <text x="80" y="1410" font-family="Instrument Serif, Georgia, serif" font-size="100" fill="#1a1f4d">in Chinatown.</text>
 
-  <line x1="80" y1="1620" x2="180" y2="1620" stroke="#292f71" stroke-width="3"/>
+  <line x1="80" y1="1520" x2="180" y2="1520" stroke="#292f71" stroke-width="3"/>
 
-  <text x="80" y="1680" font-family="Inter, sans-serif" font-size="32" font-weight="500" fill="#0F1117">Steep · 970 N Broadway</text>
-  <text x="80" y="1730" font-family="Inter, sans-serif" font-size="28" font-weight="400" fill="#6B6F7A" font-style="italic">Chef Kyungbin Min · Steep with Friends series</text>
-  <text x="80" y="1780" font-family="Inter, sans-serif" font-size="26" font-weight="500" fill="#292f71">Reserve at steepla.com</text>
+  <text x="80" y="1580" font-family="Inter, sans-serif" font-size="32" font-weight="500" fill="#0F1117">Steep · 970 N Broadway</text>
+  <text x="80" y="1630" font-family="Inter, sans-serif" font-size="28" font-weight="400" fill="#6B6F7A" font-style="italic">Chef Kyungbin Min · Steep with Friends series</text>
+  <text x="80" y="1680" font-family="Inter, sans-serif" font-size="26" font-weight="500" fill="#292f71">Reserve at steepla.com</text>
 </svg>

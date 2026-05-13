@@ -34,16 +34,16 @@
     </g>
   </g>
 
-  <text x="540" y="1120" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">THURSDAY · MAY 14 · PRIX FIXE</text>
+  <text x="540" y="1020" font-family="Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">THURSDAY · MAY 14 · PRIX FIXE</text>
 
-  <text x="540" y="1280" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#1a1f4d">Firstborn x Little Fish:</text>
-  <text x="540" y="1380" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="92" text-anchor="middle" fill="#FF6B47">a one-night menu.</text>
+  <text x="540" y="1180" font-family="Instrument Serif, Georgia, serif" font-size="92" text-anchor="middle" fill="#1a1f4d">Firstborn x Little Fish:</text>
+  <text x="540" y="1280" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="92" text-anchor="middle" fill="#FF6B47">a one-night menu.</text>
 
-  <text x="540" y="1490" font-family="Instrument Serif, Georgia, serif" font-size="64" text-anchor="middle" fill="#1a1f4d">Anthony Wang hosts the</text>
-  <text x="540" y="1570" font-family="Instrument Serif, Georgia, serif" font-size="64" text-anchor="middle" fill="#1a1f4d">Little Fish team in Chinatown.</text>
+  <text x="540" y="1390" font-family="Instrument Serif, Georgia, serif" font-size="64" text-anchor="middle" fill="#1a1f4d">Anthony Wang hosts the</text>
+  <text x="540" y="1470" font-family="Instrument Serif, Georgia, serif" font-size="64" text-anchor="middle" fill="#1a1f4d">Little Fish team in Chinatown.</text>
 
-  <line x1="440" y1="1660" x2="640" y2="1660" stroke="#292f71" stroke-width="1.5"/>
+  <line x1="440" y1="1560" x2="640" y2="1560" stroke="#292f71" stroke-width="1.5"/>
 
-  <text x="540" y="1740" font-family="Inter, sans-serif" font-size="34" font-weight="500" text-anchor="middle" fill="#0F1117">Firstborn · Mandarin Plaza</text>
-  <text x="540" y="1780" font-family="Inter, sans-serif" font-size="28" font-style="italic" text-anchor="middle" fill="#6B6F7A">Multi-course · book on OpenTable</text>
+  <text x="540" y="1640" font-family="Inter, sans-serif" font-size="34" font-weight="500" text-anchor="middle" fill="#0F1117">Firstborn · Mandarin Plaza</text>
+  <text x="540" y="1680" font-family="Inter, sans-serif" font-size="28" font-style="italic" text-anchor="middle" fill="#6B6F7A">Multi-course · book on OpenTable</text>
 </svg>
