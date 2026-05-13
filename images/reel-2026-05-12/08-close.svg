@@ -32,9 +32,9 @@
   <text x="540" y="1260" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="58" text-anchor="middle" fill="#FAFAF7" opacity="0.92">A daily glance at what's</text>
   <text x="540" y="1330" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="58" text-anchor="middle" fill="#FAFAF7" opacity="0.92">worth doing in Los Angeles.</text>
 
-  <g transform="translate(540, 1540)">
+  <g transform="translate(540, 1480)">
     <text x="0" y="0" font-family="Inter, sans-serif" font-size="32" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="5">FOLLOW · SUBSCRIBE · GO OUTSIDE</text>
   </g>
 
-  <text x="540" y="1680" font-family="Inter, sans-serif" font-size="28" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.75" letter-spacing="3">@THEHAPSCLUB · HAPS.CLUB</text>
+  <text x="540" y="1560" font-family="Inter, sans-serif" font-size="28" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.75" letter-spacing="3">@THEHAPSCLUB · HAPS.CLUB</text>
 </svg>
