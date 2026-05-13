@@ -26,15 +26,15 @@
 
   <use href="#hc-logo-white" x="190" y="380" width="700" height="700"/>
 
-  <line x1="380" y1="1240" x2="700" y2="1240" stroke="#FF6B47" stroke-width="2"/>
-  <circle cx="540" cy="1240" r="6" fill="#FF6B47"/>
+  <line x1="380" y1="1140" x2="700" y2="1140" stroke="#FF6B47" stroke-width="2"/>
+  <circle cx="540" cy="1140" r="6" fill="#FF6B47"/>
 
-  <text x="540" y="1360" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="58" text-anchor="middle" fill="#FAFAF7" opacity="0.92">A daily glance at what's</text>
-  <text x="540" y="1430" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="58" text-anchor="middle" fill="#FAFAF7" opacity="0.92">worth doing in Los Angeles.</text>
+  <text x="540" y="1260" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="58" text-anchor="middle" fill="#FAFAF7" opacity="0.92">A daily glance at what's</text>
+  <text x="540" y="1330" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="58" text-anchor="middle" fill="#FAFAF7" opacity="0.92">worth doing in Los Angeles.</text>
 
-  <g transform="translate(540, 1640)">
+  <g transform="translate(540, 1540)">
     <text x="0" y="0" font-family="Inter, sans-serif" font-size="32" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="5">FOLLOW · SUBSCRIBE · GO OUTSIDE</text>
   </g>
 
-  <text x="540" y="1780" font-family="Inter, sans-serif" font-size="28" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.75" letter-spacing="3">@THEHAPSCLUB · HAPS.CLUB</text>
+  <text x="540" y="1680" font-family="Inter, sans-serif" font-size="28" font-weight="500" text-anchor="middle" fill="#FAFAF7" opacity="0.75" letter-spacing="3">@THEHAPSCLUB · HAPS.CLUB</text>
 </svg>

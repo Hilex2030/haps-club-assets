@@ -3,7 +3,7 @@
     <radialGradient id="s1-bg" cx="20%" cy="0%" r="80%">
       <stop offset="0%" stop-color="#292f71" stop-opacity="0.10"/>
       <stop offset="55%" stop-color="#292f71" stop-opacity="0"/>
-    </radialGradient>
+    </linearGradient>
     <linearGradient id="s1-coral" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#FF6B47" stop-opacity="0.04"/>
       <stop offset="100%" stop-color="#FF6B47" stop-opacity="0"/>
@@ -31,14 +31,14 @@
 
   <use href="#hc-logo-navy" x="190" y="440" width="700" height="700"/>
 
-  <g transform="translate(540, 1330)">
+  <g transform="translate(540, 1230)">
     <text x="0" y="0" font-family="Inter, sans-serif" font-size="34" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">HAPPENING IN MAY</text>
   </g>
 
-  <line x1="380" y1="1430" x2="700" y2="1430" stroke="#292f71" stroke-width="1.5"/>
-  <circle cx="540" cy="1430" r="6" fill="#FF6B47"/>
+  <line x1="380" y1="1330" x2="700" y2="1330" stroke="#292f71" stroke-width="1.5"/>
+  <circle cx="540" cy="1330" r="6" fill="#FF6B47"/>
 
-  <text x="540" y="1530" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="56" text-anchor="middle" fill="#6B6F7A">Four tables worth showing up for.</text>
+  <text x="540" y="1430" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="56" text-anchor="middle" fill="#6B6F7A">Four tables worth showing up for.</text>
 
-  <text x="540" y="1780" font-family="Inter, sans-serif" font-size="26" font-weight="500" text-anchor="middle" fill="#6B6F7A" letter-spacing="3">HAPS.CLUB</text>
+  <text x="540" y="1580" font-family="Inter, sans-serif" font-size="26" font-weight="500" text-anchor="middle" fill="#6B6F7A" letter-spacing="3">HAPS.CLUB</text>
 </svg>
