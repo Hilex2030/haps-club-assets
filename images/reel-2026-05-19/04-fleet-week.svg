@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+<defs>
+<style>
+.s { font-family: 'Inter', -apple-system, system-ui, sans-serif; }
+.h { font-family: 'Instrument Serif', Georgia, serif; }
+</style>
+<linearGradient id="s4sky" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FFF1ED"/><stop offset="100%" stop-color="#FAFAF7"/></linearGradient><linearGradient id="s4water" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#292f71" stop-opacity="0.4"/><stop offset="100%" stop-color="#1a1f4d" stop-opacity="0.6"/></linearGradient>
+</defs>
+
+<rect width="1080" height="1350" fill="url(#s4sky)"/>
+<rect x="0" y="780" width="1080" height="200" fill="#292f71" opacity="0.85"/>
+<rect x="0" y="780" width="1080" height="200" fill="url(#s4water)"/>
+<g fill="#1a1f4d">
+  <path d="M 60 780 L 920 780 L 880 830 L 100 830 Z"/>
+  <rect x="160" y="700" width="640" height="80"/>
+  <rect x="380" y="580" width="180" height="120"/>
+  <rect x="420" y="540" width="100" height="40"/>
+  <rect x="465" y="420" width="10" height="120"/>
+  <line x1="425" y1="450" x2="515" y2="450" stroke="#1a1f4d" stroke-width="6"/>
+  <line x1="440" y1="475" x2="500" y2="475" stroke="#1a1f4d" stroke-width="5"/>
+  <rect x="600" y="600" width="60" height="100"/>
+  <ellipse cx="240" cy="710" rx="50" ry="20"/>
+  <rect x="200" y="680" width="20" height="30"/>
+  <rect x="260" y="680" width="20" height="30"/>
+</g>
+<g>
+  <path d="M 40 380 Q 540 320 1040 380" fill="none" stroke="#6B6F7A" stroke-width="2"/>
+  <polygon points="120,378 138,378 129,400" fill="#FF6B47"/>
+  <polygon points="240,370 258,370 249,392" fill="#292f71"/>
+  <polygon points="360,365 378,365 369,387" fill="#FF6B47"/>
+  <polygon points="480,362 498,362 489,384" fill="#292f71"/>
+  <polygon points="600,362 618,362 609,384" fill="#FF6B47"/>
+  <polygon points="720,365 738,365 729,387" fill="#292f71"/>
+  <polygon points="840,370 858,370 849,392" fill="#FF6B47"/>
+  <polygon points="960,378 978,378 969,400" fill="#292f71"/>
+</g>
+<circle cx="900" cy="260" r="55" fill="#FFF1ED" opacity="0.7"/>
+<text x="80" y="1010" class="s" font-size="32" font-weight="600" fill="#FF6B47" letter-spacing="5">FRI–MON · MAY 22–25 · FREE</text>
+<text x="80" y="1090" class="h" font-size="64" fill="#1a1f4d">Battleships in San Pedro</text>
+<text x="80" y="1158" class="h" font-style="italic" font-size="58" fill="#FF6B47">for the long weekend.</text>
+<line x1="80" y1="1200" x2="180" y2="1200" stroke="#292f71" stroke-width="2"/>
+<text x="80" y="1255" class="s" font-size="30" font-weight="500" fill="#6B6F7A">LA Fleet Week · Battleship Iowa &amp; the waterfront</text>
+
+</svg>

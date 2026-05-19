@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+<defs>
+<style>
+.s { font-family: 'Inter', -apple-system, system-ui, sans-serif; }
+.h { font-family: 'Instrument Serif', Georgia, serif; }
+</style>
+<radialGradient id="s10glow" cx="50%" cy="40%" r="65%"><stop offset="0%" stop-color="#FF6B47" stop-opacity="0.18"/><stop offset="60%" stop-color="#FF6B47" stop-opacity="0"/></radialGradient>
+</defs>
+
+<rect width="1080" height="1350" fill="#1a1f4d"/>
+<rect width="1080" height="1350" fill="url(#s10glow)"/>
+<image href="https://cdn.jsdelivr.net/gh/Hilex2030/haps-club-assets@main/images/haps-club-logo-white.svg" x="340" y="200" width="400" height="400"/>
+<line x1="440" y1="680" x2="640" y2="680" stroke="#FF6B47" stroke-width="2"/>
+<text x="540" y="780" class="s" font-size="32" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="5">THE FULL LIST</text>
+<text x="540" y="900" class="h" font-style="italic" font-size="76" text-anchor="middle" fill="#ffffff">Updated daily.</text>
+<text x="540" y="990" class="h" font-size="76" text-anchor="middle" fill="#ffffff">Free every Tuesday.</text>
+<rect x="340" y="1060" width="400" height="80" rx="40" fill="#FF6B47"/>
+<text x="540" y="1115" class="s" font-size="36" font-weight="700" text-anchor="middle" fill="#ffffff" letter-spacing="3">HAPS.CLUB →</text>
+<text x="540" y="1230" class="s" font-size="22" font-weight="500" text-anchor="middle" fill="#ffffff" opacity="0.55" letter-spacing="3">@THEHAPSCLUB · LINK IN BIO</text>
+
+</svg>

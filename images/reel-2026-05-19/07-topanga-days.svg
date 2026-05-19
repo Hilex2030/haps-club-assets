@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+<defs>
+<style>
+.s { font-family: 'Inter', -apple-system, system-ui, sans-serif; }
+.h { font-family: 'Instrument Serif', Georgia, serif; }
+</style>
+<linearGradient id="s7sky" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FFF1ED"/><stop offset="100%" stop-color="#FAFAF7"/></linearGradient><radialGradient id="s7sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/><stop offset="100%" stop-color="#FF6B47" stop-opacity="0"/></radialGradient>
+</defs>
+
+<rect width="1080" height="1350" fill="url(#s7sky)"/>
+<circle cx="880" cy="200" r="95" fill="#FF6B47" opacity="0.85"/>
+<circle cx="880" cy="200" r="95" fill="url(#s7sun)"/>
+<path d="M 0 580 L 180 480 L 360 540 L 540 440 L 720 510 L 900 460 L 1080 500 L 1080 850 L 0 850 Z" fill="#292f71" opacity="0.55"/>
+<path d="M 0 650 L 200 560 L 380 600 L 580 510 L 780 580 L 960 540 L 1080 570 L 1080 850 L 0 850 Z" fill="#292f71" opacity="0.85"/>
+<path d="M 0 720 L 240 650 L 460 690 L 680 600 L 880 670 L 1080 640 L 1080 850 L 0 850 Z" fill="#1a1f4d"/>
+<g transform="translate(320, 730)" fill="#E54D2B">
+  <polygon points="0,-80 -90,40 90,40"/>
+  <polygon points="0,-80 -30,40 -10,40" fill="#1a1f4d" opacity="0.4"/>
+  <polygon points="0,-80 30,40 10,40" fill="#1a1f4d" opacity="0.4"/>
+  <rect x="-2" y="-110" width="4" height="32" fill="#1a1f4d"/>
+  <polygon points="2,-110 28,-100 2,-90" fill="#FF6B47"/>
+</g>
+<g fill="#1a1f4d">
+  <polygon points="700,670 720,640 740,670"/>
+  <polygon points="700,670 718,648 736,670"/>
+  <rect x="717" y="666" width="6" height="14"/>
+  <polygon points="820,680 836,656 852,680"/>
+  <rect x="831" y="678" width="6" height="12"/>
+</g>
+<text x="80" y="950" class="s" font-size="32" font-weight="600" fill="#FF6B47" letter-spacing="5">FRI–MON · MAY 22–25</text>
+<text x="80" y="1030" class="h" font-size="64" fill="#1a1f4d">Topanga Days,</text>
+<text x="80" y="1100" class="h" font-style="italic" font-size="64" fill="#FF6B47">51 years running.</text>
+<line x1="80" y1="1145" x2="180" y2="1145" stroke="#292f71" stroke-width="2"/>
+<text x="80" y="1205" class="s" font-size="28" font-weight="500" fill="#6B6F7A">Canned Heat · Cyril Neville · Topanga</text>
+<text x="80" y="1250" class="s" font-size="26" font-weight="500" fill="#6B6F7A" opacity="0.8">Monday parade · take the shuttle</text>
+
+</svg>

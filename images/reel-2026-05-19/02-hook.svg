@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+<defs>
+<style>
+.s { font-family: 'Inter', -apple-system, system-ui, sans-serif; }
+.h { font-family: 'Instrument Serif', Georgia, serif; }
+</style>
+<radialGradient id="s2glow" cx="80%" cy="100%" r="70%"><stop offset="0%" stop-color="#FF6B47" stop-opacity="0.35"/><stop offset="60%" stop-color="#FF6B47" stop-opacity="0"/></radialGradient>
+</defs>
+
+<rect width="1080" height="1350" fill="#292f71"/>
+<rect width="1080" height="1350" fill="url(#s2glow)"/>
+<text x="540" y="430" class="s" font-size="28" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="6">FOR THE WEEK AHEAD</text>
+<text x="540" y="600" class="h" font-size="120" font-weight="400" text-anchor="middle" fill="#ffffff">14 picks.</text>
+<text x="540" y="730" class="h" font-style="italic" font-size="120" font-weight="400" text-anchor="middle" fill="#FF6B47">8 days.</text>
+<text x="540" y="860" class="h" font-size="120" font-weight="400" text-anchor="middle" fill="#ffffff">One city.</text>
+<line x1="440" y1="980" x2="640" y2="980" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+<text x="540" y="1060" class="s" font-size="26" font-weight="500" text-anchor="middle" fill="#ffffff" opacity="0.7" letter-spacing="3">Hand-picked. No filler.</text>
+
+</svg>

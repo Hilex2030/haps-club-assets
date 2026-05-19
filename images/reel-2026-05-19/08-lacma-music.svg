@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+<defs>
+<style>
+.s { font-family: 'Inter', -apple-system, system-ui, sans-serif; }
+.h { font-family: 'Instrument Serif', Georgia, serif; }
+</style>
+
+</defs>
+
+<rect x="0" y="0" width="1080" height="650" fill="#292f71"/>
+<rect x="0" y="650" width="1080" height="700" fill="#FAFAF7"/>
+<line x1="0" y1="650" x2="1080" y2="650" stroke="#FF6B47" stroke-width="2" opacity="0.6"/>
+<text x="540" y="430" class="h" font-style="italic" font-size="260" font-weight="400" text-anchor="middle" fill="#ffffff" opacity="0.10">Music</text>
+<g fill="#FF6B47">
+  <ellipse cx="170" cy="280" rx="28" ry="20" transform="rotate(-15 170 280)"/>
+  <rect x="194" y="160" width="7" height="125" transform="rotate(-15 170 280)"/>
+  <ellipse cx="860" cy="350" rx="28" ry="20" transform="rotate(-15 860 350)"/>
+  <rect x="884" y="220" width="7" height="135" transform="rotate(-15 860 350)"/>
+  <path d="M 891 220 Q 940 240 920 290" fill="none" stroke="#FF6B47" stroke-width="10" stroke-linecap="round" transform="rotate(-15 860 350)"/>
+  <ellipse cx="940" cy="170" rx="14" ry="10" transform="rotate(-15 940 170)"/>
+  <rect x="952" y="105" width="4" height="68" transform="rotate(-15 940 170)"/>
+</g>
+<line x1="380" y1="500" x2="700" y2="500" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+<text x="540" y="555" class="s" font-size="26" font-weight="600" text-anchor="middle" fill="#ffffff" opacity="0.7" letter-spacing="6">ON THE LAWN AT LACMA</text>
+<text x="80" y="780" class="s" font-size="30" font-weight="600" fill="#E54D2B" letter-spacing="5">FRI 5/22 + SAT 5/23 · FREE</text>
+<text x="80" y="880" class="h" font-size="62" fill="#1a1f4d">Jazz on the lawn Friday,</text>
+<text x="80" y="952" class="h" font-style="italic" font-size="60" fill="#E54D2B">salsa on the lawn Saturday.</text>
+<line x1="80" y1="1000" x2="180" y2="1000" stroke="#292f71" stroke-width="2"/>
+<text x="80" y="1065" class="s" font-size="28" font-weight="500" fill="#6B6F7A">Brian Swartz Quintet · 6pm Fri</text>
+<text x="80" y="1110" class="s" font-size="28" font-weight="500" fill="#6B6F7A">Son Mayor · 5pm Sat</text>
+<text x="80" y="1185" class="s" font-size="24" font-weight="500" fill="#6B6F7A" opacity="0.75">Bring a low chair. The lawn fills up early.</text>
+
+</svg>

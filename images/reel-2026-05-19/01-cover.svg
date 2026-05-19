@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+<defs>
+<style>
+.s { font-family: 'Inter', -apple-system, system-ui, sans-serif; }
+.h { font-family: 'Instrument Serif', Georgia, serif; }
+</style>
+<radialGradient id="s1bg" cx="20%" cy="0%" r="80%"><stop offset="0%" stop-color="#292f71" stop-opacity="0.10"/><stop offset="55%" stop-color="#292f71" stop-opacity="0"/></radialGradient>
+</defs>
+
+<rect width="1080" height="1350" fill="#FAFAF7"/>
+<rect width="1080" height="1350" fill="url(#s1bg)"/>
+<image href="https://cdn.jsdelivr.net/gh/Hilex2030/haps-club-assets@main/images/haps-club-logo.svg" x="290" y="240" width="500" height="500"/>
+<text x="540" y="900" class="s" font-size="32" font-weight="600" text-anchor="middle" fill="#FF6B47" letter-spacing="5">MEMORIAL DAY WEEKEND</text>
+<line x1="420" y1="950" x2="660" y2="950" stroke="#292f71" stroke-width="1.5"/>
+<circle cx="540" cy="950" r="5" fill="#FF6B47"/>
+<text x="540" y="1030" class="h" font-style="italic" font-size="56" text-anchor="middle" fill="#6B6F7A">Eight days of summer ahead.</text>
+<text x="540" y="1170" class="s" font-size="30" font-weight="500" text-anchor="middle" fill="#6B6F7A" letter-spacing="4">HAPS.CLUB</text>
+
+</svg>

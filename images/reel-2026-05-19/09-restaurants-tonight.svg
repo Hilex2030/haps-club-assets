@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+<defs>
+<style>
+.s { font-family: 'Inter', -apple-system, system-ui, sans-serif; }
+.h { font-family: 'Instrument Serif', Georgia, serif; }
+</style>
+<linearGradient id="s9wash" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#EEF0F8" stop-opacity="0.5"/><stop offset="100%" stop-color="#FFF1ED" stop-opacity="0.3"/></linearGradient>
+</defs>
+
+<rect width="1080" height="1350" fill="#FAFAF7"/>
+<rect width="1080" height="1350" fill="url(#s9wash)"/>
+<text x="540" y="500" class="h" font-style="italic" font-size="380" font-weight="400" text-anchor="middle" fill="#FF6B47" opacity="0.18">&amp;</text>
+<text x="80" y="650" class="s" font-size="26" font-weight="600" fill="#E54D2B" letter-spacing="4">TONIGHT · TUESDAY</text>
+<text x="80" y="710" class="h" font-size="46" fill="#1a1f4d">Billy Vera's Big Band</text>
+<text x="80" y="755" class="s" font-size="24" font-weight="500" fill="#6B6F7A">Vibrato Grill, Bel Air · 7:30pm</text>
+<line x1="80" y1="800" x2="200" y2="800" stroke="#292f71" stroke-width="1" opacity="0.4"/>
+<text x="80" y="860" class="s" font-size="26" font-weight="600" fill="#E54D2B" letter-spacing="4">NEW &amp; NOTABLE · BOOK AHEAD</text>
+<text x="80" y="920" class="h" font-size="46" fill="#1a1f4d">Sqirl is serving dinner</text>
+<text x="80" y="965" class="s" font-size="24" font-weight="500" fill="#6B6F7A">Virgil Village · sqirlla.com</text>
+<text x="80" y="1030" class="h" font-size="46" fill="#1a1f4d">Amiguita opens at the Junction</text>
+<text x="80" y="1075" class="s" font-size="24" font-weight="500" fill="#6B6F7A">Silver Lake · Afro-Caribbean · amiguitala.com</text>
+<line x1="80" y1="1140" x2="200" y2="1140" stroke="#292f71" stroke-width="1" opacity="0.4"/>
+<text x="80" y="1180" class="s" font-size="22" font-weight="600" fill="#E54D2B" letter-spacing="3">MARK YOUR CALENDAR</text>
+<text x="80" y="1220" class="s" font-size="22" font-weight="500" fill="#6B6F7A">Mulholland Drive at Cinespia · Sat 5/30</text>
+<text x="80" y="1255" class="s" font-size="22" font-weight="500" fill="#6B6F7A">Blue Note Jazz Festival at the Bowl · Jun 13–14</text>
+<text x="80" y="1290" class="s" font-size="22" font-weight="500" fill="#6B6F7A">Best of Broadway opening at the Bowl · Sat 6/20</text>
+
+</svg>

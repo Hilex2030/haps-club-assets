@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+<defs>
+<style>
+.s { font-family: 'Inter', -apple-system, system-ui, sans-serif; }
+.h { font-family: 'Instrument Serif', Georgia, serif; }
+</style>
+<linearGradient id="s5fade" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FAFAF7" stop-opacity="0"/><stop offset="100%" stop-color="#FAFAF7" stop-opacity="1"/></linearGradient>
+</defs>
+
+<rect width="1080" height="1350" fill="#FAFAF7"/>
+<image href="https://cdn.jsdelivr.net/gh/Hilex2030/haps-club-assets@main/images/reel-2026-05-19/annenberg-pool.jpg" x="0" y="0" width="1080" height="850" preserveAspectRatio="xMidYMid slice"/>
+<rect x="0" y="700" width="1080" height="150" fill="url(#s5fade)"/>
+<text x="80" y="950" class="s" font-size="32" font-weight="600" fill="#FF6B47" letter-spacing="5">SAT MAY 23 · SANTA MONICA · $10</text>
+<text x="80" y="1030" class="h" font-size="64" fill="#1a1f4d">Marion Davies' pool</text>
+<text x="80" y="1100" class="h" font-style="italic" font-size="62" fill="#FF6B47">opens for the season.</text>
+<line x1="80" y1="1145" x2="180" y2="1145" stroke="#292f71" stroke-width="2"/>
+<text x="80" y="1200" class="s" font-size="30" font-weight="500" fill="#6B6F7A">Annenberg Community Beach House · 415 PCH</text>
+<text x="80" y="1245" class="s" font-size="22" font-weight="500" fill="#6B6F7A" opacity="0.7">Photo: Mike Hope, CC BY-SA 4.0</text>
+
+</svg>
