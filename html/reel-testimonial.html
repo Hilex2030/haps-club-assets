@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haps Club — People Are Saying Things</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #292f71;
+    --navy-deep: #1a1f4d;
+    --navy-tint: #EEF0F8;
+    --accent: #FF6B47;
+    --accent-deep: #E54D2B;
+    --accent-tint: #FFF1ED;
+    --bg: #FAFAF7;
+    --ink: #0F1117;
+    --ink-3: #6B6F7A;
+    --sans: 'Inter', -apple-system, system-ui, sans-serif;
+    --serif: 'Instrument Serif', Georgia, serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #2a2a2a;
+    font-family: var(--sans);
+    padding: 30px 0 60px;
+    min-height: 100vh;
+  }
+  .toolbar {
+    max-width: 1100px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+    color: #eee;
+    text-align: center;
+  }
+  .toolbar h1 { font-family: var(--serif); font-size: 28px; font-weight: 400; margin-bottom: 6px; }
+  .toolbar p { font-size: 14px; color: #aaa; line-height: 1.5; }
+  .toolbar code { background: #444; padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+  .deck {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 0 20px;
+  }
+  .slide-wrapper {
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+  }
+  .slide-label {
+    background: #333;
+    color: #ccc;
+    padding: 10px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .slide-label .num { color: var(--accent); }
+  .slide {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg);
+  }
+  .slide svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .toolbar { display: none; }
+    .deck { display: block; max-width: none; padding: 0; gap: 0; }
+    .slide-wrapper { page-break-after: always; border-radius: 0; box-shadow: none; }
+    .slide-label { display: none; }
+    .slide { aspect-ratio: auto; width: 1080px; height: 1920px; }
+  }
+</style>
+<style>
+  .deck { display:flex; flex-wrap:wrap; gap:16px; padding:20px; background:#e8e8e8; }
+  .slide-wrap { position:relative; width:270px; height:480px; overflow:hidden; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,.18); }
+  .slide-wrap svg { width:100%; height:100%; display:block; }
+  .toolbar { background:#1a1f4d; color:#fff; padding:12px 20px; font-family:'Inter',sans-serif; font-size:13px; display:flex; gap:16px; align-items:center; }
+  .toolbar a { color:#FF6B47; text-decoration:none; font-weight:600; }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <span>Haps Club · Testimonial Reel</span>
+  <a href="download-testimonial-reel.html">⬇ Download PNGs</a>
+</div>
+
+<svg style="display:none">
+  <defs>
+<symbol id="hc-logo-navy" viewBox="0 0 1100 1100">
+      <g fill="#292f71">
+        <path d="M425.07,448.57c1.12,0,2.23.07,3.31.19-3.45-1.45-7.15-2.19-10.19-1.46-5.61,1.27-36.72,9.18-79.82,16.07,20.91-78.8,51.26-159.38,80.07-211.65,3.06-5.61-12.75-18.87-14.03-12.5-27.8,55.34-62.73,144.84-85.94,227.21-26.27,3.83-55.34,7.14-85.17,8.42,21.17-86.45,56.36-168.56,63.75-188.7,2.04-5.61-10.97-23.46-14.28-16.07-6.63,14.79-43.61,107.1-66.56,198.39-16.83-12.75-34.94-20.91-52.79-22.7-6.63-.51-13.77.76-13.77,10.2,0,19.64,20.15,30.35,53.04,31.62h8.93c-10.71,47.43-17.09,93.33-12.24,125.97,2.04,13.26,21.68,19.89,20.4,11.22-5.87-36.98-1.02-82.62,8.67-128.01,47.18,49.47,61.97,123.68,62.99,140.25,0,.12.02.24.03.36,7.24,1.99,14.11,4.66,20.61,8.02-2.78-43.95,7.24-106.85,23.73-171.84,24.15-3.3,47.59-6.42,66.69-8.75,7.19-9.61,15.02-16.24,22.55-16.24ZM199.14,475.34c-16.06-.25-35.7-5.35-35.7-11.48s5.61-5.86,10.46-4.08c10.71,4.08,20.66,9.44,29.58,15.56h-4.34ZM294.51,581.68c-10.46-34.68-32.13-70.13-58.4-96.14,21.93-2.04,50.49-5.61,79.56-9.44-10.46,38.51-18.11,75.23-21.17,105.57Z"/>
+        <path d="M464.59,575.05c-1.27,0-4.84-.76-4.84-5.35,0-19.89,28.82-98.69,28.82-107.87,0-6.89-7.65-11.48-11.22-11.48s-7.14,4.08-15.81,15.05c-8.67,10.97-57.89,72.68-69.87,72.68-.77,0-2.81-.25-2.81-3.06,0-27.54,36.72-73.19,50.75-73.19,5.61,0,11.48,10.2,14.54,5.87,1.91-2.86-9.82-17.13-25.76-18.94,8.69,3.65,15.76,11.83,6.64,12.56-7.88.63-19.13,1.87-32.5,3.49-15.46,20.67-27.94,55.13-27.94,67.14,0,8.93,8.67,16.83,13.77,16.83,17.34,0,57.38-59.16,83.64-83.39-9.44,31.11-26.78,72.68-26.78,94.35,0,9.43,10.46,23.21,23.72,23.21,9.18,0,25.76-18.62,44.12-39.27,11.21-12.73,22.96-26.38,32.85-37.95,1.81-5.45,3.56-10.49,5.27-15.22-25.78,29.49-72.71,84.54-86.57,84.54Z"/>
+        <path d="M428.38,448.76c-1.09-.12-2.19-.19-3.31-.19-7.53,0-15.36,6.63-22.55,16.24,13.37-1.63,24.63-2.86,32.5-3.49,9.13-.73,2.05-8.91-6.64-12.56Z"/>
+        <path d="M756.76,446.54c-5.93,3.26-57.31,35.95-91.99,57.62,9.95-23.46,16.58-48.45,16.58-69.87,0-18.11-11.99-25.76-21.67-25.76-45.65,0-121.64,207.83-133.88,248.89,31.37-149.43,58.4-199.16,58.91-205.53.51-6.38-9.69-12.24-13-11.22-3.06,1.02-10.2,14.79-13.52,21.93-.51,1.27-.25,2.81.25,3.83l.25.51c.51,1.28.51,2.29,0,3.57-2.41,6.22-4.91,12.76-7.53,20.01,6.95-7.95,12.37-14.04,15.18-16.69,3.57-3.31,5.1,1.79,3.32,3.83-.59.73-10.48,12.54-23.77,28.09-12.14,36.57-26.72,91.72-45.6,198.35-6.89,39.53,4.08,43.86,13.77,43.86,6.12,0,4.59-39.78,13.01-69.87,29.33-106.08,102.26-261.38,136.94-261.38,3.57,0,5.1,2.55,4.84,8.16-1.28,29.58-11.99,64.01-25.76,93.08-35.96,23.97-68.85,48.96-68.85,62.73,0,6.38,10.71,11.48,20.4,11.48,3.57,0,8.42-.51,13.26-3.83,15.56-11.48,36.21-40.04,51.77-72.68,24.81-16.37,50.03-30.81,66.45-39.84,5.96-5.98,12.02-11,16.76-14.73-2.14-1.17,15.21-15.25,13.88-14.53ZM591.58,583.47c-7.65.26-5.1-4.08-1.78-8.67,9.94-13.77,27.03-28.82,46.67-43.1-15.81,29.84-33.66,51.51-44.88,51.77Z"/>
+        <path d="M566.34,473.81c-2.81,2.65-8.23,8.75-15.18,16.69-1.71,4.73-3.46,9.77-5.27,15.22,13.28-15.56,23.18-27.36,23.77-28.09,1.79-2.04.25-7.14-3.32-3.83Z"/>
+        <path d="M780.53,575.31c0-13.26-4.33-22.18-18.36-29.58,35.7-26.01,71.91-47.94,93.33-55.08,1.53-.51-.77-5.36-2.55-4.85-21.93,7.4-60.69,29.84-98.69,56.61-3.06-1.27-6.38-2.55-9.95-3.57-14.28-4.34-31.11-6.38-31.11-15.3,0-21.68,55.34-65.54,79.05-73.95,6.38-2.29,1.27-14.54-5.61-14.54-5.87,0-20.52,5.5-31.11,12.24-5.61,3.57-4.66,4.47-6.14,5.89-1.09,1.06-2.76,1.01-5.1,5.04-1.33-.11-3.75.85-2.98,2.59-2.73,1.31-6.97,5.98-10.26,7.76-2.24,1.17.85.38-4.95,7.21-11.76,11.79-23.1,27.29-23.1,43.92,0,14.03,17.6,25.25,30.6,29.33,2.8.76,5.61,1.53,8.16,2.04-48.71,35.7-92.82,76.5-92.82,98.69,0,9.69,6.12,23.46,23.71,23.46,3.16,0,6.62-.53,10.29-1.51v-10.99c-4.98,2.13-9.81,3.56-14.37,4.08-7.91,1.02-11.47-4.33-11.47-9.18,0-21.17,45.65-64.77,94.86-102.26,9.44,1.79,16.07,3.57,16.07,8.92,0,16.32-22.27,49.13-48.61,73.3h18.25v2.69c23.55-20.85,42.85-46.41,42.85-62.99Z"/>
+        <path d="M291.49,637.38c-10.49-2.88-21.75-4.33-33.8-4.33-21.76,0-41.23,4.86-58.4,14.56-17.18,9.71-30.56,23.25-40.16,40.64-9.6,17.39-14.4,37.17-14.4,59.36s4.8,41.92,14.4,59.2c9.6,17.28,22.98,30.78,40.16,40.48,17.17,9.71,36.64,14.56,58.4,14.56,26.67,0,49.49-6.98,68.48-20.96,18.98-13.97,31.68-33.12,38.08-57.44h-60.16c-4.48,9.39-10.83,16.54-19.04,21.44-8.21,4.91-17.55,7.36-28,7.36-16.85,0-30.51-5.87-40.96-17.6-10.46-11.73-15.68-27.41-15.68-47.04s5.22-35.31,15.68-47.04c10.45-11.73,24.1-17.6,40.96-17.6,10.45,0,19.79,2.46,28,7.36,8.21,4.91,14.56,12.05,19.04,21.44h60.16c-6.4-24.32-19.1-43.52-38.08-57.6-4.47-3.32-9.17-6.23-14.07-8.77.14,2.27.31,4.5.52,6.66,1.27,12.9-20.05.2-21.13-14.69Z"/>
+        <path d="M312.62,652.06c-.21-2.16-.38-4.4-.52-6.66-6.5-3.36-13.36-6.04-20.61-8.02,1.09,14.89,22.4,27.59,21.13,14.69Z"/>
+        <polygon points="452.56 635.61 397.84 635.61 397.84 860.24 524.24 860.24 524.24 818 452.56 818 452.56 635.61"/>
+        <path d="M682.96,770c0,13.44-3.41,23.79-10.24,31.04-6.83,7.25-16.64,10.88-29.44,10.88s-22.51-3.62-29.12-10.88c-6.61-7.25-9.92-17.6-9.92-31.04v-134.4h-54.72v134.08c0,20.05,4.05,37.07,12.16,51.04,8.11,13.97,19.15,24.43,33.12,31.36,13.97,6.94,29.81,10.4,47.52,10.4s33.76-3.52,48.16-10.56c14.4-7.04,25.87-17.49,34.4-31.36,8.53-13.87,12.8-30.83,12.8-50.88v-131.39c-18,15.93-38.48,29.1-54.72,33.42v98.28Z"/>
+        <path d="M719.43,635.61c-11.89,10.91-24.6,20.04-36.47,25.12v10.99c16.24-4.32,36.72-17.49,54.72-33.42v-2.69h-18.25Z"/>
+        <path d="M943.44,764.4c-7.9-10.13-18.35-16.58-31.36-19.36,11.52-3.41,20.75-9.49,27.68-18.24,6.93-8.74,10.4-19.73,10.4-32.96,0-17.92-6.46-32.1-19.36-42.56-12.91-10.45-30.77-15.68-53.6-15.68h-101.12v224.64h104.64c23.46,0,41.76-5.49,54.88-16.48,13.12-10.98,19.68-25.86,19.68-44.64,0-13.01-3.95-24.58-11.84-34.72ZM830.79,679.44h35.84c8.96,0,15.84,2.03,20.64,6.08,4.8,4.05,7.2,9.92,7.2,17.6s-2.4,13.5-7.2,17.44c-4.8,3.95-11.68,5.92-20.64,5.92h-35.84v-47.04ZM892.4,809.84c-5.02,4.16-12.11,6.24-21.28,6.24h-40.32v-49.6h39.68c9.17,0,16.37,2.24,21.6,6.72,5.23,4.48,7.84,10.67,7.84,18.56s-2.51,13.92-7.52,18.08Z"/>
+      </g>
+    </symbol>
+
+    <symbol id="hc-logo-white" viewBox="0 0 900 900">
+      <g fill="#fdfbfd">
+        <path d="M325.07,348.57c1.12,0,2.23.07,3.31.19-3.45-1.45-7.15-2.19-10.19-1.46-5.61,1.27-36.72,9.18-79.82,16.07,20.91-78.8,51.26-159.38,80.07-211.65,3.06-5.61-12.75-18.87-14.03-12.5-27.8,55.34-62.73,144.84-85.94,227.21-26.27,3.83-55.34,7.14-85.17,8.42,21.17-86.45,56.36-168.56,63.75-188.7,2.04-5.61-10.97-23.46-14.28-16.07-6.63,14.79-43.61,107.1-66.56,198.39-16.83-12.75-34.94-20.91-52.79-22.7-6.63-.51-13.77.76-13.77,10.2,0,19.64,20.15,30.35,53.04,31.62h8.93c-10.71,47.43-17.09,93.33-12.24,125.97,2.04,13.26,21.68,19.89,20.4,11.22-5.87-36.98-1.02-82.62,8.67-128.01,47.18,49.47,61.97,123.68,62.99,140.25,0,.12.02.24.03.36,7.24,1.99,14.11,4.66,20.61,8.02-2.78-43.95,7.24-106.85,23.73-171.84,24.15-3.3,47.59-6.42,66.69-8.75,7.19-9.61,15.02-16.24,22.55-16.24ZM99.14,375.34c-16.06-.25-35.7-5.35-35.7-11.48s5.61-5.86,10.46-4.08c10.71,4.08,20.66,9.44,29.58,15.56h-4.34ZM194.51,481.68c-10.46-34.68-32.13-70.13-58.4-96.14,21.93-2.04,50.49-5.61,79.56-9.44-10.46,38.51-18.11,75.23-21.17,105.57Z"/>
+        <path d="M364.59,475.05c-1.27,0-4.84-.76-4.84-5.35,0-19.89,28.82-98.69,28.82-107.87,0-6.89-7.65-11.48-11.22-11.48s-7.14,4.08-15.81,15.05c-8.67,10.97-57.89,72.68-69.87,72.68-.77,0-2.81-.25-2.81-3.06,0-27.54,36.72-73.19,50.75-73.19,5.61,0,11.48,10.2,14.54,5.87,1.91-2.86-9.82-17.13-25.76-18.94,8.69,3.65,15.76,11.83,6.64,12.56-7.88.63-19.13,1.87-32.5,3.49-15.46,20.67-27.94,55.13-27.94,67.14,0,8.93,8.67,16.83,13.77,16.83,17.34,0,57.38-59.16,83.64-83.39-9.44,31.11-26.78,72.68-26.78,94.35,0,9.43,10.46,23.21,23.72,23.21,9.18,0,25.76-18.62,44.12-39.27,11.21-12.73,22.96-26.38,32.85-37.95,1.81-5.45,3.56-10.49,5.27-15.22-25.78,29.49-72.71,84.54-86.57,84.54Z"/>
+        <path d="M328.38,348.76c-1.09-.12-2.19-.19-3.31-.19-7.53,0-15.36,6.63-22.55,16.24,13.37-1.63,24.63-2.86,32.5-3.49,9.13-.73,2.05-8.91-6.64-12.56Z"/>
+        <path d="M656.76,346.54c-5.93,3.26-57.31,35.95-91.99,57.62,9.95-23.46,16.58-48.45,16.58-69.87,0-18.11-11.99-25.76-21.67-25.76-45.65,0-121.64,207.83-133.88,248.89,31.37-149.43,58.4-199.16,58.91-205.53.51-6.38-9.69-12.24-13-11.22-3.06,1.02-10.2,14.79-13.52,21.93-.51,1.27-.25,2.81.25,3.83l.25.51c.51,1.28.51,2.29,0,3.57-2.41,6.22-4.91,12.76-7.53,20.01,6.95-7.95,12.37-14.04,15.18-16.69,3.57-3.31,5.1,1.79,3.32,3.83-.59.73-10.48,12.54-23.77,28.09-12.14,36.57-26.72,91.72-45.6,198.35-6.89,39.53,4.08,43.86,13.77,43.86,6.12,0,4.59-39.78,13.01-69.87,29.33-106.08,102.26-261.38,136.94-261.38,3.57,0,5.1,2.55,4.84,8.16-1.28,29.58-11.99,64.01-25.76,93.08-35.96,23.97-68.85,48.96-68.85,62.73,0,6.38,10.71,11.48,20.4,11.48,3.57,0,8.42-.51,13.26-3.83,15.56-11.48,36.21-40.04,51.77-72.68,24.81-16.37,50.03-30.81,66.45-39.84,5.96-5.98,12.02-11,16.76-14.73-2.14-1.17,15.21-15.25,13.88-14.53ZM491.58,483.47c-7.65.26-5.1-4.08-1.78-8.67,9.94-13.77,27.03-28.82,46.67-43.1-15.81,29.84-33.66,51.51-44.88,51.77Z"/>
+        <path d="M466.34,373.81c-2.81,2.65-8.23,8.75-15.18,16.69-1.71,4.73-3.46,9.77-5.27,15.22,13.28-15.56,23.18-27.36,23.77-28.09,1.79-2.04.25-7.14-3.32-3.83Z"/>
+        <path d="M680.53,475.31c0-13.26-4.33-22.18-18.36-29.58,35.7-26.01,71.91-47.94,93.33-55.08,1.53-.51-.77-5.36-2.55-4.85-21.93,7.4-60.69,29.84-98.69,56.61-3.06-1.27-6.38-2.55-9.95-3.57-14.28-4.34-31.11-6.38-31.11-15.3,0-21.68,55.34-65.54,79.05-73.95,6.38-2.29,1.27-14.54-5.61-14.54-5.87,0-20.52,5.5-31.11,12.24-5.61,3.57-4.66,4.47-6.14,5.89-1.09,1.06-2.76,1.01-5.1,5.04-1.33-.11-3.75.85-2.98,2.59-2.73,1.31-6.97,5.98-10.26,7.76-2.24,1.17.85.38-4.95,7.21-11.76,11.79-23.1,27.29-23.1,43.92,0,14.03,17.6,25.25,30.6,29.33,2.8.76,5.61,1.53,8.16,2.04-48.71,35.7-92.82,76.5-92.82,98.69,0,9.69,6.12,23.46,23.71,23.46,3.16,0,6.62-.53,10.29-1.51v-10.99c-4.98,2.13-9.81,3.56-14.37,4.08-7.91,1.02-11.47-4.33-11.47-9.18,0-21.17,45.65-64.77,94.86-102.26,9.44,1.79,16.07,3.57,16.07,8.92,0,16.32-22.27,49.13-48.61,73.3h18.25v2.69c23.55-20.85,42.85-46.41,42.85-62.99Z"/>
+        <path d="M191.49,537.38c-10.49-2.88-21.75-4.33-33.8-4.33-21.76,0-41.23,4.86-58.4,14.56-17.18,9.71-30.56,23.25-40.16,40.64-9.6,17.39-14.4,37.17-14.4,59.36s4.8,41.92,14.4,59.2c9.6,17.28,22.98,30.78,40.16,40.48,17.17,9.71,36.64,14.56,58.4,14.56,26.67,0,49.49-6.98,68.48-20.96,18.98-13.97,31.68-33.12,38.08-57.44h-60.16c-4.48,9.39-10.83,16.54-19.04,21.44-8.21,4.91-17.55,7.36-28,7.36-16.85,0-30.51-5.87-40.96-17.6-10.46-11.73-15.68-27.41-15.68-47.04s5.22-35.31,15.68-47.04c10.45-11.73,24.1-17.6,40.96-17.6,10.45,0,19.79,2.46,28,7.36,8.21,4.91,14.56,12.05,19.04,21.44h60.16c-6.4-24.32-19.1-43.52-38.08-57.6-4.47-3.32-9.17-6.23-14.07-8.77.14,2.27.31,4.5.52,6.66,1.27,12.9-20.05.2-21.13-14.69Z"/>
+        <path d="M212.62,552.06c-.21-2.16-.38-4.4-.52-6.66-6.5-3.36-13.36-6.04-20.61-8.02,1.09,14.89,22.4,27.59,21.13,14.69Z"/>
+        <polygon points="352.56 535.61 297.84 535.61 297.84 760.24 424.24 760.24 424.24 718 352.56 718 352.56 535.61"/>
+        <path d="M582.96,670c0,13.44-3.41,23.79-10.24,31.04-6.83,7.25-16.64,10.88-29.44,10.88s-22.51-3.62-29.12-10.88c-6.61-7.25-9.92-17.6-9.92-31.04v-134.4h-54.72v134.08c0,20.05,4.05,37.07,12.16,51.04,8.11,13.97,19.15,24.43,33.12,31.36,13.97,6.94,29.81,10.4,47.52,10.4s33.76-3.52,48.16-10.56c14.4-7.04,25.87-17.49,34.4-31.36,8.53-13.87,12.8-30.83,12.8-50.88v-131.39c-18,15.93-38.48,29.1-54.72,33.42v98.28Z"/>
+        <path d="M619.43,535.61c-11.89,10.91-24.6,20.04-36.47,25.12v10.99c16.24-4.32,36.72-17.49,54.72-33.42v-2.69h-18.25Z"/>
+        <path d="M843.44,664.4c-7.9-10.13-18.35-16.58-31.36-19.36,11.52-3.41,20.75-9.49,27.68-18.24,6.93-8.74,10.4-19.73,10.4-32.96,0-17.92-6.46-32.1-19.36-42.56-12.91-10.45-30.77-15.68-53.6-15.68h-101.12v224.64h104.64c23.46,0,41.76-5.49,54.88-16.48,13.12-10.98,19.68-25.86,19.68-44.64,0-13.01-3.95-24.58-11.84-34.72ZM730.79,579.44h35.84c8.96,0,15.84,2.03,20.64,6.08,4.8,4.05,7.2,9.92,7.2,17.6s-2.4,13.5-7.2,17.44c-4.8,3.95-11.68,5.92-20.64,5.92h-35.84v-47.04ZM792.4,709.84c-5.02,4.16-12.11,6.24-21.28,6.24h-40.32v-49.6h39.68c9.17,0,16.37,2.24,21.6,6.72,5.23,4.48,7.84,10.67,7.84,18.56s-2.51,13.92-7.52,18.08Z"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="deck">
+
+<!-- SLIDE 01 · OPEN -->
+<div class="slide-wrap">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="s1bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FAFAF7"/>
+      <stop offset="100%" stop-color="#EEF0F8"/>
+    </linearGradient>
+    <linearGradient id="s1coral" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF6B47" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FF6B47" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- bg -->
+  <rect width="1080" height="1920" fill="url(#s1bg)"/>
+  <rect width="1080" height="1920" fill="url(#s1coral)"/>
+
+  <!-- big open-quote decoration -->
+  <text x="80" y="620" font-family="Georgia,serif" font-size="520" fill="#292f71" opacity="0.06">"</text>
+
+  <!-- envelope + star doodle cluster, top half -->
+  <!-- envelope body -->
+  <rect x="340" y="220" width="400" height="280" rx="18" fill="#292f71" opacity="0.9"/>
+  <!-- envelope flap -->
+  <polygon points="340,220 740,220 540,380" fill="#1a1f4d"/>
+  <!-- envelope flap lines -->
+  <line x1="340" y1="220" x2="540" y2="390" stroke="#FAFAF7" stroke-width="4" opacity="0.3"/>
+  <line x1="740" y1="220" x2="540" y2="390" stroke="#FAFAF7" stroke-width="4" opacity="0.3"/>
+  <!-- coral stamp -->
+  <rect x="660" y="240" width="60" height="48" rx="4" fill="#FF6B47"/>
+  <!-- tiny star on stamp -->
+  <polygon points="690,248 696,265 714,265 700,275 705,292 690,282 675,292 680,275 666,265 684,265" fill="#FAFAF7" transform="scale(0.7) translate(298,100)"/>
+
+  <!-- floating stars -->
+  <circle cx="200" cy="300" r="8" fill="#FF6B47" opacity="0.7"/>
+  <circle cx="860" cy="350" r="6" fill="#292f71" opacity="0.4"/>
+  <circle cx="900" cy="200" r="10" fill="#FF6B47" opacity="0.5"/>
+  <circle cx="150" cy="500" r="5" fill="#292f71" opacity="0.3"/>
+
+  <!-- small star shapes -->
+  <polygon points="820,260 826,278 845,278 830,289 836,307 820,296 804,307 810,289 795,278 814,278" fill="#FF6B47" opacity="0.6" transform="scale(0.5) translate(820,180)"/>
+
+  <!-- text block -->
+  <text x="540" y="680" font-family="'Instrument Serif',Georgia,serif" font-size="82" fill="#292f71" text-anchor="middle" font-style="italic">People are</text>
+  <text x="540" y="790" font-family="'Instrument Serif',Georgia,serif" font-size="82" fill="#292f71" text-anchor="middle" font-style="italic">saying things.</text>
+
+  <rect x="380" y="840" width="320" height="5" rx="2.5" fill="#FF6B47" opacity="0.7"/>
+
+  <text x="540" y="910" font-family="'Inter',sans-serif" font-size="38" fill="#6B6F7A" text-anchor="middle" font-weight="500">Real words from real readers</text>
+  <text x="540" y="960" font-family="'Inter',sans-serif" font-size="38" fill="#6B6F7A" text-anchor="middle" font-weight="500">of the Haps Club newsletter.</text>
+
+  <!-- logo bottom -->
+  <use href="#hc-logo-navy" x="390" y="1720" width="300" height="110"/>
+</svg>
+</div>
+
+<!-- SLIDE 02 · QUOTE 1 -->
+<div class="slide-wrap">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920">
+  <defs>
+    <radialGradient id="s2glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FF6B47" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#292f71" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="#292f71"/>
+  <rect width="1080" height="1920" fill="url(#s2glow)"/>
+
+  <!-- decorative huge quote mark -->
+  <text x="60" y="700" font-family="Georgia,serif" font-size="600" fill="#FAFAF7" opacity="0.04">"</text>
+
+  <!-- illustration: tiny figure slumped over a laptop, staring blankly -->
+  <!-- desk -->
+  <rect x="240" y="780" width="600" height="24" rx="8" fill="#FAFAF7" opacity="0.15"/>
+  <!-- laptop base -->
+  <rect x="350" y="720" width="380" height="60" rx="6" fill="#EEF0F8" opacity="0.2"/>
+  <!-- laptop screen -->
+  <rect x="370" y="520" width="340" height="210" rx="10" fill="#EEF0F8" opacity="0.25"/>
+  <!-- screen glow (newsletter) -->
+  <rect x="385" y="535" width="310" height="180" rx="6" fill="#FF6B47" opacity="0.12"/>
+  <!-- newsletter lines on screen -->
+  <rect x="400" y="555" width="200" height="12" rx="4" fill="#FAFAF7" opacity="0.4"/>
+  <rect x="400" y="577" width="270" height="8" rx="4" fill="#FAFAF7" opacity="0.25"/>
+  <rect x="400" y="595" width="240" height="8" rx="4" fill="#FAFAF7" opacity="0.25"/>
+  <rect x="400" y="613" width="180" height="8" rx="4" fill="#FAFAF7" opacity="0.25"/>
+  <rect x="400" y="635" width="220" height="8" rx="4" fill="#FAFAF7" opacity="0.25"/>
+  <!-- hinge -->
+  <rect x="350" y="715" width="380" height="12" rx="4" fill="#FAFAF7" opacity="0.1"/>
+  <!-- little head peeking over laptop screen -->
+  <circle cx="540" cy="500" r="55" fill="#FAFAF7" opacity="0.18"/>
+  <!-- wide eyes -->
+  <circle cx="520" cy="495" r="10" fill="#FAFAF7" opacity="0.7"/>
+  <circle cx="560" cy="495" r="10" fill="#FAFAF7" opacity="0.7"/>
+  <!-- pupils -->
+  <circle cx="523" cy="497" r="5" fill="#292f71"/>
+  <circle cx="563" cy="497" r="5" fill="#292f71"/>
+  <!-- tiny smile: impressed -->
+  <path d="M520 518 Q540 532 560 518" stroke="#FAFAF7" stroke-width="5" fill="none" opacity="0.7" stroke-linecap="round"/>
+
+  <!-- coral eyebrow -->
+  <text x="540" y="920" font-family="'Inter',sans-serif" font-size="34" fill="#FF6B47" text-anchor="middle" font-weight="700" letter-spacing="4">A READER WROTE IN:</text>
+
+  <!-- the quote -->
+  <text x="540" y="1040" font-family="'Instrument Serif',Georgia,serif" font-size="96" fill="#FAFAF7" text-anchor="middle" font-style="italic">"Digging these</text>
+  <text x="540" y="1150" font-family="'Instrument Serif',Georgia,serif" font-size="96" fill="#FAFAF7" text-anchor="middle" font-style="italic">newsletters</text>
+  <text x="540" y="1260" font-family="'Instrument Serif',Georgia,serif" font-size="96" fill="#FAFAF7" text-anchor="middle" font-style="italic">— thanks!"</text>
+
+  <!-- attribution bar -->
+  <rect x="200" y="1350" width="680" height="2" fill="#FF6B47" opacity="0.4"/>
+  <text x="540" y="1410" font-family="'Inter',sans-serif" font-size="34" fill="#6B6F7A" text-anchor="middle">— an actual human, unprompted</text>
+
+  <!-- bottom brand strip -->
+  <rect x="0" y="1820" width="1080" height="100" fill="#1a1f4d" opacity="0.8"/>
+  <text x="540" y="1880" font-family="'Inter',sans-serif" font-size="30" fill="#FAFAF7" text-anchor="middle" opacity="0.6" font-weight="500">HAPS.CLUB · NEWSLETTER</text>
+</svg>
+</div>
+
+<!-- SLIDE 03 · QUOTE 2 -->
+<div class="slide-wrap">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="s3bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FAFAF7"/>
+      <stop offset="60%" stop-color="#FFF1ED"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#s3bg)"/>
+
+  <!-- illustration: surprised person spitting out coffee -->
+  <!-- mug -->
+  <rect x="420" y="680" width="220" height="180" rx="16" fill="#292f71" opacity="0.85"/>
+  <!-- mug handle -->
+  <path d="M640 720 Q720 760 720 810 Q720 860 640 840" stroke="#292f71" stroke-width="28" fill="none" opacity="0.85" stroke-linecap="round"/>
+  <!-- steam wisps above mug -->
+  <path d="M460 660 Q450 620 465 580 Q480 540 470 500" stroke="#292f71" stroke-width="6" fill="none" opacity="0.2" stroke-linecap="round"/>
+  <path d="M510 650 Q500 605 515 565 Q530 525 520 480" stroke="#292f71" stroke-width="6" fill="none" opacity="0.2" stroke-linecap="round"/>
+  <path d="M560 655 Q555 610 570 570 Q585 530 575 490" stroke="#292f71" stroke-width="6" fill="none" opacity="0.2" stroke-linecap="round"/>
+  <!-- haps text on mug -->
+  <text x="530" y="790" font-family="'Inter',sans-serif" font-size="42" fill="#FAFAF7" text-anchor="middle" font-weight="800" opacity="0.9">haps</text>
+  <!-- coffee splatter dots (shocked reaction) -->
+  <circle cx="700" cy="700" r="9" fill="#292f71" opacity="0.35"/>
+  <circle cx="730" cy="720" r="6" fill="#292f71" opacity="0.25"/>
+  <circle cx="720" cy="660" r="5" fill="#292f71" opacity="0.2"/>
+  <circle cx="760" cy="695" r="7" fill="#292f71" opacity="0.3"/>
+  <!-- eyebrow over quote -->
+  <text x="540" y="960" font-family="'Inter',sans-serif" font-size="34" fill="#FF6B47" text-anchor="middle" font-weight="700" letter-spacing="4">SOMEONE EMAILED US:</text>
+
+  <!-- quote text -->
+  <text x="540" y="1090" font-family="'Instrument Serif',Georgia,serif" font-size="86" fill="#292f71" text-anchor="middle" font-style="italic">"This is great,</text>
+  <text x="540" y="1190" font-family="'Instrument Serif',Georgia,serif" font-size="86" fill="#292f71" text-anchor="middle" font-style="italic">actually full of</text>
+  <text x="540" y="1290" font-family="'Instrument Serif',Georgia,serif" font-size="86" fill="#292f71" text-anchor="middle" font-style="italic">useful info."</text>
+
+  <!-- fun aside -->
+  <text x="540" y="1390" font-family="'Inter',sans-serif" font-size="34" fill="#6B6F7A" text-anchor="middle">("actually" doing a lot of work here)</text>
+
+  <rect x="200" y="1430" width="680" height="2" fill="#FF6B47" opacity="0.5"/>
+
+  <!-- bottom brand strip -->
+  <rect x="0" y="1820" width="1080" height="100" fill="#292f71" opacity="0.85"/>
+  <text x="540" y="1880" font-family="'Inter',sans-serif" font-size="30" fill="#FAFAF7" text-anchor="middle" opacity="0.6" font-weight="500">HAPS.CLUB · NEWSLETTER</text>
+</svg>
+</div>
+
+<!-- SLIDE 04 · QUOTE 3 -->
+<div class="slide-wrap">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920">
+  <rect width="1080" height="1920" fill="#292f71"/>
+  <!-- coral blotch top right -->
+  <circle cx="900" cy="200" r="320" fill="#FF6B47" opacity="0.12"/>
+
+  <!-- illustration: retro boombox / stereo with lightning bolts = "rad" energy -->
+  <!-- boombox body -->
+  <rect x="200" y="480" width="680" height="360" rx="30" fill="#FAFAF7" opacity="0.12"/>
+  <!-- speaker left -->
+  <circle cx="320" cy="660" r="100" fill="none" stroke="#FF6B47" stroke-width="14" opacity="0.6"/>
+  <circle cx="320" cy="660" r="60" fill="none" stroke="#FF6B47" stroke-width="8" opacity="0.4"/>
+  <circle cx="320" cy="660" r="22" fill="#FF6B47" opacity="0.5"/>
+  <!-- speaker right -->
+  <circle cx="760" cy="660" r="100" fill="none" stroke="#FF6B47" stroke-width="14" opacity="0.6"/>
+  <circle cx="760" cy="660" r="60" fill="none" stroke="#FF6B47" stroke-width="8" opacity="0.4"/>
+  <circle cx="760" cy="660" r="22" fill="#FF6B47" opacity="0.5"/>
+  <!-- center cassette/display -->
+  <rect x="430" y="570" width="220" height="180" rx="10" fill="#1a1f4d" opacity="0.8"/>
+  <!-- cassette spools -->
+  <circle cx="476" cy="660" r="30" fill="none" stroke="#FAFAF7" stroke-width="6" opacity="0.5"/>
+  <circle cx="476" cy="660" r="12" fill="#FAFAF7" opacity="0.3"/>
+  <circle cx="604" cy="660" r="30" fill="none" stroke="#FAFAF7" stroke-width="6" opacity="0.5"/>
+  <circle cx="604" cy="660" r="12" fill="#FAFAF7" opacity="0.3"/>
+  <!-- tape line between spools -->
+  <path d="M476 690 Q540 700 604 690" stroke="#FAFAF7" stroke-width="4" fill="none" opacity="0.3"/>
+  <!-- lightning bolts floating -->
+  <polygon points="310,360 290,460 330,460 310,560 350,420 305,420" fill="#FF6B47" opacity="0.7"/>
+  <polygon points="750,340 730,440 770,440 750,540 790,400 745,400" fill="#FF6B47" opacity="0.5"/>
+  <polygon points="540,300 520,390 560,390 540,480 580,355 535,355" fill="#FAFAF7" opacity="0.2"/>
+  <!-- buttons strip -->
+  <rect x="230" y="800" width="640" height="25" rx="4" fill="#FAFAF7" opacity="0.07"/>
+
+  <!-- eyebrow -->
+  <text x="540" y="970" font-family="'Inter',sans-serif" font-size="34" fill="#FF6B47" text-anchor="middle" font-weight="700" letter-spacing="4">DIRECT QUOTE, VERBATIM:</text>
+
+  <!-- the quote -->
+  <text x="540" y="1120" font-family="'Instrument Serif',Georgia,serif" font-size="160" fill="#FAFAF7" text-anchor="middle" font-style="italic">"This is</text>
+  <text x="540" y="1300" font-family="'Instrument Serif',Georgia,serif" font-size="160" fill="#FF6B47" text-anchor="middle" font-style="italic">rad."</text>
+
+  <!-- reaction -->
+  <text x="540" y="1430" font-family="'Inter',sans-serif" font-size="34" fill="#6B6F7A" text-anchor="middle">We screenshotted this immediately.</text>
+
+  <rect x="200" y="1470" width="680" height="2" fill="#FF6B47" opacity="0.4"/>
+
+  <!-- bottom brand strip -->
+  <rect x="0" y="1820" width="1080" height="100" fill="#1a1f4d" opacity="0.8"/>
+  <text x="540" y="1880" font-family="'Inter',sans-serif" font-size="30" fill="#FAFAF7" text-anchor="middle" opacity="0.6" font-weight="500">HAPS.CLUB · NEWSLETTER</text>
+</svg>
+</div>
+
+<!-- SLIDE 05 · QUOTE 4 -->
+<div class="slide-wrap">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="s5bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF1ED"/>
+      <stop offset="100%" stop-color="#FAFAF7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#s5bg)"/>
+
+  <!-- illustration: trophy with a tiny newsletter inside the cup -->
+  <!-- trophy base plate -->
+  <rect x="380" y="820" width="320" height="40" rx="8" fill="#292f71" opacity="0.8"/>
+  <!-- trophy stem -->
+  <rect x="495" y="700" width="90" height="130" rx="6" fill="#292f71" opacity="0.7"/>
+  <!-- trophy cup -->
+  <path d="M310 380 Q310 700 540 700 Q770 700 770 380 Z" fill="#292f71" opacity="0.85"/>
+  <!-- cup shine -->
+  <path d="M360 420 Q350 600 400 660" stroke="#FAFAF7" stroke-width="12" fill="none" opacity="0.15" stroke-linecap="round"/>
+  <!-- handles -->
+  <path d="M310 420 Q220 480 230 560 Q240 640 310 600" stroke="#292f71" stroke-width="36" fill="none" opacity="0.85" stroke-linecap="round"/>
+  <path d="M770 420 Q860 480 850 560 Q840 640 770 600" stroke="#292f71" stroke-width="36" fill="none" opacity="0.85" stroke-linecap="round"/>
+  <!-- tiny envelope inside trophy -->
+  <rect x="455" y="480" width="170" height="120" rx="8" fill="#FF6B47" opacity="0.9"/>
+  <polygon points="455,480 540,545 625,480" fill="#E54D2B" opacity="0.9"/>
+  <!-- star on trophy -->
+  <polygon points="540,410 553,450 595,450 562,474 574,514 540,490 506,514 518,474 485,450 527,450" fill="#FF6B47" opacity="0.8"/>
+
+  <!-- coral confetti dots -->
+  <circle cx="200" cy="380" r="12" fill="#FF6B47" opacity="0.5"/>
+  <circle cx="870" cy="420" r="9" fill="#FF6B47" opacity="0.4"/>
+  <circle cx="180" cy="700" r="7" fill="#292f71" opacity="0.3"/>
+  <circle cx="900" cy="650" r="11" fill="#292f71" opacity="0.25"/>
+  <rect x="150" y="500" width="14" height="14" rx="3" fill="#FF6B47" opacity="0.4" transform="rotate(30 157 507)"/>
+  <rect x="880" y="550" width="14" height="14" rx="3" fill="#292f71" opacity="0.3" transform="rotate(45 887 557)"/>
+
+  <!-- eyebrow -->
+  <text x="540" y="1000" font-family="'Inter',sans-serif" font-size="34" fill="#FF6B47" text-anchor="middle" font-weight="700" letter-spacing="4">FROM THE INBOX:</text>
+
+  <!-- quote -->
+  <text x="540" y="1120" font-family="'Instrument Serif',Georgia,serif" font-size="90" fill="#292f71" text-anchor="middle" font-style="italic">"Your newsletters</text>
+  <text x="540" y="1230" font-family="'Instrument Serif',Georgia,serif" font-size="90" fill="#292f71" text-anchor="middle" font-style="italic">are so good!"</text>
+
+  <!-- reaction line -->
+  <text x="540" y="1340" font-family="'Inter',sans-serif" font-size="34" fill="#6B6F7A" text-anchor="middle">We're printing this and framing it.</text>
+
+  <rect x="200" y="1380" width="680" height="2" fill="#FF6B47" opacity="0.5"/>
+
+  <!-- bottom brand strip -->
+  <rect x="0" y="1820" width="1080" height="100" fill="#292f71" opacity="0.85"/>
+  <text x="540" y="1880" font-family="'Inter',sans-serif" font-size="30" fill="#FAFAF7" text-anchor="middle" opacity="0.6" font-weight="500">HAPS.CLUB · NEWSLETTER</text>
+</svg>
+</div>
+
+<!-- SLIDE 06 · CLOSE / CTA -->
+<div class="slide-wrap">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920">
+  <defs>
+    <radialGradient id="s6spot" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#3a4190"/>
+      <stop offset="100%" stop-color="#1a1f4d"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#s6spot)"/>
+
+  <!-- subtle horizontal lines texture -->
+  <line x1="0" y1="400" x2="1080" y2="400" stroke="#FAFAF7" stroke-width="1" opacity="0.04"/>
+  <line x1="0" y1="600" x2="1080" y2="600" stroke="#FAFAF7" stroke-width="1" opacity="0.04"/>
+  <line x1="0" y1="800" x2="1080" y2="800" stroke="#FAFAF7" stroke-width="1" opacity="0.04"/>
+  <line x1="0" y1="1000" x2="1080" y2="1000" stroke="#FAFAF7" stroke-width="1" opacity="0.04"/>
+
+  <!-- logo -->
+  <use href="#hc-logo-white" x="340" y="320" width="400" height="150"/>
+
+  <!-- hairline -->
+  <rect x="340" y="500" width="400" height="2" fill="#FF6B47" opacity="0.7"/>
+
+  <!-- main cta text -->
+  <text x="540" y="700" font-family="'Instrument Serif',Georgia,serif" font-size="82" fill="#FAFAF7" text-anchor="middle" font-style="italic">Join them.</text>
+
+  <text x="540" y="820" font-family="'Inter',sans-serif" font-size="40" fill="#6B6F7A" text-anchor="middle">The LA newsletter people</text>
+  <text x="540" y="875" font-family="'Inter',sans-serif" font-size="40" fill="#6B6F7A" text-anchor="middle">apparently enjoy reading.</text>
+
+  <!-- pill CTA -->
+  <rect x="290" y="940" width="500" height="100" rx="50" fill="#FF6B47"/>
+  <text x="540" y="1003" font-family="'Inter',sans-serif" font-size="42" fill="#FAFAF7" text-anchor="middle" font-weight="700">haps.club</text>
+
+  <!-- social handle -->
+  <text x="540" y="1120" font-family="'Inter',sans-serif" font-size="34" fill="#6B6F7A" text-anchor="middle" letter-spacing="3">@THEHAPSCLUB</text>
+
+  <!-- tagline -->
+  <text x="540" y="1260" font-family="'Instrument Serif',Georgia,serif" font-size="42" fill="#FAFAF7" text-anchor="middle" font-style="italic" opacity="0.55">A weekly glance at what&#x2019;s worth</text>
+  <text x="540" y="1315" font-family="'Instrument Serif',Georgia,serif" font-size="42" fill="#FAFAF7" text-anchor="middle" font-style="italic" opacity="0.55">doing in Los Angeles.</text>
+</svg>
+</div>
+
+</div>
+</body>
+</html>
