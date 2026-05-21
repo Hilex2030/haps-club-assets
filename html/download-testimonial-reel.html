@@ -31,7 +31,8 @@
 
 <div id="status">Rendering slides…</div>
 <div class="grid" id="grid"></div>
-<button class="zipbtn" id="zipbtn" onclick="downloadZip()" disabled>⬇ Download all as .zip (desktop)</button>
+<button class="zipbtn" id="pngbtn" onclick="saveAllPngs()" disabled>⬇ Download all 6 PNGs</button>
+<button class="zipbtn" id="zipbtn" onclick="downloadZip()" disabled style="background:#3a4190;margin-top:14px;">⬇ Download as .zip instead</button>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script>
@@ -89,10 +90,24 @@ async function init() {
     }
     status.textContent = \'Long-press an image to save it to Photos.\';
     document.getElementById(\'zipbtn\').disabled = false;
+    document.getElementById(\'pngbtn\').disabled = false;
   } catch(e) {
     status.textContent = \'Error: \' + e.message;
     console.error(e);
   }
+}
+
+async function saveAllPngs() {
+  const btn = document.getElementById(\'pngbtn\');
+  btn.disabled = true; btn.textContent = \'Saving…\';
+  for (let i = 0; i < pngBlobs.length; i++) {
+    const a = document.createElement(\'a\');
+    a.href = URL.createObjectURL(pngBlobs[i].blob);
+    a.download = pngBlobs[i].name;
+    document.body.appendChild(a); a.click(); a.remove();
+    await new Promise(r => setTimeout(r, 400));
+  }
+  btn.textContent = \'⬇ Download all 6 PNGs\'; btn.disabled = false;
 }
 
 async function downloadZip() {
