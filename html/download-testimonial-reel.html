@@ -3,110 +3,112 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Download — Haps Club Testimonial Reel</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Save — Haps Club Testimonial Reel</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  body { margin:0; background:#1a1f4d; font-family:'Inter',sans-serif; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; gap:24px; padding:40px 20px; box-sizing:border-box; }
-  h1 { font-size:28px; font-weight:700; margin:0; color:#FAFAF7; }
-  p { font-size:15px; color:#6B6F7A; margin:0; text-align:center; }
-  #btn { background:#FF6B47; color:#fff; border:none; border-radius:50px; padding:18px 48px; font-size:18px; font-weight:700; cursor:pointer; font-family:'Inter',sans-serif; }
-  #btn:disabled { opacity:0.5; cursor:default; }
-  #status { font-size:14px; color:#6B6F7A; min-height:24px; text-align:center; }
-  #previews { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; max-width:900px; }
-  .thumb { width:108px; height:192px; border-radius:8px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,.4); }
-  .thumb canvas { width:100%; height:100%; display:block; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:#1a1f4d; font-family:\'Inter\',sans-serif; color:#FAFAF7; padding:24px 16px 60px; }
+  .head { text-align:center; margin-bottom:24px; }
+  h1 { font-size:24px; font-weight:700; margin:0 0 8px; }
+  p { font-size:14px; color:#9aa0c0; margin:0 auto; max-width:440px; line-height:1.5; }
+  .tip { background:rgba(255,107,71,.15); border:1px solid rgba(255,107,71,.4); border-radius:12px; padding:14px 16px; margin:18px auto 0; max-width:440px; font-size:13px; color:#FAFAF7; line-height:1.5; }
+  .tip b { color:#FF6B47; }
+  #status { text-align:center; font-size:14px; color:#9aa0c0; margin:20px 0; min-height:20px; }
+  .grid { display:flex; flex-direction:column; align-items:center; gap:28px; }
+  .card { width:100%; max-width:360px; }
+  .card .num { font-size:13px; font-weight:600; color:#9aa0c0; margin-bottom:8px; }
+  .card img { width:100%; border-radius:14px; box-shadow:0 6px 30px rgba(0,0,0,.45); display:block; }
+  .zipbtn { display:block; margin:32px auto 0; background:#FF6B47; color:#fff; border:none; border-radius:50px; padding:16px 40px; font-size:16px; font-weight:700; font-family:inherit; cursor:pointer; }
+  .zipbtn:disabled { opacity:.5; }
 </style>
 </head>
 <body>
-<h1>Haps Club · Testimonial Reel</h1>
-<p>Downloads 6 slides as 1080×1920 PNGs.</p>
-<div id="previews"></div>
-<div id="status">Ready.</div>
-<button id="btn" onclick="downloadAll()">⬇ Download All PNGs</button>
+<div class="head">
+  <h1>Haps Club · Testimonial Reel</h1>
+  <p>6 slides, 1080×1920, ready for Instagram.</p>
+  <div class="tip">📱 <b>On iPhone:</b> press and hold each image below, then tap <b>Add to Photos</b>. Save them in order (1→6) so they post as a sequence.</div>
+</div>
+
+<div id="status">Rendering slides…</div>
+<div class="grid" id="grid"></div>
+<button class="zipbtn" id="zipbtn" onclick="downloadZip()" disabled>⬇ Download all as .zip (desktop)</button>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script>
-const DECK_URL = 'https://hilex2030.github.io/haps-club-assets/html/reel-testimonial.html';
-const SLIDE_LABELS = [
-  '01-open', '02-quote-digging', '03-quote-great-info',
-  '04-quote-rad', '05-quote-so-good', '06-close'
-];
+const DECK_URL = \'https://hilex2030.github.io/haps-club-assets/html/reel-testimonial.html\';
+const LABELS = [\'01-open\',\'02-digging\',\'03-useful-info\',\'04-rad\',\'05-so-good\',\'06-close\'];
+const FONT_CSS = `@import url(\'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap\');`;
+let pngBlobs = [];
 
 async function getSVGs() {
-  const resp = await fetch(DECK_URL);
-  const html = await resp.text();
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(html, 'text/html');
-  const wraps = doc.querySelectorAll('.slide-wrap');
-  return Array.from(wraps).map(w => {
-    const svg = w.querySelector('svg');
-    // inline defs from hidden master svg
-    return svg ? svg.outerHTML : null;
-  }).filter(Boolean);
+  const html = await (await fetch(DECK_URL)).text();
+  const doc = new DOMParser().parseFromString(html, \'text/html\');
+  // grab the hidden master defs (logo symbols)
+  const masterDefs = doc.querySelector(\'svg[style*="display:none"] defs\');
+  const defsHTML = masterDefs ? masterDefs.innerHTML : \'\';
+  return Array.from(doc.querySelectorAll(\'.slide-wrap svg\')).map(svg => {
+    const inner = svg.innerHTML;
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920"><defs><style>${FONT_CSS}</style>${defsHTML}</defs>${inner}</svg>`;
+  });
 }
 
-const FONT_CSS = `@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');`;
-
-async function svgToPng(svgStr) {
-  const wrapped = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920">
-    <defs><style>${FONT_CSS}</style></defs>
-    ${svgStr.replace(/^<svg[^>]*>/, '').replace('</svg>', '')}
-  </svg>`;
-  const blob = new Blob([wrapped], {type: 'image/svg+xml'});
-  const url = URL.createObjectURL(blob);
+function svgToPng(svgStr) {
   return new Promise((res, rej) => {
+    const blob = new Blob([svgStr], {type:\'image/svg+xml\'});
+    const url = URL.createObjectURL(blob);
     const img = new Image();
     img.onload = () => {
-      const c = document.createElement('canvas');
+      const c = document.createElement(\'canvas\');
       c.width = 1080; c.height = 1920;
-      const ctx = c.getContext('2d');
-      ctx.drawImage(img, 0, 0);
+      c.getContext(\'2d\').drawImage(img, 0, 0);
       URL.revokeObjectURL(url);
-      c.toBlob(b => res(b), 'image/png');
+      c.toBlob(b => res(b), \'image/png\');
     };
     img.onerror = rej;
     img.src = url;
   });
 }
 
-async function downloadAll() {
-  const btn = document.getElementById('btn');
-  const status = document.getElementById('status');
-  const previews = document.getElementById('previews');
-  btn.disabled = true;
-  status.textContent = 'Fetching deck…';
+async function init() {
+  const status = document.getElementById(\'status\');
+  const grid = document.getElementById(\'grid\');
   try {
     const svgs = await getSVGs();
-    status.textContent = `Rendering ${svgs.length} slides…`;
-    const zip = new JSZip();
-    previews.innerHTML = '';
+    // wait for fonts
+    if (document.fonts && document.fonts.ready) { try { await document.fonts.ready; } catch(e){} }
     for (let i = 0; i < svgs.length; i++) {
-      status.textContent = `Rendering slide ${i+1}/${svgs.length}…`;
+      status.textContent = `Rendering ${i+1} of ${svgs.length}…`;
       const blob = await svgToPng(svgs[i]);
-      const label = SLIDE_LABELS[i] || (\`0${i+1}-slide\`);
-      zip.file(`${label}.png`, blob);
-      // thumb preview
-      const div = document.createElement('div');
-      div.className = 'thumb';
-      const img = document.createElement('img');
-      img.src = URL.createObjectURL(blob);
-      img.style.cssText = 'width:100%;height:100%;object-fit:cover;';
-      div.appendChild(img);
-      previews.appendChild(div);
+      pngBlobs.push({name: LABELS[i] + \'.png\', blob});
+      const card = document.createElement(\'div\'); card.className = \'card\';
+      const num = document.createElement(\'div\'); num.className = \'num\';
+      num.textContent = `Slide ${i+1}`;
+      const im = document.createElement(\'img\');
+      im.src = URL.createObjectURL(blob); im.alt = LABELS[i];
+      card.appendChild(num); card.appendChild(im); grid.appendChild(card);
     }
-    status.textContent = 'Zipping…';
-    const zipBlob = await zip.generateAsync({type:'blob'});
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(zipBlob);
-    a.download = 'haps-club-testimonial-reel.zip';
-    a.click();
-    status.textContent = 'Done. Check your downloads.';
+    status.textContent = \'Long-press an image to save it to Photos.\';
+    document.getElementById(\'zipbtn\').disabled = false;
   } catch(e) {
-    status.textContent = 'Error: ' + e.message;
+    status.textContent = \'Error: \' + e.message;
     console.error(e);
   }
-  btn.disabled = false;
 }
+
+async function downloadZip() {
+  const btn = document.getElementById(\'zipbtn\');
+  btn.disabled = true; btn.textContent = \'Zipping…\';
+  const zip = new JSZip();
+  pngBlobs.forEach(p => zip.file(p.name, p.blob));
+  const zb = await zip.generateAsync({type:\'blob\'});
+  const a = document.createElement(\'a\');
+  a.href = URL.createObjectURL(zb);
+  a.download = \'haps-club-testimonial-reel.zip\';
+  a.click();
+  btn.textContent = \'⬇ Download all as .zip (desktop)\'; btn.disabled = false;
+}
+
+init();
 </script>
 </body>
 </html>
